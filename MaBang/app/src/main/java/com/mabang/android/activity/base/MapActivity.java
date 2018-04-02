@@ -861,13 +861,6 @@ public abstract class MapActivity extends AppActivity {
     }
 
     @Override
-    protected void onPause() {
-        // MapView的生命周期与Activity同步，当activity挂起时需调用MapView.onPause()
-        mMapView.onPause();
-        super.onPause();
-    }
-
-    @Override
     protected void onResume() {
         // MapView的生命周期与Activity同步，当activity恢复时需调用MapView.onResume()
         mMapView.onResume();
@@ -875,12 +868,21 @@ public abstract class MapActivity extends AppActivity {
     }
 
     @Override
+    protected void onPause() {
+        // MapView的生命周期与Activity同步，当activity挂起时需调用MapView.onPause()
+        mMapView.onPause();
+        super.onPause();
+    }
+
+    @Override
     protected void onDestroy() {
         // MapView的生命周期与Activity同步，当activity销毁时需调用MapView.destroy()
+        if (mMapView!=null)
         mMapView.onDestroy();
         super.onDestroy();
         // 回收 bitmap 资源
-        mBd.recycle();
+        if (mBd!=null)
+            mBd.recycle();
     }
 
 }

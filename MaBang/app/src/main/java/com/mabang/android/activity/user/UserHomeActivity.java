@@ -389,7 +389,7 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
      * ①地址选择弹窗，传四级联动地址id
      * ②输入用户信息(模糊地址)，传区号id，
      */
-    private void searchRequestType(SearchInfo.SearchType searchType) {
+    private void searchRequestType(final SearchInfo.SearchType searchType) {
         SearchInfo searchInfo = new SearchInfo();
         // TODO: 2018/2/14 设置对应参数
         searchInfo.setAccount(getMemberInfo().getAccount());
@@ -430,7 +430,10 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
                     String text = result.getText();
                     logI(text + "");
                     // TODO: 2018/2/16 获取相应数据做对应显示
-                    setSearchTypeInfoData(result);
+                    if (searchType.equals(SearchInfo.SearchType.CAN_BESPEAK))
+                        setSearchTypeInfoData(result);
+                    else
+                        setSearchInfoData(result);
 
                     List<BillboardInfo> biList = result.getBillboardInfoList();
                     if (biList != null && biList.size() > 0) {//当有广告位列表时遍历列表，若其中一个广告位带经纬度就移动到该位置

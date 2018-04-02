@@ -82,9 +82,9 @@ public class HttpReuqest {
 
     public synchronized void sendMessage(final String type, Object param, boolean showDialog, final CallBack myCallBack) {
         if (mActivity!=null&&!mActivity.isFinishing()) {
-            Dialog loginLoadDialog = LoadingDialog.createDialog(mActivity, "请稍等");
+            Dialog loginLoadDialog = LoadingDialog.createDialog(mActivity, "请稍等");//
             if (showDialog) {
-                loginLoadDialog.show();
+                loginLoadDialog.show();//这个应该避免error: View not attached to window manager，建议在onCreate稍后一点执行
             } else {
                 loginLoadDialog.dismiss();
             }

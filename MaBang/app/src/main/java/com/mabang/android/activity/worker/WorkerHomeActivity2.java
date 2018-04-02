@@ -25,8 +25,8 @@ import com.mabang.android.entity.vo.Message;
 import com.mabang.android.entity.vo.SearchInfo;
 import com.mabang.android.okhttp.HttpReuqest;
 import com.mabang.android.utils.AppUtils;
+import com.mabang.android.utils.DialogManager;
 import com.mabang.android.utils.PopupWindowManager;
-import com.mabang.android.widget.BillboradInfoDialog;
 import com.mabang.android.widget.KeyboardPatch;
 
 import java.util.List;
@@ -40,7 +40,7 @@ import walke.base.widget.ImageTextView;
  * email:1032458982@qq.com
  */
 
-public class WorkerHomeActivity extends MapActivity {
+public class WorkerHomeActivity2 extends MapActivity {
 
     private ImageTextView itvExit, itvPreview;
     private Button btSearch;
@@ -53,8 +53,6 @@ public class WorkerHomeActivity extends MapActivity {
 
     private ImageView ivLocationTop;
     private SearchInfo mSearchInfo;
-
-    private BillboradInfoDialog mBillboradInfoDialog;
 
     @Override
     protected int rootLayoutId() {
@@ -88,39 +86,6 @@ public class WorkerHomeActivity extends MapActivity {
         etTop.setTextColor(Color.BLACK);
 
 
-        mBillboradInfoDialog = new BillboradInfoDialog(this);
-        mBillboradInfoDialog.setOnButtonClickListener(new BillboradInfoDialog.OnButtonClickListener() {
-            @Override
-            public void onClickLocation(final BillboardInfo info) {
-                //进行定位校正
-                DialogUtil.tipsTwoButton(WorkerHomeActivity.this, "取消", "确定", "确定绑定到当前定位？", new DialogUtil.TwoButtonClickListener() {
-                    @Override
-                    public void leftOnClick() {
-                    }
-
-                    @Override
-                    public void rightOnClick() { //定位校正 更新修改广告位经纬度为 当前定位
-                        updateCoordinates(info);//更新广告位位置坐标
-                    }
-                });
-            }
-
-            @Override
-            public void onClickBinding(final BillboardInfo info) {
-                //进行绑定当前定位
-                DialogUtil.tipsTwoButton(WorkerHomeActivity.this, "取消", "确定", "确定绑定到当前定位？", new DialogUtil.TwoButtonClickListener() {
-                    @Override
-                    public void leftOnClick() {
-                    }
-
-                    @Override
-                    public void rightOnClick() { //定位校正 更新修改广告位经纬度为 当前定位
-                        updateCoordinates(info);//更新广告位位置坐标
-                    }
-                });
-            }
-        });
-
     }
 
     @Override
@@ -140,7 +105,7 @@ public class WorkerHomeActivity extends MapActivity {
         mBillboardInfoList = result.getBillboardInfoList();
         if (mBillboardInfoList != null && mBillboardInfoList.size() > 0) {
             for (BillboardInfo billboardInfo : mBillboardInfoList) {
-                logI("billboardInfo = " + billboardInfo.toString());
+                logI("billboardInfo = "+billboardInfo.toString());
             }
             boolean isExits = checkCurrentLocationBillboard(mBDLocation, mBillboardInfoList);
             if (isExits)
@@ -152,7 +117,7 @@ public class WorkerHomeActivity extends MapActivity {
     protected void mapMarkerClick(Marker marker, final BillboardInfo markerInfo) {
         // ②点击地图上的覆盖物，
 //        showUploadPhotoDialog(billboardInfo);
-        setMapCenter(marker.getPosition(), new LocateDoneListener() {
+       setMapCenter(marker.getPosition(), new LocateDoneListener() {
             @Override
             public void done() {
                 showUploadPhotoDialog(markerInfo);
@@ -169,10 +134,21 @@ public class WorkerHomeActivity extends MapActivity {
     private void showUploadPhotoDialog(final BillboardInfo billboardInfo) {
         if (billboardInfo == null)
             return;
-        mBillboradInfoDialog.setBillboardInfo(billboardInfo);
-        boolean showing = mBillboradInfoDialog.isShowing();
-        if (!isFinishing() && !showing)
-            mBillboradInfoDialog.show();
+        DialogManager.dialogBaseInfoUploadPhoto(WorkerHomeActivity2.this, billboardInfo, new DialogManager.LocationClickListener() {
+            @Override
+            public void click() {//进行定位校正
+                DialogUtil.tipsTwoButton(WorkerHomeActivity2.this, "取消", "确定", "确定绑定到当前定位？", new DialogUtil.TwoButtonClickListener() {
+                    @Override
+                    public void leftOnClick() {
+                    }
+
+                    @Override
+                    public void rightOnClick() { //定位校正 更新修改广告位经纬度为 当前定位
+                        updateCoordinates(billboardInfo);//更新广告位位置坐标
+                    }
+                });
+            }
+        });
     }
 
     @Override
@@ -221,7 +197,7 @@ public class WorkerHomeActivity extends MapActivity {
                             requestSearchInfo(etTopText, adcode);
                         }
                     });
-                    if (!NetWorkUtil.isNetworkConnected(WorkerHomeActivity.this)) {
+                    if (!NetWorkUtil.isNetworkConnected(WorkerHomeActivity2.this)) {
                         toast("网络连接不可用");
                         return;
                     }
@@ -296,7 +272,7 @@ public class WorkerHomeActivity extends MapActivity {
                     //可以对输入框清空
                     etBottom.setText("");
                     // TODO: 2018/2/16 获取相应数据做对应显示
-                    logI("直接按管理码查询:onSuccess: result = " + result.toString());
+                    logI("直接按管理码查询:onSuccess: result = "+result.toString());
                     if (getLatLng(result) != null) {//已绑定经纬度，则显示广告位图片上传弹框（见3.1.7）
                         boolean isCurrentLocationHasBillboard = checkCurrentLocationBillboard(mBDLocation, result);
                         if (isCurrentLocationHasBillboard)
@@ -305,26 +281,23 @@ public class WorkerHomeActivity extends MapActivity {
                         showUploadPhotoDialog(result);
                     } else {
                         // 当查询到的广告位信息没有经纬度
-                        mBillboradInfoDialog.setBillboardInfo(result);
-                        if (!isFinishing() && !mBillboradInfoDialog.isShowing())
-                            mBillboradInfoDialog.show();
-//                        DialogManager.dialogBillboardInfoOneButton(WorkerHomeActivity.this, result, "绑定当前定位", new DialogManager.OneButtonClickListener() {
-//                            @Override
-//                            public void onClicked(final BillboardInfo info) {
-////                                updateCoordinates(info);//更新广告位位置坐标
-//                                DialogUtil.tipsTwoButton(WorkerHomeActivity.this, "取消", "确定", "确定绑定到当前定位？", new DialogUtil.TwoButtonClickListener() {
-//                                    @Override
-//                                    public void leftOnClick() {
-//                                    }
-//                                    @Override
-//                                    public void rightOnClick() { //定位校正 更新修改广告位经纬度为 当前定位
-//                                        updateCoordinates(info);//更新广告位位置坐标
-//                                    }
-//                                });
-//                            }
-//                        });
+                        DialogManager.dialogBillboardInfoOneButton(WorkerHomeActivity2.this, result, "绑定当前定位", new DialogManager.OneButtonClickListener() {
+                            @Override
+                            public void onClicked(final BillboardInfo info) {
+//                                updateCoordinates(info);//更新广告位位置坐标
+                                DialogUtil.tipsTwoButton(WorkerHomeActivity2.this, "取消", "确定", "确定绑定到当前定位？", new DialogUtil.TwoButtonClickListener() {
+                                    @Override
+                                    public void leftOnClick() {
+                                    }
+                                    @Override
+                                    public void rightOnClick() { //定位校正 更新修改广告位经纬度为 当前定位
+                                        updateCoordinates(info);//更新广告位位置坐标
+                                    }
+                                });
+                            }
+                        });
                     }
-                } else {
+                }else {
                     toast(text + "");
                 }
             }
@@ -363,9 +336,8 @@ public class WorkerHomeActivity extends MapActivity {
                 String text = result.getText();
                 if (Api.OK == result.getCode()) {
                     // TODO: 2018/2/16 获取相应数据做对应显示
-                    logI("更新广告位位置坐标:onSuccess: result.getText = " + text + "  BillboardInfo = " + result.toString());
-//                    DialogManager.dialogDismiss(WorkerHomeActivity.this);//现在仅在手动点击弹窗的“X”关闭
-
+                    logI("更新广告位位置坐标:onSuccess: result.getText = "+text+"  BillboardInfo = "+result.toString());
+                    DialogManager.dialogDismiss(WorkerHomeActivity2.this);
                     String lng = result.getLocationLng();
                     billboardInfo.setLocationLng(lng);
                     String lat = result.getLocationLat();
@@ -379,6 +351,7 @@ public class WorkerHomeActivity extends MapActivity {
                     showUploadPhotoDialog(currentLocationBillboard);
 
                     reSearchRequest();//重新请求搜索信息，目的是用特殊覆盖物突出显示刚绑定的广告位[此时该广告位就在定位位置]
+//                    DialogManager.dialogBaseInfoUploadPhoto(WorkerHomeActivity.this,result);
                 }//
 
                 toast(text + "");
@@ -405,7 +378,7 @@ public class WorkerHomeActivity extends MapActivity {
         // TODO: 2018/2/14 设置对应参数
         searchInfo.setAccount(getMemberInfo().getAccount());
         searchInfo.setToken(getMemberInfo().getToken());
-        if (locationZoneCode == 0) {
+        if (locationZoneCode==0){
             toast("无法准确获取当前位置，请到网络较好的地方重试");
             return;
         }
@@ -417,7 +390,7 @@ public class WorkerHomeActivity extends MapActivity {
             @Override
             public void onSuccess(Message message, SearchInfo result) {
                 initWorkerOverlay(result, currentLocationBillboard);
-                if (result != null) {
+                if (result!=null) {
                     List<BillboardInfo> list = result.getBillboardInfoList();
                     if (list != null) {
                         for (BillboardInfo billboardInfo : list) {
@@ -441,10 +414,10 @@ public class WorkerHomeActivity extends MapActivity {
 
     /**
      * 检测当前定位是否有广告位，例如用于比较工人首页，获取到的广告位列表，然后控制“预览”蒙层的显示与否
-     *
      * @param location
      * @param billboardInfoList
-     * @return http://www.ab126.com/Geography/1884.html  经度纬度距离计算
+     * @return
+     *  http://www.ab126.com/Geography/1884.html  经度纬度距离计算
      */
     private boolean checkCurrentLocationBillboard(BDLocation location, List<BillboardInfo> billboardInfoList) {
         if (location == null) {
@@ -467,7 +440,7 @@ public class WorkerHomeActivity extends MapActivity {
 //            if (locationLat==null||locationLng==null)
 //                break;//不该用
 
-            if (locationLat != null || locationLng != null) {
+            if (locationLat!=null||locationLng!=null) {
                 double parseLat = Double.parseDouble(locationLat);
                 double parseLng = Double.parseDouble(locationLng);
                 double v1 = Math.abs(parseLat - mLatitude);//
@@ -499,7 +472,7 @@ public class WorkerHomeActivity extends MapActivity {
         String lng = mLongitude + "";
         String locationLat = billboardInfo.getLocationLat();
         String locationLng = billboardInfo.getLocationLng();
-        if (locationLat == null || locationLng == null)
+        if (locationLat==null||locationLng==null)
             return false;
         if (lat.startsWith(locationLat) && lng.startsWith(locationLng)) {//当前定位与某个广告位位置重合
             currentLocationBillboard = billboardInfo;//①加到到初始数据后，检测数据列表是否有符合的
