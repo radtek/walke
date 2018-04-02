@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+ <!--   <color name="white">#ffffff</color>
+    <color name="textBlack">#666666</color>
+    <color name="viewfinder_mask">#ff0000</color>
+    <color name="transparent">#4d93f177</color>
+    <color name="result_view">#cc00cc</color>
+    <color name="possible_result_points">#cccc00</color>
+    <color name="bg_orange">#ff6622</color>
+    <color name="bg_lineView">#dadada</color>
+    <color name="selectedColor">#ff6622</color>
+    <color name="blue">#0066ff</color>
+    <color name="line">#cccccc</color>-->
+
+    <color name="hintColor">#9ecccccc</color>
+    <color name="transparent">#00ffffff</color>
+    <color name="line">#9ecccccc</color>
+    <color name="item_pressed">#55ffffff</color>
+    <color name="textBlack">#333333</color>
+    <color name="bg_E4BD79">#E4BD79</color>
+    <color name="text_E4BD79">#E4BD79</color>
+    <color name="text_ffffff">#ffffff</color>
+    <color name="translucence">#33000000</color>
+
+</resources>

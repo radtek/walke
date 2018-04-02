@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="56dp"
+              android:layout_height="56dp">
+    <!--@drawable/item_selector-->
+
+    <ImageView
+        android:id="@+id/vtb_ivOverlay"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:src="@mipmap/icon_overlay_red"
+        android:scaleType="fitCenter"/>
+    <TextView
+        android:id="@+id/vtb_tvNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="22"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="11dp"
+        android:textColor="#ffffff"/>
+
+</FrameLayout>

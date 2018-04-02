@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:padding="12dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/dialog_bg_booking"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="11dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.2"
+                android:gravity="bottom|center_horizontal"
+                android:text="完善预定资料"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                />
+            <!--
+             android:background="#2252fd52"
+              android:background="#22525dfd"
+            -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="2.5"
+                android:gravity="center_horizontal"
+                android:text="(其中“*”为必要)"
+                android:textColor="#ffffff"
+                android:textSize="13sp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="12dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <walke.base.widget.TextInputView
+                    android:id="@+id/dba_tivName"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="12dp"
+                    android:layout_weight="1"
+                    app:hintText="请输入姓名"
+                    app:tipsText="姓名："/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/icon_star"
+                    android:visibility="invisible"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="12dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <walke.base.widget.TextInputView
+                    android:id="@+id/dba_tivPhone"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="12dp"
+                    android:layout_weight="1"
+                    app:hintText="请输联系电话/手机"
+                    app:tipsText="电话："/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/icon_star"
+                    android:visibility="invisible"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="12dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <walke.base.widget.TextInputView
+                    android:id="@+id/dba_tivCompany"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="12dp"
+                    android:layout_weight="1"
+                    app:hintText="请输入公司名称"
+                    app:tipsText="公司："/>
+
+                <ImageView
+                    android:id="@+id/dba_ivStar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/icon_star"/>
+            </LinearLayout>
+            <!-- <walke.base.widget.TextInputView
+                 android:id="@+id/dba_tivName"
+                 android:layout_width="match_parent"
+                 android:layout_height="0dp"
+                 android:layout_marginRight="12dp"
+                 android:layout_marginLeft="12dp"
+                 android:layout_weight="1"
+                 app:hintText="请输入姓名"
+                 app:tipsText="姓名："
+                 />
+
+             <walke.base.widget.TextInputView
+                 android:id="@+id/dba_tivPhone"
+                 android:layout_width="match_parent"
+                 android:layout_height="0dp"
+                 android:layout_marginRight="12dp"
+                 android:layout_marginLeft="12dp"
+                 android:layout_weight="1"
+                 app:hintText="请输联系电话/手机"
+                 app:tipsText="电话："/>-->
+            <!--<walke.base.widget.TextInputView
+                android:id="@+id/dba_tivCompany"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginLeft="12dp"
+                android:layout_weight="1"
+                app:hintText="广州技客科技有限公司"
+                app:iconRight="@mipmap/dialog_star"
+                app:tipsText="公司："/>-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.8"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/dba_btBookNow"
+                    style="@style/ButtonCommit"
+                    android:text="立即预定"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/dba_ivCancel"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:scaleType="fitXY"
+            android:src="@mipmap/dialog_cancel"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

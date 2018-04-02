@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/bg_white"
+              android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:orientation="vertical"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <!-- 地图先空着 -->
+                <com.baidu.mapapi.map.MapView
+                    android:id="@+id/homeWorker_mapView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true"/>
+
+                <LinearLayout
+                    android:id="@+id/homeWorker_linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="20dp"
+                    android:gravity="right"
+                    android:orientation="vertical">
+
+                    <walke.base.widget.ImageTextView
+                        android:id="@+id/homeWorker_preview"
+                        android:layout_width="@dimen/exitButtonSize"
+                        android:layout_height="@dimen/exitButtonSize"
+                        app:img="@mipmap/home_preview"
+                        app:text="预览"/>
+
+                    <walke.base.widget.ImageTextView
+                        android:id="@+id/homeWorker_exit"
+                        android:layout_width="@dimen/exitButtonSize"
+                        android:layout_height="@dimen/exitButtonSize"
+                        android:layout_marginTop="@dimen/interval"
+                        app:img="@mipmap/home_exit"
+                        app:text="退出"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="@dimen/interval"
+                        android:orientation="horizontal">
+                        <!--<SearchView
+                            android:id="@+id/homeWorker_svBottom"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4"
+                            android:layout_margin="4dp"
+                            android:background="@drawable/corners_search_input"
+                            android:gravity="center_vertical"
+                            android:iconifiedByDefault="false"
+                            android:queryHint="输入完整管理编号"
+                            android:searchIcon="@null"
+                            android:textColor="#000000"
+                            android:textSize="16sp"/>-->
+
+                        <walke.base.widget.ClearEditText
+                            android:id="@+id/homeWorker_etBottom"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4"
+                            android:gravity="center_vertical"
+                            android:hint="输入完整唯一码/管理编号"
+                            android:inputType="number"
+                            android:paddingLeft="@dimen/searchInputMarginSize"
+                            android:paddingRight="5dp"
+                            android:singleLine="true"
+                            android:textCursorDrawable="@drawable/edit_cursor_color"
+                            android:textSize="@dimen/searchTextSize"
+                            android:background="@drawable/bg_corners_white"/>
+
+                        <Button
+                            android:id="@+id/homeWorker_btSearch"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="12dp"
+                            android:layout_weight="1.4"
+                            android:background="@drawable/corners_add_preselect"
+                            android:text="查询"
+                            android:textColor="@color/textWhite"
+                            android:textSize="14sp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <View
+                        android:id="@+id/homeWorker_statusBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/titleBarHeight"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/bg_dialog_corners"
+                        android:orientation="horizontal"
+                        android:padding="6dp">
+                        <!--<SearchView
+                            android:id="@+id/homeWorker_svTop"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="8dp"
+                            android:layout_weight="5"
+                            android:background="@drawable/corners_search_input"
+                            android:gravity="center_vertical"
+                            android:iconifiedByDefault="false"
+                            android:searchIcon="@null"
+                            android:textColor="#000000"
+                            android:queryHint="(当前地址：)广州市天河区荷光街道"
+                            android:textSize="16sp"
+                            android:layout_marginLeft="15dp"/>-->
+                        <walke.base.widget.ClearEditText
+                            android:id="@+id/homeWorker_etTop"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="8dp"
+                            android:layout_weight="5"
+                            android:background="@drawable/bg_corners_gray"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/searchInputMarginSize"
+                            android:singleLine="true"
+                            android:text="广州市天河区荷光街道"
+                            android:textCursorDrawable="@drawable/edit_cursor_color"
+                            android:textSize="@dimen/searchTextSize"/>
+
+                        <ImageView
+                            android:id="@+id/homeWorker_ivLocationTop"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:padding="5dp"
+                            android:src="@mipmap/home_top_location"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

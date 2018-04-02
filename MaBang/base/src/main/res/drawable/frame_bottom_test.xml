@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 连框颜色值 弃用本来想要一个但底线、透明的背景效果 -->
+    <item>
+        <shape>
+            <solid android:color="#00f90f0f" />
+        </shape>
+    </item>
+    <!-- 主体背景颜色值 -->
+    <item
+        android:bottom="2dp">
+        <shape>
+            <solid android:color="#06ffffff" />
+            <stroke android:color="#f00" android:width="2dp" android:dashGap="30dp" android:dashWidth="30dp"/>
+
+            <!--<padding
+                android:bottom="10dp"
+                android:left="10dp"
+                android:right="10dp"
+                android:top="10dp" />-->
+        </shape>
+    </item>
+
+</layer-list>

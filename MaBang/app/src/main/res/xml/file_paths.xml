@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--  Android7.0适配 2     external-files-path  这个不能错
+ name属性的值可以随便写,别名
+ path属性的值表示共享的具体位置，设置空就表示将整个SD卡进行共享
+  -->
+
+    <external-files-path name="aaaa" path="MaBang" />
+
+</paths>

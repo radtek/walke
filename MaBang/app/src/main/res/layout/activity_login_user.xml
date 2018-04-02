@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/bg_login">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <com.mabang.android.widget.TitleView
+            android:id="@+id/alu_TitleView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:centerText="客户登录"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:padding="40dp"
+            android:src="@mipmap/login_logo"/>
+
+        <walke.base.widget.LoginInputView
+            android:id="@+id/alu_inputPhone"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/loginInputHeight"
+            android:layout_marginLeft="@dimen/loginButtonMarginSize"
+            android:layout_marginRight="@dimen/loginButtonMarginSize"
+            android:background="@drawable/bg_round_edge"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            app:inputIcon="@mipmap/login_phone"
+            app:inputType="phoneNumber"/>
+
+        <walke.base.widget.LoginInputView
+            android:id="@+id/alu_inputAuthCode"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/loginInputHeight"
+            android:layout_marginLeft="@dimen/loginButtonMarginSize"
+            android:layout_marginRight="@dimen/loginButtonMarginSize"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_round_edge"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            app:inputHint="请输入验证码"
+            app:inputIcon="@mipmap/login_auth_code"
+            app:inputType="phoneAuthCode"/>
+
+        <Button
+            android:id="@+id/alu_btLogin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/loginInputHeight"
+            android:layout_marginLeft="@dimen/loginButtonMarginSize"
+            android:layout_marginRight="@dimen/loginButtonMarginSize"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_round_edge_red"
+            android:text="确认登录"
+            android:textColor="#ffffff"/>
+
+        <TextView
+            android:id="@+id/alu_tvWorkerLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginLeft="@dimen/loginButtonMarginSize"
+            android:layout_marginRight="36dp"
+            android:layout_marginTop="6dp"
+            android:padding="7dp"
+            android:text="切换工人登录"
+            android:textColor="@color/appRed"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="代码工场"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="3dp"
+            android:text="TM"
+            android:textSize="6sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="提供技术支持"
+            android:textSize="10sp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

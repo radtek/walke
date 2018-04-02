@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="48dp"
+              android:gravity="center_vertical"
+              android:orientation="horizontal">
+
+    <FrameLayout
+        android:layout_width="28dp"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/lah_ivSelect"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="6dp"
+            android:src="@mipmap/home_ad_list_gray"/>
+        <TextView
+            android:id="@+id/lah_tvItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="9sp"
+            android:textColor="#ffffff"
+            android:text="11"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"/>
+    </FrameLayout>
+    <!--<ImageView
+        android:id="@+id/lah_ivSelect"
+        android:layout_width="28dp"
+        android:layout_height="match_parent"
+        android:padding="6dp"
+        android:src="@mipmap/home_ad_list_gray"/>-->
+
+    <TextView
+        android:id="@+id/lah_tvText"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="0dp"
+        android:layout_weight="1"
+        android:enabled="true"
+        android:gravity="center_vertical"
+        android:lineSpacingExtra="2dp"
+        android:singleLine="true"
+        android:layout_marginLeft="4dp"/>
+
+
+</LinearLayout>

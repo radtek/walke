@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:paddingBottom="3dp">
+
+    <TextView
+        android:id="@+id/vtt_tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:width="80dp"
+        android:text="详细地址："
+        android:textColor="#333333"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/vtt_tvDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/textInput_ivStar"
+        android:background="@null"
+        android:gravity=""
+        android:lineSpacingExtra="2dp"
+        android:text="广州市天河区棠下\n荷光路街道\n星辉大楼303室"
+        android:textColor="@color/textGray"
+        android:textSize="14sp"/>
+
+</LinearLayout>

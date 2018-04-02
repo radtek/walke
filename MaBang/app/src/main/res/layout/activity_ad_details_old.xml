@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/bg_white"
+                android:orientation="vertical">
+
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.mabang.android.widget.TitleView
+            android:id="@+id/details_TitleView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:centerText="详情"/>
+
+        <walke.base.widget.banner.BannerView
+            android:id="@+id/details_adsBanner"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/interval"
+            android:background="@color/bg_default"/>
+
+        <com.mabang.android.widget.AdDetailsView
+            android:id="@+id/details_advDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/details_btAddPreselect"
+                style="@style/ButtonAddPreselect"
+                android:text="加入预选"/>
+
+            <Button
+                android:id="@+id/details_btPreselect"
+                style="@style/ButtonWantBook"
+                android:layout_marginLeft="42dp"
+                android:text="我要预定"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/details_rlBigPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#fc000000">
+
+        <View
+            android:id="@+id/details_statusBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            &lt;!&ndash;appTranslucence&ndash;&gt;
+
+            <ImageView
+                android:id="@+id/details_ivBigCancel"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:padding="7dp"
+                android:src="@mipmap/dialog_cancel"
+                android:visibility="gone"/>
+            &lt;!&ndash; <TextView
+                 android:id="@+id/details_tvBigCancel"
+                 android:layout_width="50dp"
+                 android:layout_height="40dp"
+                 android:text="关闭"
+                 android:gravity="center"
+                 android:layout_alignParentBottom="true"
+                 android:layout_centerHorizontal="true"
+                 android:textColor="#ffffff"
+                 android:textSize="14sp"/>
+
+             <com.mabang.android.widget.CustomViewPager
+                 android:id="@+id/details_bvBig"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:layout_above="@id/details_tvBigCancel"
+                 app:pointMarginBottom="30"/>&ndash;&gt;
+
+            <com.mabang.android.widget.CustomViewPager
+                android:id="@+id/details_bvBig"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:pointMarginBottom="30"/>
+
+            <TextView
+                android:id="@+id/details_tvBigCancel"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="关闭"
+                android:textColor="#ffffff"
+                android:textSize="14sp"/>
+
+            &lt;!&ndash; <walke.base.widget.banner.BannerView
+                 android:id="@+id/details_bvBig"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:layout_above="@id/details_tvBigCancel"
+                 app:pointMarginBottom="30"/>&ndash;&gt;
+        </RelativeLayout>
+    </LinearLayout>-->
+
+</RelativeLayout>

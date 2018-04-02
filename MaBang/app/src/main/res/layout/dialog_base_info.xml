@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/dialog_bg"
+                android:orientation="vertical">
+    <!-- android:background="#33000000" -->
+
+    <RelativeLayout
+        android:id="@+id/dbi_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="11dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/dialog_bg_base_info"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="11dp"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="@dimen/adDetailMarginSize_dialog"
+                android:layout_marginRight="@dimen/adDetailMarginSize_dialog"
+                android:layout_weight="5"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <View
+                        android:layout_width="4dp"
+                        android:layout_height="16dp"
+                        android:layout_centerVertical="true"
+                        android:background="@color/appPink"/>
+
+                    <ImageView
+                        android:id="@+id/dbi_ivLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/adDetailMarginSize_dialog"
+                        android:src="@mipmap/dialog_location_icon"/>
+
+                    <TextView
+                        android:id="@+id/dbi_tvAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/adDetailMarginSize_dialog"
+                        android:layout_marginRight="@dimen/adDetailMarginSize_dialog"
+                        android:gravity="center_vertical"
+                        android:text="天河区荷光路"
+                        android:textColor="#333333"
+                        android:textSize="17sp"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="@dimen/interval"
+                    android:background="@color/bg_default"/>
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/adDetailMarginSize_dialog"
+                        android:layout_marginRight="@dimen/adDetailMarginSize_dialog"
+                        android:orientation="vertical"
+                        >
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/dbi_tvManagerCode"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:text="管理编号:88888"
+                                android:textSize="13sp"/>
+
+                            <TextView
+                                android:id="@+id/dbi_tvSoleCode"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:text="唯一码：8888"
+                                android:textSize="13sp"/>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/interval">
+
+                            <View
+                                android:layout_width="8dp"
+                                android:layout_height="8dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@color/appPink"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/adDetailMarginSize_dialog"
+                                android:orientation="vertical">
+
+                                <com.mabang.android.widget.TextTextView
+                                    android:id="@+id/dbi_ttvCompany"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:leftText="广告使用："
+                                    app:rightText="广州技客科技"
+                                    app:size="13"/>
+
+                                <com.mabang.android.widget.TextTextView
+                                    android:id="@+id/dbi_ttvDetailsAddress"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/adDetailMarginTop_dialog"
+                                    app:leftText="详细地址："
+                                    app:rightText="广州市天河区棠下\n荷光路街道\n星辉大楼303室"
+                                    app:size="13"/>
+
+                                <com.mabang.android.widget.TextTextView
+                                    android:id="@+id/dbi_ttvFacilitySituation"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/adDetailMarginTop_dialog"
+                                    app:leftText="雨棚材质："
+                                    app:rightText="不锈钢"
+                                    app:size="13"/>
+
+                                <com.mabang.android.widget.TextTextView
+                                    android:id="@+id/dbi_ttvAdSituation"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/adDetailMarginTop_dialog"
+                                    app:leftText="广告状态："
+                                    app:rightText="空闲"
+                                    app:size="13"/>
+
+                                <com.mabang.android.widget.TextTextView
+                                    android:id="@+id/dbi_ttvSpecification"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/adDetailMarginTop_dialog"
+                                    app:leftText="规格："
+                                    app:rightText="2m*2m"
+                                    app:size="13"/>
+
+                                <com.mabang.android.widget.TextTextView
+                                    android:id="@+id/dbi_ttvRemark"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/adDetailMarginTop_dialog"
+                                    app:leftText="备注："
+                                    app:rightText="无"
+                                    app:size="13"/>
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+                </ScrollView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.8"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/dbi_btBindLocation"
+                    style="@style/ButtonCommit"
+                    android:text="绑定当前定位"
+                    android:visibility="gone"/>
+
+                <Button
+                    android:id="@+id/dbi_btUploadPhotoAd"
+                    style="@style/ButtonAddPreselect"
+                    android:text="广告图片上传"/>
+
+                <Button
+                    android:id="@+id/dbi_btUploadPhotoDown"
+                    style="@style/ButtonAddPreselect"
+                    android:layout_marginLeft="20dp"
+                    android:text="验收图片上传"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/dbi_ivCancel"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:scaleType="fitXY"
+            android:src="@mipmap/dialog_cancel"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

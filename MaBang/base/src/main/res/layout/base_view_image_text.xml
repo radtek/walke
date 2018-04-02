@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/shadow_bottom">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="5dp"
+        android:orientation="vertical"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+        android:translationZ="2dp"
+        >
+        <!-- android:background="@drawable/shadow_bottom" 在LinearLayout设置会不一样 -->
+
+        <ImageView
+            android:id="@+id/vit_image"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:padding="0dp"
+            android:src="@mipmap/ic_launcher"/>
+        <!--   android:padding="5dp"  -->
+
+        <TextView
+            android:id="@+id/vit_text"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="微信登录"
+            android:textSize="13sp"/>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/vit_vCover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/corners_gray_transparent"
+        android:visibility="gone"/>
+
+</RelativeLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/textInput_tvTips"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1.2"
+        android:text="姓名:"
+        android:textSize="15sp"
+        android:gravity="center"/>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="5"
+        android:orientation="vertical"
+        android:layout_marginLeft="0dp"
+        android:padding="2dp">
+
+        <ImageView
+            android:id="@+id/textInput_ivStar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@mipmap/icon_star"
+            android:layout_alignParentRight="true"/>
+
+        <walke.base.widget.ClearEditText
+            android:id="@+id/textInput_etInput"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@id/textInput_ivStar"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="请输姓名"
+            android:paddingLeft="12dp"
+            android:textColor="#000000"
+            android:textColorHint="@color/hintColor"
+            android:textSize="15sp"
+            android:singleLine="true"/>
+
+        <View
+            android:id="@+id/textInput_vLine"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/lineHeight_Frame"
+            android:background="@color/hintColor"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

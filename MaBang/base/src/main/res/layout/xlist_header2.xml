@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="bottom"
+    android:background="#faba26">
+
+    <RelativeLayout
+        android:id="@+id/xlist_header_content2"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:gravity="center_horizontal"
+        android:background="#faba26">
+
+        <TextView
+            android:id="@+id/xlist_header_text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="下拉刷新"
+            android:layout_centerInParent="true"
+            android:textSize="12sp"
+            android:textColor="#ffffff"/>
+
+        <walke.base.widget.xlist.DrawRing
+            android:id="@+id/xlist_header_progressbar2"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_toLeftOf="@id/xlist_header_text2"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
+            app:aboveColor="#ffffff"
+            app:underColor="#eec1c0c0"/>
+    </RelativeLayout>
+
+</LinearLayout>

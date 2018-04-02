@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_white"
+            android:orientation="vertical">
+
+    <com.mabang.android.widget.TitleView
+        android:id="@+id/apu_TitleVIew"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_white"
+            android:orientation="vertical">
+
+            <com.mabang.android.widget.AdDetailsView
+                android:id="@+id/apu_adDetailsView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:showBottom="true"/>
+
+            <TextView
+                android:id="@+id/apu_tvUploadType"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/adDetailMarginSize"
+                android:text="上传广告位图片"
+                android:textSize="@dimen/adDetailsTextSize"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/apu_rvPictures"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+                <GridView
+                    android:id="@+id/apu_gvPictures"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:horizontalSpacing="4dp"
+                    android:numColumns="4"
+                    android:verticalSpacing="4dp"
+                    android:visibility="gone"/>
+                <!--android:columnWidth="90dp"
+                android:numColumns="auto_fit"-->
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/apu_btCommit"
+                style="@style/ButtonCommit"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="50dp"
+                android:layout_marginTop="25dp"
+                android:text="确定"/>
+            <!-- @dimen/commitButtonMarginBottom -->
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

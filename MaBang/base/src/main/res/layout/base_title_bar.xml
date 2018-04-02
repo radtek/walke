@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tb_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/tb_stutas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <ImageView
+            android:id="@+id/tb_ivLeft"
+            android:layout_width="52dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="3dp"
+            android:padding="13dp"
+            android:scaleType="fitStart"
+            android:src="@mipmap/icon_back_3x"/>
+        <!--android:layout_marginTop="25dp"-->
+
+        <FrameLayout
+            android:id="@+id/tb_fl_right"
+            android:layout_width="52dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp">
+            <!--android:layout_marginTop="25dp"-->
+            <ImageView
+                android:id="@+id/tb_iv_right"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitEnd"
+                android:src="@mipmap/menu"
+                android:padding="13dp"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/tb_tv_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:text="关闭"
+                android:textColor="#232323"
+                android:textSize="16sp"
+                android:visibility="gone"/>
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tb_tv_center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@id/tb_fl_right"
+            android:layout_toRightOf="@id/tb_ivLeft"
+            android:gravity="center"
+            android:text="123456"
+            android:textColor="#232323"
+            android:textSize="20sp"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:focusableInTouchMode="true"
+            android:focusable="true"
+            android:marqueeRepeatLimit="marquee_forever" />
+        <!--android:layout_marginTop="25dp"-->
+        <!--android:textStyle="bold"-->
+    </RelativeLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="52dp"
+    android:gravity="center"
+    android:padding="6dp"
+    android:layout_centerVertical="true"
+    android:background="@drawable/item_selector">
+    <walke.base.widget.xlist.DrawRing
+        android:id="@+id/xlv_loadMoreProgressBar"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_centerVertical="true"
+        app:aboveColor="#f90d0d"
+        app:underColor="#ececec"/>
+    <TextView
+        android:id="@+id/xlv_loadMoreHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/xlv_loadMoreProgressBar"
+        android:layout_marginLeft="8dp"
+        android:text="没有更多数据"
+        android:textColor="#cccccc"
+        android:textSize="12sp" />
+
+</RelativeLayout>

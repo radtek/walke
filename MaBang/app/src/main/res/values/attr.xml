@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="rightText" format="string|reference"/>
+
+    <declare-styleable name="TitleView">
+        <attr name="ivLeft" format="reference|integer"/>
+        <attr name="centerText" format="string|reference"/>
+        <!-- <attr name="rightText" format="string|reference"/>-->
+        <attr name="rightText"/>
+    </declare-styleable>
+    <declare-styleable name="AdDetailsView">
+        <attr name="showBottom" format="boolean"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="TextTextView">
+        <!--<attr name="rightText" format="string|reference"/>  于前一个重复定义报错故提出来-->
+        <attr name="leftText" format="string|reference"/>
+        <attr name="size" format="integer|reference"/>
+        <attr name="rightText"/>
+    </declare-styleable>
+
+    <declare-styleable name="CustomViewPager">
+        <attr name="pointMarginBottom" format="integer|reference"/>
+    </declare-styleable>
+
+</resources>

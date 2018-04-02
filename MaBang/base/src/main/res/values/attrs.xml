@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 第①种：属性、引用与 View分开写 -->
+    <attr name="aboveColor" format="color|reference"/>
+    <attr name="underColor" format="color|reference"/>
+    <attr name="normalSelect" format="boolean|reference"/>
+    <declare-styleable name="DrawRing">
+        <attr name="aboveColor"></attr>
+        <attr name="underColor"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="XList">
+        <attr name="normalSelect"></attr>
+    </declare-styleable>
+    <!--                    -->
+    <attr name="img" format="reference"/>
+    <attr name="text" format="string|reference"/>
+    <attr name="hintText" format="string|reference"/>
+    <attr name="textsColor" format="color|reference"/>
+    <declare-styleable name="ImageTextView">
+        <attr name="img"/>
+        <attr name="text"/>
+        <attr name="textsColor"/>
+    </declare-styleable>
+
+    <attr name="inputLength" format="integer|dimension|reference" />
+    <attr name="etType" format="enum">
+        <enum name="phone" value="0"/>
+        <enum name="password" value="1"/>
+        <enum name="phoneAuthCode" value="2"/>
+        <enum name="imageAuthCode" value="3"/>
+        <enum name="sellCode" value="4"/>
+    </attr>
+    <declare-styleable name="IconInputView">
+        <attr name="img"/>
+        <attr name="hintText"/>
+        <attr name="inputLength"/>
+        <attr name="etType"/>
+
+    </declare-styleable>
+    <!--                    -->
+    <attr name="desc" format="string|reference"/>
+    <attr name="ivLayer" format="reference"/>
+    <declare-styleable name="TextImageView">
+        <attr name="img"/>
+        <attr name="ivLayer"/>
+        <attr name="text"/>
+        <attr name="desc"/>
+    </declare-styleable>
+
+    <!-- ****************************************** -->
+    <!-- 第②种：属性、引用写在View里面 -->
+    <declare-styleable name="LoginInputView">
+        <attr name="inputIcon" format="reference|integer"/>
+        <!--<attr name="hintText" format="string|reference"/>-->
+        <!-- name 属性(hintText)与其他Library冲突也不行 -->
+        <attr name="inputHint" format="string|reference"/>
+        <attr name="inputLength" />
+        <attr name="inputType" >
+            <enum name="phoneNumber" value="1"/>
+            <enum name="phoneAuthCode" value="2"/>
+            <enum name="password" value="3"/>
+            <enum name="other" value="4"/>
+        </attr>
+
+    </declare-styleable>
+    <!-- ****************************************** -->
+
+    <declare-styleable name="IconTextView">
+        <attr name="img"/>
+        <attr name="text"/>
+        <attr name="textsColor"/>
+    </declare-styleable>
+    <attr name="tipsText"  format="string|reference"/>
+    <declare-styleable name="TextInputView">
+        <attr name="iconRight"  format="reference"/>
+        <attr name="tipsText" />
+        <attr name="hintText" />
+    </declare-styleable>
+
+    <declare-styleable name="BannerView">
+        <attr name="pointMarginBottom" format="integer|reference"/>
+    </declare-styleable>
+
+</resources>

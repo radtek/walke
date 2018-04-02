@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/bg_white"
+                android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/aap_redactLayout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/appRed">
+
+        <walke.base.widget.IconTextView
+            android:id="@+id/aap_selectAll"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+
+        <walke.base.widget.IconTextView
+            android:id="@+id/aap_selectDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+            app:img="@mipmap/ad_preselect_delete"
+            app:text="删除"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/aap_redactLayout"
+        android:orientation="vertical">
+
+        <com.mabang.android.widget.TitleView
+            android:id="@+id/aap_TitleView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:centerText="预选广告位"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:background="@color/bg_default"
+            android:gravity="center_vertical"
+            android:paddingLeft="18dp"
+            android:text="多选列表"/>
+
+        <walke.base.widget.xlist.XListView
+            android:id="@+id/aap_xListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <!--<walke.base.widget.xlist.XList
+            android:id="@+id/aap_xlist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>-->
+        <TextView
+            android:id="@+id/aap_lvEmptyView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#d9d9d9"
+            android:gravity="center"
+            android:text="暂无预选数据，可返回到首页添加"
+            android:textSize="15sp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/aap_btPreselect"
+        style="@style/ButtonCommit"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="90dp"
+        android:text="预定所选"/>
+    <!--@dimen/commitButtonMarginBottom-->
+</RelativeLayout>

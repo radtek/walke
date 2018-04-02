@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/xlist_footer_content"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:padding="6dp"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="16dp">
+        <walke.base.widget.xlist.DrawRing
+            android:id="@+id/xlist_footer_progressbar"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_centerVertical="true"
+            app:aboveColor="#f9630d"
+            app:underColor="#ececec"/>
+        <TextView
+            android:id="@+id/xlist_footer_hint_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/xlist_footer_progressbar"
+            android:layout_marginLeft="8dp"
+            android:text="加载更多"
+            android:textSize="12sp"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

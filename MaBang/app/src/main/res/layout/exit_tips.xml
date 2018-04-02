@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_margin="22dp"
+              android:background="@drawable/exit_tips_bg"
+              android:gravity="center"
+              android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="是否退出登录"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.6dp"
+        android:background="@color/line"/>
+
+    <TextView
+        android:id="@+id/exit_tips_yes"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/exit_selector"
+        android:gravity="center"
+        android:text="退出"
+        android:textColor="@color/textRed"
+        android:textSize="17sp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.6dp"
+        android:background="@color/line"/>
+
+    <TextView
+        android:id="@+id/exit_tips_no"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/exit_selector"
+        android:gravity="center"
+        android:text="取消"
+        android:textColor="@color/textBlue"
+        android:textSize="17sp"/>
+
+
+</LinearLayout>

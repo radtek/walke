@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="10dp"
+              android:layout_marginRight="10dp"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="16dp"
+            android:layout_centerVertical="true"
+            android:background="@color/appPink"/>
+
+        <TextView
+            android:id="@+id/vad_tvAddress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/adDetailMarginSize"
+            android:layout_marginRight="@dimen/adDetailMarginSize"
+            android:gravity="center_vertical"
+            android:text="天河区荷光路11"
+            android:textColor="#333333"
+            android:textSize="17sp"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/adDetailMarginSize"
+        android:layout_marginRight="@dimen/adDetailMarginSize"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/bg_default"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/vad_tvAdManageCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:text="管理编号:88888 "
+                android:textColor="@color/text_deepBlack"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/vad_tvAdUniqueCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:text="唯一码：8888"
+                android:textColor="@color/text_deepBlack"
+                android:textSize="14sp"
+                android:layout_marginLeft="12dp"/>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@color/appPink"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/adDetailMarginSize_dialog"
+                    android:orientation="vertical">
+
+                    <com.mabang.android.widget.TextTextView
+                        android:id="@+id/vad_ttvCompany"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:leftText="广告使用："
+                        app:rightText="广州技客科技"/>
+
+                    <com.mabang.android.widget.TextTextView
+                        android:id="@+id/vad_ttvDetailsAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/adDetailMarginTop_dialog"
+                        app:leftText="详细地址："
+                        app:rightText="广州市天河区棠下\n荷光路街道星辉大楼303室"/>
+
+                    <com.mabang.android.widget.TextTextView
+                        android:id="@+id/vad_ttvFacilitySituation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/adDetailMarginTop_dialog"
+                        app:leftText="雨棚材质："
+                        app:rightText="不锈钢"/>
+
+                    <com.mabang.android.widget.TextTextView
+                        android:id="@+id/vad_ttvAdSituation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/adDetailMarginTop_dialog"
+                        app:leftText="广告状态："
+                        app:rightText="空闲"/>
+
+                    <com.mabang.android.widget.TextTextView
+                        android:id="@+id/vad_ttvSpecification"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/adDetailMarginTop_dialog"
+                        app:leftText="规格："
+                        app:rightText="2m*2m"/>
+
+                    <com.mabang.android.widget.TextTextView
+                        android:id="@+id/vad_ttvRemark"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/adDetailMarginTop_dialog"
+                        app:leftText="备注："
+                        app:rightText="无"/>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/vad_lineBottom"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/bg_default"/>
+    </LinearLayout>
+
+</LinearLayout>

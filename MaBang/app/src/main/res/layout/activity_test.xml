@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/bg_white"
+              android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="22dp"
+        android:gravity="center"
+        android:text="TestActivity"
+        android:textSize="18sp"/>
+    <ImageView
+        android:id="@+id/test_iv1"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_gravity="center_horizontal"
+        android:background="#8d6977f6"/>
+    <ImageView
+        android:id="@+id/test_iv2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@mipmap/scan_buy_2x108"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:background="#8d6977f6"/>
+
+    <walke.base.widget.ClearEditText
+        android:id="@+id/test_etTest"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:hint="phone"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="check"
+        android:onClick="check"/>
+
+
+
+</LinearLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ff3F51B5</color>
+    <color name="colorPrimaryDark">#ff303F9F</color>
+    <color name="colorAccent">#ff666666</color>
+    <color name="title_bg">#ffa22a2c</color>
+    <color name="title_text">#ffffffff</color>
+    <color name="bg_default">#ffEEEEEE</color>
+    <color name="appRed">#ff9d2325</color>
+    <color name="text_deepBlack">#ff303030</color>
+    <color name="textRed">#ff9d2325</color><!--#ff0000-->
+    <color name="textWhite">#ffffffff</color>
+    <color name="textGray">#ff999999</color>
+    <color name="textBlue">#ff0073ff</color>
+    <color name="loadAlertDialog_bg">#00000000</color>
+    <color name="dialog_bg">#33000000</color>
+    <color name="grayBackground">#ff909090</color>
+    <color name="appPink">#ffEE0000</color>
+    <color name="bg_white">#ffffffff</color>
+    <color name="bg_login">#fff0f0f0</color>
+    <color name="appTranslucence">#33000000</color>
+    <color name="appGray">#FF333333</color>
+    <color name="adListGray">#848383</color>
+    <color name="adListBlue">#3688FF</color>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="loginButtonMarginSize">25dp</dimen>
+    <dimen name="adDetailMarginSize">12dp</dimen>
+    <dimen name="adDetailMarginSize_dialog">12dp</dimen>
+
+    <dimen name="interval">8dp</dimen>
+    <dimen name="adDetailsTextSize">13sp</dimen>
+    <dimen name="commitButtonMarginBottom">70dp</dimen>
+    <dimen name="adDetailMarginTop_dialog">0dp</dimen><!-- 2-->
+    <dimen name="titleBarHeight">48dp</dimen>
+    <dimen name="cornersDefault">8dp</dimen>
+    <dimen name="searchInputMarginSize">10dp</dimen>
+    <dimen name="searchTextSize">15sp</dimen>
+    <dimen name="exitButtonSize">48dp</dimen>
+</resources>

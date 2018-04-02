@@ -1,0 +1,89 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "27.0.3"
+    defaultConfig {
+        applicationId "com.mabang.android"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+
+    //直接运行(debug包)也是有签名的
+    //微信不允许没签名的apk授权  [包名有修改则需要重新生成一个新的jks文件]
+    signingConfigs {
+        relase {
+            keyAlias 'mabang'
+            keyPassword 'mabang'
+            storeFile file('mabang.jks')
+            storePassword 'mabang'
+        }
+    }
+
+    //移除lint检测的error
+    lintOptions {
+        abortOnError false
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.relase //(debug)使用签名
+        }
+
+        release {
+            minifyEnabled true
+//            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            //......
+            jniLibs.srcDirs = ['libs']
+            jni.srcDirs=[] //disable automatic ndk-build //禁用自动ndk-build
+        }
+    }
+
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+    compile project(':base')
+    //picasso
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    //百度地图
+    compile files('libs/BaiduLBS_Android.jar')
+    //okhttp包
+    compile 'io.reactivex:rxjava:1.0.14'
+    compile 'io.reactivex:rxandroid:1.1.0'
+    compile 'com.f2prateek.rx.preferences:rx-preferences:1.0.1'
+    compile 'com.squareup.okhttp3:okhttp:3.3.1'
+    compile 'com.squareup.okio:okio:1.6.0'
+    compile 'com.google.code.gson:gson:2.5'
+    compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'
+    compile 'com.trello:rxlifecycle:0.4.0'
+    compile 'com.trello:rxlifecycle-components:0.4.0'
+    //    compile 'com.github.franmontiel:PersistentCookieJar:v0.9.3'
+    //圆形图片
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile files('libs/ormlite-android-4.48.jar')
+    compile files('libs/aliyun-oss-sdk-android-2.2.0.jar')
+    //谷歌官方推荐的图片加载框架 glide
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+
+    // bugly崩溃分析
+    // 其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.2.0
+    compile 'com.tencent.bugly:crashreport:latest.release'
+
+}

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@color/bg_white"
+             android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.mabang.android.widget.TitleView
+            android:id="@+id/details_TitleView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:centerText="详情"/>
+
+        <walke.base.widget.banner.BannerView
+            android:id="@+id/details_adsBanner"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/interval"
+            android:background="@color/bg_default"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <com.mabang.android.widget.AdDetailsView
+                    android:id="@+id/details_advDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/details_btAddPreselect"
+                        style="@style/ButtonAddPreselect"
+                        android:text="加入预选"/>
+
+                    <Button
+                        android:id="@+id/details_btPreselect"
+                        style="@style/ButtonWantBook"
+                        android:layout_marginLeft="42dp"
+                        android:text="我要预定"
+                        android:visibility="gone"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/details_rlBigPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fc000000"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/details_statusBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.mabang.android.widget.CustomViewPager
+                android:id="@+id/details_bvBig"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:id="@+id/details_tvBigCancel"
+                android:layout_width="56dp"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:text="关闭"
+                android:textColor="#ffffff"
+                android:textSize="13sp"
+                android:background="@drawable/bg_radius_gray_close"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"/>
+
+        </FrameLayout>
+    </LinearLayout>
+
+</FrameLayout>
