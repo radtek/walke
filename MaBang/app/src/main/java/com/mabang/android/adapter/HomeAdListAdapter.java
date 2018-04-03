@@ -59,10 +59,14 @@ public class HomeAdListAdapter extends BaseAdapter {
 
         BillboardInfo binfo = datas.get(position);
 
-        holder.tvText.setText(binfo.getLongAddress()+"");
-        if (TextUtils.isEmpty(binfo.getLongAddress()))
+        String longAddress = binfo.getLongAddress();
+        if (TextUtils.isEmpty(longAddress))
             holder.tvText.setText(" ");//服务器地址信息返回为空
-
+        else {
+//            int indexOf = longAddress.indexOf("区");
+//            longAddress=longAddress.substring(indexOf+1,longAddress.length());
+            holder.tvText.setText(longAddress + "");
+        }
 
         holder.ivItem.setImageResource(R.mipmap.home_ad_list_gray);
         holder.tvItem.setTextColor(parent.getContext().getResources().getColor(R.color.adListGray));

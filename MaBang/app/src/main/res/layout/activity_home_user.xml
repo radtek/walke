@@ -28,24 +28,28 @@
         android:layout_marginTop="6dp"
         android:background="@drawable/bg_round_edge_transparent"
         android:orientation="horizontal"
-        android:paddingLeft="12dp"
-        android:paddingRight="12dp">
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        android:paddingBottom="2dp">
 
         <RadioButton
             android:id="@+id/home_rbCanBooking"
             style="@style/HomeRadioButton"
-            android:text="可预订"/>
+            android:text="可预订"
+            android:background="@drawable/selector_can_book"/>
 
         <RadioButton
             android:id="@+id/home_rbMineBooked"
             style="@style/HomeRadioButton"
             android:checked="false"
-            android:text="我预订的"/>
+            android:text="我预订的"
+            android:background="@drawable/selector_mine_book"/>
 
         <RadioButton
             android:id="@+id/home_rbMineUsing"
             style="@style/HomeRadioButton"
-            android:text="我占用的"/>
+            android:text="我占用的"
+            android:background="@drawable/selector_mine_using"/>
 
         <RadioButton
             android:id="@+id/home_rbUsed"
@@ -97,6 +101,7 @@
             android:layout_alignParentBottom="true"
             android:background="@drawable/bg_corners_white"
             android:orientation="vertical">
+            <!-- bg_corners_white -->
 
             <ListView
                 android:id="@+id/homeUser_lvAdPosition"

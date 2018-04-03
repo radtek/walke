@@ -214,7 +214,7 @@
                 <Button
                     android:id="@+id/dbi_btUploadPhotoDown"
                     style="@style/ButtonAddPreselect"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="16dp"
                     android:text="验收图片上传"/>
 
             </LinearLayout>

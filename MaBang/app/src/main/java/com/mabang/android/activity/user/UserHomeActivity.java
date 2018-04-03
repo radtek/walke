@@ -98,6 +98,7 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
     private boolean inputTextGetLatLng;
     private HomeAdListAdapter mAdapter;
     private List<BillboardInfo> mTypeList;
+    private SearchInfo mDefaultSearchInfo;
 
     @Override
     protected int rootLayoutId() {
@@ -141,11 +142,10 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
                         LatLng latLng = getLatLng(info);
                         if (latLng != null) {//当被点击的有坐标
                             moveToNewCenter(latLng);
-//                            initTypeOverlay(mSearchInfo, info);
                             if (mTypeList == null)
                                 initOverlay(mSearchInfo, info);
                             else
-                                initTypeOverlay(mSearchInfo, mTypeList, info);
+                                initTypeOverlay(mDefaultSearchInfo, mTypeList, info);
                         }
                     }
                 }
@@ -199,6 +199,7 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
     @Override
     protected void enterFirstData(SearchInfo result) {
         super.enterFirstData(result);
+        mDefaultSearchInfo = result;
         setSearchInfoData(result);
     }
 
@@ -208,7 +209,7 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
         if (mTypeList == null)
             initOverlay(mSearchInfo, markerInfo);
         else
-            initTypeOverlay(mSearchInfo, mTypeList, markerInfo);
+            initTypeOverlay(mDefaultSearchInfo, mTypeList, markerInfo);
         setMapCenter(marker.getPosition(), new LocateDoneListener() {
             @Override
             public void done() {
@@ -283,7 +284,7 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
             });
             if (!NetWorkUtil.isNetworkConnected(UserHomeActivity.this)) {
                 toast("网络连接不可用");
-            }else {
+            } else {
                 //
                 mSearch.reverseGeoCode(new ReverseGeoCodeOption().location(latLngBystr));
             }
@@ -493,15 +494,16 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
         if (mSearchInfo == null)
             return;
         //广告位列表
-        mBillboardInfoList = mSearchInfo.getBillboardInfoList();
+        mBillboardInfoList = mDefaultSearchInfo.getBillboardInfoList();
         mTypeList = typeResult.getBillboardInfoList();
-        if (mTypeList == null||mTypeList.size()<1){
+        if (mTypeList == null || mTypeList.size() < 1) {
             toast("筛选没有结果");
-            if (mBillboardInfoList == null)
-                mAdapter = new HomeAdTypeListAdapter(mBillboardInfoList, mTypeList);
+            if (mBillboardInfoList == null)//mBillboardInfoList 直接new一个size=0的
+//                mAdapter = new HomeAdTypeListAdapter(mBillboardInfoList, mTypeList);
+                mAdapter = new HomeAdTypeListAdapter(new ArrayList<BillboardInfo>(), mTypeList);
             else {
                 mAdapter = new HomeAdTypeListAdapter(mBillboardInfoList, mTypeList);
-                initTypeOverlay(mSearchInfo, mTypeList);
+                initTypeOverlay(mDefaultSearchInfo, mTypeList);
             }
             lvAds.setAdapter(mAdapter);
             return;
@@ -509,27 +511,16 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
 
         mAdapter = null;//先回收
 
-        if (mBillboardInfoList == null) {
+        if (mBillboardInfoList == null) {//mBillboardInfoList 直接new一个size=0的
             mAdapter = new HomeAdTypeListAdapter(new ArrayList<BillboardInfo>(), null);
             lvAds.setAdapter(mAdapter);
         } else {
             mAdapter = new HomeAdTypeListAdapter(mBillboardInfoList, mTypeList);
             lvAds.setAdapter(mAdapter);
-            initTypeOverlay(mSearchInfo, mTypeList);
+            initTypeOverlay(mDefaultSearchInfo, mTypeList);
             for (BillboardInfo billboardInfo : mTypeList) {
                 logI("mTypeList: billboardInfo = " + billboardInfo.toString());
             }
-//            if (mTypeList == null||mTypeList.size()<1) {
-//                mAdapter = new HomeAdTypeListAdapter(new ArrayList<BillboardInfo>(), null);
-//                lvAds.setAdapter(mAdapter);
-//            } else {
-//                mAdapter = new HomeAdTypeListAdapter(mBillboardInfoList, mTypeList);
-//                lvAds.setAdapter(mAdapter);
-//                initTypeOverlay(mSearchInfo, mTypeList);
-//                for (BillboardInfo billboardInfo : mTypeList) {
-//                    logI("mTypeList: billboardInfo = " + billboardInfo.toString());
-//                }
-//            }
 
         }
 
@@ -715,7 +706,7 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
                 this.etSearch.setSelection(text.length());
             }
             AreaInfo areaInfo = dialog.cityPanel.getDropDownItemInfo();//当断网选择会为null
-            if (areaInfo!=null) {
+            if (areaInfo != null) {
                 String cityName = areaInfo.getAreaName();
                 locationZoneCode = dialog.zonePanel.getDropDownItemInfo().getAreaId();
                 if (!TextUtils.isEmpty(cityName)) {
@@ -779,6 +770,7 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
     }
 
     private void setInputOrDialogSearchResult(SearchInfo result) {
+        mDefaultSearchInfo = result;//搜索返回
         if (Api.OK == result.getCode()) {
 
             String text = result.getText();

@@ -66,17 +66,13 @@ public class ToastUtil {
             return;
         if ("null".equals(text)||"NULL".equals(text)||"Null".equals(text)) {
             return;
-//            ToastUtil.initToastInstance(context);
-//            ToastUtil.mToast.setDuration(Toast.LENGTH_SHORT);
-//            ToastUtil.mToast.setText(text);
-//            ToastUtil.mToast.show();
         }
-//        ToastUtil.initToastInstance(context);
-//        ToastUtil.mToast.setDuration(Toast.LENGTH_SHORT);
-//        ToastUtil.mToast.setText(text);
-//        ToastUtil.mToast.show();
+        ToastUtil.initToastInstance(context);
+        ToastUtil.mToast.setDuration(Toast.LENGTH_SHORT);
+        ToastUtil.mToast.setText(text);
+        ToastUtil.mToast.show();
 
-        MyToast.getInstance(context).makeText(context, text, MyToast.LENGTH_SHORT).show();
+//        MyToast.getInstance(context).makeText(context, text, MyToast.LENGTH_SHORT).show(context);//会发生not attached to window manager等异常
 //        XToast.getInstance(context).makeText(context, text, XToast.LENGTH_SHORT).show();
         return;
     }

@@ -13,4 +13,5 @@
     <dimen name="searchInputMarginSize">10dp</dimen>
     <dimen name="searchTextSize">15sp</dimen>
     <dimen name="exitButtonSize">48dp</dimen>
+    <dimen name="home_type_Radius">20dp</dimen>
 </resources>

@@ -26,7 +26,7 @@ import com.mabang.android.entity.vo.SearchInfo;
 import com.mabang.android.okhttp.HttpReuqest;
 import com.mabang.android.utils.AppUtils;
 import com.mabang.android.utils.PopupWindowManager;
-import com.mabang.android.widget.BillboradInfoDialog;
+import com.mabang.android.widget.BillboardInfoDialog;
 import com.mabang.android.widget.KeyboardPatch;
 
 import java.util.List;
@@ -54,7 +54,7 @@ public class WorkerHomeActivity extends MapActivity {
     private ImageView ivLocationTop;
     private SearchInfo mSearchInfo;
 
-    private BillboradInfoDialog mBillboradInfoDialog;
+    private BillboardInfoDialog mBillboardInfoDialog;
 
     @Override
     protected int rootLayoutId() {
@@ -88,8 +88,8 @@ public class WorkerHomeActivity extends MapActivity {
         etTop.setTextColor(Color.BLACK);
 
 
-        mBillboradInfoDialog = new BillboradInfoDialog(this);
-        mBillboradInfoDialog.setOnButtonClickListener(new BillboradInfoDialog.OnButtonClickListener() {
+        mBillboardInfoDialog = new BillboardInfoDialog(this);
+        mBillboardInfoDialog.setOnButtonClickListener(new BillboardInfoDialog.OnButtonClickListener() {
             @Override
             public void onClickLocation(final BillboardInfo info) {
                 //进行定位校正
@@ -138,7 +138,9 @@ public class WorkerHomeActivity extends MapActivity {
         mSearchInfo = result;
         //广告位列表
         mBillboardInfoList = result.getBillboardInfoList();
+
         if (mBillboardInfoList != null && mBillboardInfoList.size() > 0) {
+            logI("enterFirstData  mBillboardInfoList.size = "+mBillboardInfoList.size());
             for (BillboardInfo billboardInfo : mBillboardInfoList) {
                 logI("billboardInfo = " + billboardInfo.toString());
             }
@@ -169,10 +171,10 @@ public class WorkerHomeActivity extends MapActivity {
     private void showUploadPhotoDialog(final BillboardInfo billboardInfo) {
         if (billboardInfo == null)
             return;
-        mBillboradInfoDialog.setBillboardInfo(billboardInfo);
-        boolean showing = mBillboradInfoDialog.isShowing();
+        mBillboardInfoDialog.setBillboardInfo(billboardInfo);
+        boolean showing = mBillboardInfoDialog.isShowing();
         if (!isFinishing() && !showing)
-            mBillboradInfoDialog.show();
+            mBillboardInfoDialog.show();
     }
 
     @Override
@@ -305,9 +307,9 @@ public class WorkerHomeActivity extends MapActivity {
                         showUploadPhotoDialog(result);
                     } else {
                         // 当查询到的广告位信息没有经纬度
-                        mBillboradInfoDialog.setBillboardInfo(result);
-                        if (!isFinishing() && !mBillboradInfoDialog.isShowing())
-                            mBillboradInfoDialog.show();
+                        mBillboardInfoDialog.setBillboardInfo(result);
+                        if (!isFinishing() && !mBillboardInfoDialog.isShowing())
+                            mBillboardInfoDialog.show();
 //                        DialogManager.dialogBillboardInfoOneButton(WorkerHomeActivity.this, result, "绑定当前定位", new DialogManager.OneButtonClickListener() {
 //                            @Override
 //                            public void onClicked(final BillboardInfo info) {
@@ -418,6 +420,7 @@ public class WorkerHomeActivity extends MapActivity {
             public void onSuccess(Message message, SearchInfo result) {
                 initWorkerOverlay(result, currentLocationBillboard);
                 if (result != null) {
+                    logI("reSearchRequest  result.BillboardInfoList.size = "+result.getBillboardInfoList().size());
                     List<BillboardInfo> list = result.getBillboardInfoList();
                     if (list != null) {
                         for (BillboardInfo billboardInfo : list) {

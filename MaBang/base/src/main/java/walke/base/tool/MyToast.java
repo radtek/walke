@@ -3,6 +3,7 @@ package walke.base.tool;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,30 +57,64 @@ public class MyToast {
         return result;
     }
 
-
-    public void show() {
+    public void show(final Context context) {
         if (mDialog!=null&&!mDialog.isShowing()){
             mDialog.show();
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    dialogDismiss();
+                    dialogDismiss(context);
+//                    dialogDismiss();
                 }
             }, mDuration);//mDuration
         }
 
     }
 
+    public void show(final AppCompatActivity activity) {
+        if (mDialog!=null&&!mDialog.isShowing()){
+            mDialog.show();
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    dialogDismiss(activity);
+//                    dialogDismiss();
+                }
+            }, mDuration);//mDuration
+        }
+
+    }
     public static int dip2px(Context context, float dipValue) {
         final float scale = context.getResources().getDisplayMetrics().density;
         return (int) (dipValue * scale + 0.5f);
     }
 
-    public static void dialogDismiss(){
-        if (mDialog!=null&&mDialog.isShowing()){
+
+    public static void dialogDismiss(Context context){
+
+        if (mDialog!=null&&mDialog.isShowing()&&ActivityUtil.isValidContext(context)){
             mDialog.dismiss();
             mDialog=null;
         }
     }
+
+
+    public static void dialogDismiss(AppCompatActivity activity){
+
+        if (mDialog!=null&&mDialog.isShowing()&&!activity.isFinishing()){
+            mDialog.dismiss();
+            mDialog=null;
+        }
+    }
+
+    public static void dialogDismiss(){
+
+        if (mDialog!=null&&mDialog.isShowing()){//会报not attached to window manager异常
+            mDialog.dismiss();
+            mDialog=null;
+        }
+    }
+
+
 
 }
