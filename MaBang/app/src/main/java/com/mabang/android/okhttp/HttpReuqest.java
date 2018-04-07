@@ -100,7 +100,7 @@ public class HttpReuqest {
                 message.setMessage(voMessage);
             }
         }
-        Log.i("walke", "sendMessage:---------------->>> 请求类型 type=" + type + " 请求体：------>>> message = " + message.getMessage());
+        Log.i("walke", "sendMessage:---------------->>> 请求类型 type=" + type + " 请求体：--->> message = " + message.getMessage());
         String sign = MD5Util.MD5Encode(message.getId() + message.getVersion() + message.getType() + message.getMessage() + Api.CLIENT_SALT);
         message.setSign(sign);
         String messageJson = new GsonBuilder().create().toJson(message);
@@ -154,6 +154,8 @@ public class HttpReuqest {
                                 if (result == null || TextUtils.isEmpty(result)) {
                                     if (myCallBack != null) {
                                         myCallBack.onError(new Exception("服务器返回空字符"));
+                                        Log.i("walke", "onResponse: 服务器返回空字符:");
+                                        Log.i("walke", "sendMessage:---------------->>> 请求类型 type= " + type );
                                         ToastUtil.showToast(mActivity, Constants.ERROR_SERVICE);
                                         myCallBack.onFinish();
                                     }

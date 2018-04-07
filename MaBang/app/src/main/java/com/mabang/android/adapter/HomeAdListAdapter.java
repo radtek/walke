@@ -63,8 +63,8 @@ public class HomeAdListAdapter extends BaseAdapter {
         if (TextUtils.isEmpty(longAddress))
             holder.tvText.setText(" ");//服务器地址信息返回为空
         else {
-//            int indexOf = longAddress.indexOf("区");
-//            longAddress=longAddress.substring(indexOf+1,longAddress.length());
+            int indexOf = longAddress.indexOf("区");
+            longAddress=longAddress.substring(indexOf+1,longAddress.length());
             holder.tvText.setText(longAddress + "");
         }
 

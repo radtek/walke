@@ -9,13 +9,13 @@
         android:layout_width="28dp"
         android:layout_height="match_parent">
         <ImageView
-            android:id="@+id/lah_ivSelect"
+            android:id="@+id/laht_ivSelect"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="1dp"
             android:src="@mipmap/home_ad_list_gray"/>
         <TextView
-            android:id="@+id/lah_tvItem"
+            android:id="@+id/laht_tvItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="9sp"
@@ -25,14 +25,14 @@
             android:layout_marginTop="17dp"/>
     </FrameLayout>
     <!--<ImageView
-        android:id="@+id/lah_ivSelect"
+        android:id="@+id/laht_ivSelect"
         android:layout_width="28dp"
         android:layout_height="match_parent"
         android:padding="6dp"
         android:src="@mipmap/home_ad_list_gray"/>-->
 
     <TextView
-        android:id="@+id/lah_tvText"
+        android:id="@+id/laht_tvText"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_marginRight="0dp"

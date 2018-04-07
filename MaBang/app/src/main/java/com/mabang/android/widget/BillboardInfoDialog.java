@@ -187,9 +187,9 @@ public class BillboardInfoDialog extends MyDialog {
         mTtvSpecification.getTvDesc().setText(AppUtils.textReplace(billboardInfo.getSpec(), ""));//规格
         mTtvRemark.getTvDesc().setText(AppUtils.textReplace(billboardInfo.getOtherDescribe(), "无"));//备注
 
-        String locationLat = billboardInfo.getLocationLat();
-        String locationLng = billboardInfo.getLocationLng();
-        if (TextUtils.isEmpty(locationLat) || TextUtils.isEmpty(locationLng)) {
+        Double locationLat = billboardInfo.getLocationLat();
+        Double locationLng = billboardInfo.getLocationLng();
+        if (locationLat==null|| locationLng==null) {
             mBtBindLocation.setVisibility(View.VISIBLE);
             mIvLocation.setVisibility(View.GONE);
             mBtUploadPhotoAd.setVisibility(View.GONE);

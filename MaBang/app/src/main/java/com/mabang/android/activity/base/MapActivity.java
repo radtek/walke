@@ -5,7 +5,6 @@ import android.graphics.Point;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
@@ -223,16 +222,16 @@ public abstract class MapActivity extends AppActivity {
                             requestZoneDatas(locationZoneCode);
                     }
                 });
-//                if (!NetWorkUtil.isNetworkConnected(MapActivity.this)) {
-//                    toast("网络连接不可用");
-////                    DialogUtil.tipsOneButton(MapActivity.this, "好的", "网络连接不可用", new DialogUtil.OneButtonClickListener() {
-////                        @Override
-////                        public void buttonClick() {
-////                            DialogUtil.dialogDismiss(MapActivity.this);
-////                        }
-////                    });
-//                    return;
-//                }
+                if (!NetWorkUtil.isNetworkConnected(MapActivity.this)) {
+                    toast("网络连接不可用");
+//                    DialogUtil.tipsOneButton(MapActivity.this, "好的", "网络连接不可用", new DialogUtil.OneButtonClickListener() {
+//                        @Override
+//                        public void buttonClick() {
+//                            DialogUtil.dialogDismiss(MapActivity.this);
+//                        }
+//                    });
+                    return;
+                }
                 // 反Geo搜索
                 mSearch.reverseGeoCode(new ReverseGeoCodeOption().location(ll));//需要用到网络
 
@@ -379,13 +378,13 @@ public abstract class MapActivity extends AppActivity {
         }
         for (int i = 0; i < billboardInfoList.size(); i++) {
             BillboardInfo billboardInfo = billboardInfoList.get(i);
-            String locationLng = billboardInfo.getLocationLng();
-            String locationLat = billboardInfo.getLocationLat();
-            if (TextUtils.isEmpty(locationLat) || TextUtils.isEmpty(locationLng)) {
+            Double locationLng = billboardInfo.getLocationLng();
+            Double locationLat = billboardInfo.getLocationLat();
+            if (locationLat==null|| locationLng==null) {
                 logI("经纬度为null");
 //                break;
             } else {
-                LatLng latLng = new LatLng(Double.parseDouble(locationLat), Double.parseDouble(locationLng));
+                LatLng latLng = new LatLng(locationLat, locationLng);
                 if (i < 100) {
                     tvOverlayNumber.setText("" + (i + 1));
                 } else {
@@ -414,12 +413,12 @@ public abstract class MapActivity extends AppActivity {
         LatLng selectlatLng = null;
         for (int i = 0; i < billboardInfoList.size(); i++) {
             BillboardInfo bInfo = billboardInfoList.get(i);
-            String locationLng = bInfo.getLocationLng();
-            String locationLat = bInfo.getLocationLat();
-            if (TextUtils.isEmpty(locationLat) || TextUtils.isEmpty(locationLng)) {
+            Double locationLng = bInfo.getLocationLng();
+            Double locationLat = bInfo.getLocationLat();
+            if (locationLat==null || locationLng==null) {
 //                break;
             } else {
-                LatLng latLng = new LatLng(Double.parseDouble(locationLat), Double.parseDouble(locationLng));
+                LatLng latLng = new LatLng(locationLat, locationLng);
                 if (billboardInfo != null && bInfo.getId().equals(billboardInfo.getId())) {
                     selectItem = i;
                     selectlatLng = latLng;
@@ -468,13 +467,13 @@ public abstract class MapActivity extends AppActivity {
         }
         for (int i = 0; i < billboardInfoList.size(); i++) {
             BillboardInfo billboardInfo = billboardInfoList.get(i);
-            String locationLng = billboardInfo.getLocationLng();
-            String locationLat = billboardInfo.getLocationLat();
-            if (TextUtils.isEmpty(locationLat) || TextUtils.isEmpty(locationLng)) {
+            Double locationLng = billboardInfo.getLocationLng();
+            Double locationLat = billboardInfo.getLocationLat();
+            if (locationLat==null || locationLng==null) {
                 logI("经纬度为null");
 //                break;
             } else {
-                LatLng latLng = new LatLng(Double.parseDouble(locationLat), Double.parseDouble(locationLng));
+                LatLng latLng = new LatLng(locationLat, locationLng);
                 if (i < 100) {
                     tvOverlayNumber.setText("" + (i + 1));
                     ivOverlay.setImageResource(R.mipmap.icon_overlay_red);
@@ -505,12 +504,12 @@ public abstract class MapActivity extends AppActivity {
         LatLng selectlatLng = null;
         for (int i = 0; i < billboardInfoList.size(); i++) {
             BillboardInfo bInfo = billboardInfoList.get(i);
-            String locationLng = bInfo.getLocationLng();
-            String locationLat = bInfo.getLocationLat();
-            if (TextUtils.isEmpty(locationLat) || TextUtils.isEmpty(locationLng)) {
+            Double locationLng = bInfo.getLocationLng();
+            Double locationLat = bInfo.getLocationLat();
+            if (locationLat==null || locationLng==null) {
 //                break;
             } else {
-                LatLng latLng = new LatLng(Double.parseDouble(locationLat), Double.parseDouble(locationLng));
+                LatLng latLng = new LatLng(locationLat, locationLng);
                 if (i < 100) {
                     if (billboardInfo != null && bInfo.getId().equals(billboardInfo.getId())) {
                         selectItem = i;
@@ -568,22 +567,20 @@ public abstract class MapActivity extends AppActivity {
         }
         for (int i = 0; i < billboardInfoList.size(); i++) {
             BillboardInfo bInfo = billboardInfoList.get(i);
-            String locationLng = bInfo.getLocationLng();
-            String locationLat = bInfo.getLocationLat();
-            if (TextUtils.isEmpty(locationLat) || TextUtils.isEmpty(locationLng)) {
-//                break;
-            } else {
-                LatLng latLng = new LatLng(Double.parseDouble(locationLat), Double.parseDouble(locationLng));
-//            if (i < 100) {
-//                if (isFitList(infos, bInfo))
-//                    ivOverlay.setImageResource(R.mipmap.icon_overlay_blue);
-//                else
-//                    ivOverlay.setImageResource(R.mipmap.icon_overlay_red);
-                if (i < 100 && !isFitList(infos, bInfo)) {
-
-                    ivOverlay.setImageResource(R.mipmap.icon_overlay_red);
-                    tvOverlayNumber.setText("" + (i + 1));
-                    mBd = BitmapDescriptorFactory.fromView(mOverlayView);
+            Double locationLng = bInfo.getLocationLng();
+            Double locationLat = bInfo.getLocationLat();
+            if (locationLat!=null &&locationLng!=null) {
+                LatLng latLng = new LatLng(locationLat, locationLng);
+                if (i < 100 ) {
+                    if (bInfo.getAdvanceType()==0) {// 1为可预订的，2为我预订的，0就是其他数据
+                        ivOverlay.setImageResource(R.mipmap.icon_overlay_red);
+                        tvOverlayNumber.setText("" + (i + 1));
+                        mBd = BitmapDescriptorFactory.fromView(mOverlayView);
+                    }else if (bInfo.getAdvanceType()==2){// 1为可预订的，2为我预订的，0就是其他数据
+                        ivOverlay.setImageResource(R.mipmap.icon_overlay_blue_mine);
+                        tvOverlayNumber.setText("" + (i + 1));
+                        mBd = BitmapDescriptorFactory.fromView(mOverlayView);
+                    }
                     MarkerOptions ooA = new MarkerOptions().position(latLng).icon(mBd).zIndex(2).draggable(true);
                     Marker marker = (Marker) (mBaiduMap.addOverlay(ooA));
                     Bundle extraInfo = new Bundle();
@@ -592,24 +589,27 @@ public abstract class MapActivity extends AppActivity {
                 }
             }
         }
+
         //蓝色放在上一层(比红色高一层)
         for (int i = 0; i < billboardInfoList.size(); i++) {
             BillboardInfo bInfo = billboardInfoList.get(i);
-            String locationLng = bInfo.getLocationLng();
-            String locationLat = bInfo.getLocationLat();
-            if (TextUtils.isEmpty(locationLat) || TextUtils.isEmpty(locationLng)) {
+            Double locationLng = bInfo.getLocationLng();
+            Double locationLat = bInfo.getLocationLat();
+            if (locationLat==null || locationLng==null) {
 //                break;
             } else {
-                LatLng latLng = new LatLng(Double.parseDouble(locationLat), Double.parseDouble(locationLng));
-                if (i < 100 && isFitList(infos, bInfo)) {
-                    ivOverlay.setImageResource(R.mipmap.icon_overlay_blue);
-                    tvOverlayNumber.setText("" + (i + 1));
-                    mBd = BitmapDescriptorFactory.fromView(mOverlayView);
-                    MarkerOptions ooA = new MarkerOptions().position(latLng).icon(mBd).zIndex(2).draggable(true);
-                    Marker marker = (Marker) (mBaiduMap.addOverlay(ooA));
-                    Bundle extraInfo = new Bundle();
-                    extraInfo.putSerializable(Constants.MARKER_INFO, bInfo);
-                    marker.setExtraInfo(extraInfo);
+                LatLng latLng = new LatLng(locationLat,locationLng);
+                if (i < 100) {
+                    if (bInfo.getAdvanceType()==1) {// 1为可预订的，2为我预订的，0就是其他数据
+                        ivOverlay.setImageResource(R.mipmap.icon_overlay_blue);
+                        tvOverlayNumber.setText("" + (i + 1));
+                        mBd = BitmapDescriptorFactory.fromView(mOverlayView);
+                        MarkerOptions ooA = new MarkerOptions().position(latLng).icon(mBd).zIndex(2).draggable(true);
+                        Marker marker = (Marker) (mBaiduMap.addOverlay(ooA));
+                        Bundle extraInfo = new Bundle();
+                        extraInfo.putSerializable(Constants.MARKER_INFO, bInfo);
+                        marker.setExtraInfo(extraInfo);
+                    }
                 }
             }
         }
@@ -632,22 +632,24 @@ public abstract class MapActivity extends AppActivity {
         LatLng selectlatLng = null;
         for (int i = 0; i < billboardInfoList.size(); i++) {
             BillboardInfo bInfo = billboardInfoList.get(i);
-            String locationLng = bInfo.getLocationLng();
-            String locationLat = bInfo.getLocationLat();
-            if (TextUtils.isEmpty(locationLat) || TextUtils.isEmpty(locationLng)) {
-//                break;
-            } else {
-                LatLng latLng = new LatLng(Double.parseDouble(locationLat), Double.parseDouble(locationLng));
+            Double locationLng = bInfo.getLocationLng();
+            Double locationLat = bInfo.getLocationLat();
+            if (locationLat!=null || locationLng!=null) {
+                LatLng latLng = new LatLng(locationLat, locationLng);
                 if (i < 100) {
-
                     if (billboardInfo != null && bInfo.getId().equals(billboardInfo.getId())) {
                         selectItem = i;
                         selectlatLng = latLng;
-                    } else if (!isFitList(infos, bInfo)) {
-
-                        ivOverlay.setImageResource(R.mipmap.icon_overlay_red);
-                        tvOverlayNumber.setText("" + (i + 1));
-                        mBd = BitmapDescriptorFactory.fromView(mOverlayView);
+                    } else {
+                        if (bInfo.getAdvanceType()==0) {// 1为可预订的，2为我预订的，0就是其他数据
+                            ivOverlay.setImageResource(R.mipmap.icon_overlay_red);
+                            tvOverlayNumber.setText("" + (i + 1));
+                            mBd = BitmapDescriptorFactory.fromView(mOverlayView);
+                        }else if (bInfo.getAdvanceType()==2){// 1为可预订的，2为我预订的，0就是其他数据
+                            ivOverlay.setImageResource(R.mipmap.icon_overlay_blue_mine);
+                            tvOverlayNumber.setText("" + (i + 1));
+                            mBd = BitmapDescriptorFactory.fromView(mOverlayView);
+                        }
                         MarkerOptions ooA = new MarkerOptions().position(latLng).icon(mBd).zIndex(2).draggable(true);
                         Marker marker = (Marker) (mBaiduMap.addOverlay(ooA));
                         Bundle extraInfo = new Bundle();
@@ -659,21 +661,17 @@ public abstract class MapActivity extends AppActivity {
         }
 
         //蓝色放在上一层(比红色高一层)
-
         for (int i = 0; i < billboardInfoList.size(); i++) {
             BillboardInfo bInfo = billboardInfoList.get(i);
-            String locationLng = bInfo.getLocationLng();
-            String locationLat = bInfo.getLocationLat();
-            if (TextUtils.isEmpty(locationLat) || TextUtils.isEmpty(locationLng)) {
-//                break;
-            } else {
-                LatLng latLng = new LatLng(Double.parseDouble(locationLat), Double.parseDouble(locationLng));
+            Double locationLng = bInfo.getLocationLng();
+            Double locationLat = bInfo.getLocationLat();
+            if (locationLat!=null || locationLng!=null) {
+                LatLng latLng = new LatLng(locationLat, locationLng);
                 if (i < 100) {
-
                     if (billboardInfo != null && bInfo.getId().equals(billboardInfo.getId())) {
                         selectItem = i;
                         selectlatLng = latLng;
-                    } else if (isFitList(infos, bInfo)) {
+                    } else if (bInfo.getAdvanceType()==1) {// 1为可预订的，2为我预订的，0就是其他数据
                         ivOverlay.setImageResource(R.mipmap.icon_overlay_blue);
                         tvOverlayNumber.setText("" + (i + 1));
                         mBd = BitmapDescriptorFactory.fromView(mOverlayView);
@@ -686,7 +684,6 @@ public abstract class MapActivity extends AppActivity {
                 }
             }
         }
-
 
         //放置到最顶层
         if (selectItem != -1 && selectlatLng != null) {
@@ -823,10 +820,10 @@ public abstract class MapActivity extends AppActivity {
      * @return
      */
     protected LatLng getLatLng(BillboardInfo info) {
-        String lat = info.getLocationLat();
-        String lng = info.getLocationLng();
-        if (!TextUtils.isEmpty(lat) && !TextUtils.isEmpty(lng)) {
-            LatLng ll = new LatLng(Double.parseDouble(lat), Double.parseDouble(lng));
+        Double lat = info.getLocationLat();
+        Double lng = info.getLocationLng();
+        if (lat!=null && lng!=null) {
+            LatLng ll = new LatLng(lat, lng);
             return ll;
         } else {
             return null;

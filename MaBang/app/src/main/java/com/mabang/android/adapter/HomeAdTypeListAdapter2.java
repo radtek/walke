@@ -18,19 +18,20 @@ import java.util.List;
  * email:1032458982@qq.com
  */
 
-public class HomeAdTypeListAdapter extends HomeAdListAdapter {
+public class HomeAdTypeListAdapter2 extends HomeAdListAdapter {
     private List<BillboardInfo> datas;
-//    private List<BillboardInfo> typeList;
+    private List<BillboardInfo> typeList;
 
-    public HomeAdTypeListAdapter(List<BillboardInfo> datas) {
+    public HomeAdTypeListAdapter2(List<BillboardInfo> datas) {
         super(datas);
         this.datas = datas;
     }
 
-    public HomeAdTypeListAdapter(List<BillboardInfo> datas, List<BillboardInfo> typeList) {
+    public HomeAdTypeListAdapter2(List<BillboardInfo> datas, List<BillboardInfo> typeList) {
         super(datas);
+//        super(datas,typeList);
         this.datas = datas;
-//        this.typeList=typeList;
+        this.typeList=typeList;
     }
 
     @Override
@@ -50,13 +51,13 @@ public class HomeAdTypeListAdapter extends HomeAdListAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        AdSelectViewHolder holder = null;
-        if (convertView == null) {
+        AdSelectViewHolder holder=null;
+        if (convertView==null){
             convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.lv_ad_home_type, parent, false);
-            holder = new AdSelectViewHolder(convertView);
+            holder=new AdSelectViewHolder(convertView);
             convertView.setTag(holder);
-        } else {
-            holder = ((AdSelectViewHolder) convertView.getTag());
+        }else {
+            holder=((AdSelectViewHolder) convertView.getTag());
         }
 
         BillboardInfo binfo = datas.get(position);
@@ -66,36 +67,38 @@ public class HomeAdTypeListAdapter extends HomeAdListAdapter {
             holder.tvText.setText(" ");//服务器地址信息返回为空
         else {
             int indexOf = longAddress.indexOf("区");
-            longAddress = longAddress.substring(indexOf + 1, longAddress.length());
+            longAddress=longAddress.substring(indexOf+1,longAddress.length());
             holder.tvText.setText(longAddress + "");
         }
-        if (binfo.getAdvanceType() == 0) {// 1为可预订的，2为我预订的，0就是其他数据
+        if (typeList==null||typeList.size()<1){
             holder.ivItem.setImageResource(R.mipmap.home_ad_list_gray);
             holder.tvItem.setTextColor(parent.getContext().getResources().getColor(R.color.adListGray));
-        } else if (binfo.getAdvanceType() == 1) {
-            holder.ivItem.setImageResource(R.mipmap.home_ad_list_blue);
-            holder.tvItem.setTextColor(parent.getContext().getResources().getColor(R.color.adListBlue));
-        } else if (binfo.getAdvanceType() == 2) {
-            holder.ivItem.setImageResource(R.mipmap.home_ad_list_blue_mine);
-            holder.tvItem.setTextColor(parent.getContext().getResources().getColor(R.color.adListBlue));
+        }else {
+            if (isFitList(typeList, binfo)) {
+                holder.ivItem.setImageResource(R.mipmap.home_ad_list_blue);
+                holder.tvItem.setTextColor(parent.getContext().getResources().getColor(R.color.adListBlue));
+            } else {
+                holder.ivItem.setImageResource(R.mipmap.home_ad_list_gray);
+                holder.tvItem.setTextColor(parent.getContext().getResources().getColor(R.color.adListGray));
+            }
         }
-        holder.tvItem.setText("" + (position + 1));
+        holder.tvItem.setText(""+(position+1));
 
         return convertView;
     }
 
 
     private boolean isFitList(List<BillboardInfo> infos, BillboardInfo bInfo) {
-        if (infos != null) {
+        if (infos!=null) {
             for (BillboardInfo info : infos) {
-                if (info.getId() != null && info.getId().equals(bInfo.getId()))
+                if (info.getId()!=null&&info.getId().equals(bInfo.getId()))
                     return true;
             }
         }
         return false;
     }
 
-    class AdSelectViewHolder {
+    class AdSelectViewHolder{
         private final TextView tvText;
         private final TextView tvItem;
         private final ImageView ivItem;

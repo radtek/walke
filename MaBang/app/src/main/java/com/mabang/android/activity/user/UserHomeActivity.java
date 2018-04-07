@@ -98,7 +98,7 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
     private boolean inputTextGetLatLng;
     private HomeAdListAdapter mAdapter;
     private List<BillboardInfo> mTypeList;
-    private SearchInfo mDefaultSearchInfo;
+//    private SearchInfo mDefaultSearchInfo;
 
     @Override
     protected int rootLayoutId() {
@@ -144,8 +144,10 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
                             moveToNewCenter(latLng);
                             if (mTypeList == null)
                                 initOverlay(mSearchInfo, info);
-                            else
-                                initTypeOverlay(mDefaultSearchInfo, mTypeList, info);
+                            else {
+//                                initTypeOverlay(mDefaultSearchInfo, mTypeList, info);
+                                initTypeOverlay(mSearchInfo, mTypeList, info);
+                            }
                         }
                     }
                 }
@@ -199,7 +201,7 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
     @Override
     protected void enterFirstData(SearchInfo result) {
         super.enterFirstData(result);
-        mDefaultSearchInfo = result;
+//        mDefaultSearchInfo = result;
         setSearchInfoData(result);
     }
 
@@ -208,8 +210,10 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
         etSearch.clearFocus();
         if (mTypeList == null)
             initOverlay(mSearchInfo, markerInfo);
-        else
-            initTypeOverlay(mDefaultSearchInfo, mTypeList, markerInfo);
+        else {
+//            initTypeOverlay(mDefaultSearchInfo, mTypeList, markerInfo);
+            initTypeOverlay(mSearchInfo, mTypeList, markerInfo);
+        }
         setMapCenter(marker.getPosition(), new LocateDoneListener() {
             @Override
             public void done() {
@@ -446,9 +450,7 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
                             }
                         }
                     }
-
                 }
-
             }
 
             @Override
@@ -458,7 +460,6 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
 
             @Override
             public void onFinish() {
-
             }
         });
     }
@@ -467,10 +468,8 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
         mSearchInfo = result;
         //广告位列表
         mBillboardInfoList = result.getBillboardInfoList();
-
         mAdapter = null;//先回收
         mTypeList = null;//重置
-
         if (mBillboardInfoList == null) {
             mAdapter = new HomeAdListAdapter(new ArrayList<BillboardInfo>());
             lvAds.setAdapter(mAdapter);
@@ -478,11 +477,9 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
             mAdapter = new HomeAdListAdapter(mBillboardInfoList);
             lvAds.setAdapter(mAdapter);
             initOverlay(result);
-            for (BillboardInfo billboardInfo : mBillboardInfoList) {
+            for (BillboardInfo billboardInfo : mBillboardInfoList)
                 logI("billboardInfo = " + billboardInfo);
-            }
         }
-
     }
 
     /**
@@ -491,10 +488,12 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
      * @param typeResult
      */
     private void setSearchTypeInfoData(SearchInfo typeResult) {
-        if (mSearchInfo == null)
-            return;
+//        if (mSearchInfo == null)
+//            return;
+        mSearchInfo=typeResult;
         //广告位列表
-        mBillboardInfoList = mDefaultSearchInfo.getBillboardInfoList();
+//        mBillboardInfoList = mDefaultSearchInfo.getBillboardInfoList();
+        mBillboardInfoList = mSearchInfo.getBillboardInfoList();
         mTypeList = typeResult.getBillboardInfoList();
         if (mTypeList == null || mTypeList.size() < 1) {
             toast("筛选没有结果");
@@ -503,7 +502,8 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
                 mAdapter = new HomeAdTypeListAdapter(new ArrayList<BillboardInfo>(), mTypeList);
             else {
                 mAdapter = new HomeAdTypeListAdapter(mBillboardInfoList, mTypeList);
-                initTypeOverlay(mDefaultSearchInfo, mTypeList);
+//                initTypeOverlay(mDefaultSearchInfo, mTypeList);
+                initTypeOverlay(mSearchInfo, mTypeList);
             }
             lvAds.setAdapter(mAdapter);
             return;
@@ -517,7 +517,8 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
         } else {
             mAdapter = new HomeAdTypeListAdapter(mBillboardInfoList, mTypeList);
             lvAds.setAdapter(mAdapter);
-            initTypeOverlay(mDefaultSearchInfo, mTypeList);
+//            initTypeOverlay(mDefaultSearchInfo, mTypeList);
+            initTypeOverlay(mSearchInfo, mTypeList);
             for (BillboardInfo billboardInfo : mTypeList) {
                 logI("mTypeList: billboardInfo = " + billboardInfo.toString());
             }
@@ -770,7 +771,7 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
     }
 
     private void setInputOrDialogSearchResult(SearchInfo result) {
-        mDefaultSearchInfo = result;//搜索返回
+//        mDefaultSearchInfo = result;//搜索返回
         if (Api.OK == result.getCode()) {
 
             String text = result.getText();
@@ -827,10 +828,10 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
         List<BillboardInfo> billboardInfoList = result.getBillboardInfoList();
         if (billboardInfoList != null && billboardInfoList.size() > 0) {
             for (BillboardInfo billboardInfo : billboardInfoList) {
-                String lat = billboardInfo.getLocationLat();
-                String lng = billboardInfo.getLocationLng();
-                if (!TextUtils.isEmpty(lat) && !TextUtils.isEmpty(lng)) {
-                    llList.add(new LatLng(Double.parseDouble(lat), Double.parseDouble(lng)));
+                Double lat = billboardInfo.getLocationLat();
+                Double lng = billboardInfo.getLocationLng();
+                if (lat!=null && lng!=null) {
+                    llList.add(new LatLng(lat, lng));
                 }
             }
         }

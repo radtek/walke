@@ -50,17 +50,21 @@ public class BillboardInfo extends VoBase {
 	private String otherDescribe; // 其它描述
 
 	@DatabaseField(columnName = "locationLng")
-	private String locationLng; // 经度
+	private Double locationLng; // 经度
 
 	@DatabaseField(columnName = "locationLat")
-	private String locationLat; // 纬度
+	private Double locationLat; // 纬度
 
 	@DatabaseField(columnName = "available")
 	private boolean available; // 是否可用、可被预约
 
 	private Integer areaId;
 
-//	@DatabaseField(columnName = "isSelected") //应不要，会在app上用户改动二改动的
+//	private boolean myAdvance; // 是否为我预约的  这个参数只会在“可预约”的条件中会有值体现，其它条件查询时值都为：false
+	// myAdvance 取消了，会导致解析出错
+	private int advanceType; // 1为可预订的，2为我预订的，0就是其他数据
+
+//	@DatabaseField(columnName = "isSelected") //应不要，会在app上用户改动
 	private boolean isSelected; // 预选广告位列表界面用来记录是否已勾选，仅用于本地(特有属性)，
 
 	private List<BillboardImageInfo> advertisingImageList; // 广告位图
@@ -161,20 +165,20 @@ public class BillboardInfo extends VoBase {
 		return;
 	}
 
-	public String getLocationLng() {
+	public Double getLocationLng() {
 		return this.locationLng;
 	}
 
-	public void setLocationLng(String locationLng) {
+	public void setLocationLng(Double locationLng) {
 		this.locationLng = locationLng;
 		return;
 	}
 
-	public String getLocationLat() {
+	public Double getLocationLat() {
 		return this.locationLat;
 	}
 
-	public void setLocationLat(String locationLat) {
+	public void setLocationLat(Double locationLat) {
 		this.locationLat = locationLat;
 		return;
 	}
@@ -193,6 +197,23 @@ public class BillboardInfo extends VoBase {
 
 	public void setAreaId(Integer areaId) {
 		this.areaId = areaId;
+	}
+
+//	public boolean isMyAdvance() {
+//		return myAdvance;
+//	}
+//
+//	public void setMyAdvance(boolean myAdvance) {
+//		this.myAdvance = myAdvance;
+//	}
+
+
+	public int getAdvanceType() {
+		return advanceType;
+	}
+
+	public void setAdvanceType(int advanceType) {
+		this.advanceType = advanceType;
 	}
 
 	public boolean isSelected() {

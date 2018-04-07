@@ -357,8 +357,8 @@ public class WorkerHomeActivity extends MapActivity {
         // TODO: 2018/2/21  替换具体数据 id和经
         billboardInfo.setAreaId(locationZoneCode);
         billboardInfo.setLongAddress(locationAddress);
-        billboardInfo.setLocationLng(mBDLocation.getLongitude() + "");//
-        billboardInfo.setLocationLat(mBDLocation.getLatitude() + "");
+        billboardInfo.setLocationLng(mBDLocation.getLongitude());//
+        billboardInfo.setLocationLat(mBDLocation.getLatitude());
         httpReuqest.sendMessage(Api.Worker_updateCoordinates, billboardInfo, true, new HttpReuqest.CallBack<BillboardInfo>() {
             @Override
             public void onSuccess(Message message, final BillboardInfo result) {
@@ -367,11 +367,8 @@ public class WorkerHomeActivity extends MapActivity {
                     // TODO: 2018/2/16 获取相应数据做对应显示
                     logI("更新广告位位置坐标:onSuccess: result.getText = " + text + "  BillboardInfo = " + result.toString());
 //                    DialogManager.dialogDismiss(WorkerHomeActivity.this);//现在仅在手动点击弹窗的“X”关闭
-
-                    String lng = result.getLocationLng();
-                    billboardInfo.setLocationLng(lng);
-                    String lat = result.getLocationLat();
-                    billboardInfo.setLocationLat(lat);
+                    billboardInfo.setLocationLng(result.getLocationLng());
+                    billboardInfo.setLocationLat( result.getLocationLat());
                     currentLocationBillboard = billboardInfo;//②广告更新绑定当前定位的请求成功之后
                     itvPreview.getvCover().setVisibility(View.GONE);//去掉"预览"蒙层
                     //更新广告位位置成功后将该位置移动至中心,本来就在中心
@@ -456,25 +453,12 @@ public class WorkerHomeActivity extends MapActivity {
         }
         for (BillboardInfo billboardInfo : billboardInfoList) {
             double mLatitude = location.getLatitude();
-            String lat = mLatitude + "";
             double mLongitude = location.getLongitude();
-            String lng = mLongitude + "";
-            String locationLat = billboardInfo.getLocationLat();
-            String locationLng = billboardInfo.getLocationLng();
-            /*boolean bLat = lat.startsWith(locationLat);
-            boolean bLng = lng.startsWith(locationLng);
-            if (bLat && bLng) {//当前定位与某个广告位位置重合
-                currentLocationBillboard = billboardInfo;//①加到到初始数据后，检测数据列表是否有符合的
-                return true;
-            }*/
-//            if (locationLat==null||locationLng==null)
-//                break;//不该用
-
+            Double locationLat = billboardInfo.getLocationLat();
+            Double locationLng = billboardInfo.getLocationLng();
             if (locationLat != null || locationLng != null) {
-                double parseLat = Double.parseDouble(locationLat);
-                double parseLng = Double.parseDouble(locationLng);
-                double v1 = Math.abs(parseLat - mLatitude);//
-                double v2 = Math.abs(parseLng - mLongitude);//113.273581
+                double v1 = Math.abs(locationLat - mLatitude);//
+                double v2 = Math.abs(locationLng - mLongitude);//113.273581
                 if (v1 < 0.00002 && v2 < 0.00002) {//0.00005误差许可，用网络计算过，约8米误差,0.00002约3米
                     currentLocationBillboard = billboardInfo;//①加到到初始数据后，检测数据列表是否有符合的
                     return true;
@@ -497,14 +481,12 @@ public class WorkerHomeActivity extends MapActivity {
             return false;
         }
         double mLatitude = location.getLatitude();
-        String lat = mLatitude + "";
         double mLongitude = location.getLongitude();
-        String lng = mLongitude + "";
-        String locationLat = billboardInfo.getLocationLat();
-        String locationLng = billboardInfo.getLocationLng();
+        Double locationLat = billboardInfo.getLocationLat();
+        Double locationLng = billboardInfo.getLocationLng();
         if (locationLat == null || locationLng == null)
             return false;
-        if (lat.startsWith(locationLat) && lng.startsWith(locationLng)) {//当前定位与某个广告位位置重合
+        if (locationLat.equals(mLatitude) && locationLng.equals(mLongitude)) {//当前定位与某个广告位位置重合
             currentLocationBillboard = billboardInfo;//①加到到初始数据后，检测数据列表是否有符合的
             return true;
         }
