@@ -67,9 +67,10 @@
                         android:layout_marginLeft="@dimen/adDetailMarginSize_dialog"
                         android:layout_marginRight="@dimen/adDetailMarginSize_dialog"
                         android:gravity="center_vertical"
-                        android:text="天河区荷光路"
+                        android:text=""
                         android:textColor="#333333"
                         android:textSize="17sp"/>
+                    <!--天河区荷光路-->
 
                 </RelativeLayout>
 
@@ -91,20 +92,37 @@
                         android:layout_marginRight="@dimen/adDetailMarginSize_dialog"
                         android:orientation="vertical"
                         >
-
-                        <RelativeLayout
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
                             <TextView
                                 android:id="@+id/dbi_tvManagerCode"
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:layout_alignParentLeft="true"
                                 android:layout_alignParentStart="true"
                                 android:layout_alignParentTop="true"
-                                android:text="管理编号:88888"
+                                android:text="管理编号:"
                                 android:textSize="13sp"/>
+
+                            <TextView
+                                android:id="@+id/dbi_tvSoleCode"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_alignParentRight="true"
+                                android:text="唯一码："
+                                android:textSize="13sp"/>
+
+                        </LinearLayout>
+
+                        <!--<RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
 
                             <TextView
                                 android:id="@+id/dbi_tvSoleCode"
@@ -113,7 +131,7 @@
                                 android:layout_alignParentRight="true"
                                 android:text="唯一码：8888"
                                 android:textSize="13sp"/>
-                        </RelativeLayout>
+                        </RelativeLayout>-->
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -138,7 +156,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     app:leftText="广告使用："
-                                    app:rightText="广州技客科技"
+                                    app:rightText=""
                                     app:size="13"/>
 
                                 <com.mabang.android.widget.TextTextView
@@ -147,8 +165,9 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="@dimen/adDetailMarginTop_dialog"
                                     app:leftText="详细地址："
-                                    app:rightText="广州市天河区棠下\n荷光路街道\n星辉大楼303室"
+                                    app:rightText=""
                                     app:size="13"/>
+                                <!--广州市天河区棠下\n荷光路街道\n星辉大楼303室-->
 
                                 <com.mabang.android.widget.TextTextView
                                     android:id="@+id/dbi_ttvFacilitySituation"
@@ -156,7 +175,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="@dimen/adDetailMarginTop_dialog"
                                     app:leftText="雨棚材质："
-                                    app:rightText="不锈钢"
+                                    app:rightText=""
                                     app:size="13"/>
 
                                 <com.mabang.android.widget.TextTextView
@@ -165,7 +184,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="@dimen/adDetailMarginTop_dialog"
                                     app:leftText="广告状态："
-                                    app:rightText="空闲"
+                                    app:rightText=""
                                     app:size="13"/>
 
                                 <com.mabang.android.widget.TextTextView
@@ -174,7 +193,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="@dimen/adDetailMarginTop_dialog"
                                     app:leftText="规格："
-                                    app:rightText="2m*2m"
+                                    app:rightText=""
                                     app:size="13"/>
 
                                 <com.mabang.android.widget.TextTextView

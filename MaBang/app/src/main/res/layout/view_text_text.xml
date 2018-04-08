@@ -23,8 +23,9 @@
         android:background="@null"
         android:gravity=""
         android:lineSpacingExtra="2dp"
-        android:text="广州市天河区棠下\n荷光路街道\n星辉大楼303室"
+        android:text=""
         android:textColor="@color/textGray"
         android:textSize="14sp"/>
+    <!--广州市天河区棠下\n荷光路街道\n星辉大楼303室-->
 
 </LinearLayout>

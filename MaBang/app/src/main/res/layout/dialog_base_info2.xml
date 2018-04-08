@@ -67,9 +67,10 @@
                         android:layout_marginLeft="@dimen/adDetailMarginSize_dialog"
                         android:layout_marginRight="@dimen/adDetailMarginSize_dialog"
                         android:gravity="center_vertical"
-                        android:text="天河区荷光路"
+                        android:text=""
                         android:textColor="#333333"
                         android:textSize="17sp"/>
+                    <!--天河区荷光路-->
 
                 </RelativeLayout>
 
@@ -147,8 +148,9 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="@dimen/adDetailMarginTop_dialog"
                                     app:leftText="详细地址："
-                                    app:rightText="广州市天河区棠下\n荷光路街道\n星辉大楼303室"
+                                    app:rightText=""
                                     app:size="13"/>
+                                <!--广州市天河区棠下\n荷光路街道\n星辉大楼303室-->
 
                                 <com.mabang.android.widget.TextTextView
                                     android:id="@+id/dbi_ttvFacilitySituation"

@@ -67,7 +67,7 @@
         <activity android:name=".activity.user.AdPreselectActivity"/>
 
         <activity android:name=".activity.worker.WorkerLoginActivity"
-                  android:launchMode="singleTask"/>
+                  android:launchMode="singleTask"/><!--launchMode="singleTask" -->
         <activity android:name=".activity.worker.WorkerHomeActivity"
                   android:launchMode="singleTask"
                   android:windowSoftInputMode="adjustResize|stateHidden"

@@ -15,7 +15,7 @@
     <color name="blue">#0066ff</color>
     <color name="line">#cccccc</color>-->
 
-    <color name="hintColor">#9ecccccc</color>
+    <color name="hintColor">#dd777777</color>
     <color name="transparent">#00ffffff</color>
     <color name="line">#9ecccccc</color>
     <color name="item_pressed">#55ffffff</color>

@@ -39,8 +39,9 @@
                 android:layout_marginRight="@dimen/adDetailMarginSize"
                 android:layout_toLeftOf="@id/dbit_ivLocationIcon"
                 android:gravity="center_vertical"
-                android:text="天河区荷光路"
+                android:text=""
                 android:textSize="16sp"/>
+            <!--天河区荷光路-->
 
         </RelativeLayout>
 
@@ -98,7 +99,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:lineSpacingExtra="6dp"
-                    android:text="广告状态：广州技客科技\n详细地址：广州市天河区荷光路街道星辉大楼303室\n雨棚状态：不锈钢\n规格：2m*2m\n备注：无"/>
+                    android:text=""/>
+                <!--广告状态：广州技客科技\n详细地址：广州市天河区荷光路街道星辉大楼303室\n雨棚状态：不锈钢\n规格：2m*2m\n备注：无-->
             </LinearLayout>
 
         </LinearLayout>

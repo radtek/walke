@@ -84,6 +84,25 @@ public class WorkerLoginActivity extends AppActivity {
 //            etPassword.setText(workerPassword);
 //            etPassword.setSelection(workerPassword.length());
 //        }
+
+        //现象：当输入了手机+密码。还未登陆点击Home键后，再打开APP，发现密码填充到了手机栏
+
+        String lastLoginName = SharepreUtil.getString(this, Constants.LAST_WORKER_LOGIN_NAME);
+        etPhone.setText("");//13632495711
+        if (!TextUtils.isEmpty(lastLoginName)){
+            etPhone.setText(lastLoginName);
+            etPhone.setSelection(lastLoginName.length());
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        // //现象：当输入了手机+密码。还未登陆点击Home键后，再打开APP，发现密码填充到了手机栏
+        if (livPhone!=null){
+            String username = livPhone.getEtInput().getText().toString().trim();
+            SharepreUtil.putString(WorkerLoginActivity.this,Constants.LAST_WORKER_LOGIN_NAME,username);
+        }
     }
 
     private void checkLogin() {

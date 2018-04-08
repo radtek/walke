@@ -104,7 +104,27 @@ public class UserLoginActivity extends AppActivity {
 //            etPhone.setText(lastLoginName);
 //            etPhone.setSelection(lastLoginName.length());
 //        }
+
+        //现象：当输入了手机+验证码。还未登陆点击Home键后，再打开APP，发现验证码填充到了手机栏
+        String lastLoginName = SharepreUtil.getString(this, Constants.LAST_USER_LOGIN_NAME);
+        etPhone.setText("");
+        if (!TextUtils.isEmpty(lastLoginName)){
+            etPhone.setText(lastLoginName);
+            etPhone.setSelection(lastLoginName.length());
+        }
     }
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        //现象：当输入了手机+密码。还未登陆点击Home键后，再打开APP，发现密码填充到了手机栏
+        if (livPhone!=null){
+            String username = livPhone.getEtInput().getText().toString().trim();
+            SharepreUtil.putString(UserLoginActivity.this,Constants.LAST_USER_LOGIN_NAME,username);
+        }
+    }
+
 
     private void checkLogin() {
 //        VoBase voBase = new VoBase();//
@@ -265,12 +285,6 @@ public class UserLoginActivity extends AppActivity {
         });
     }
 
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-
-    }
 
 
 }

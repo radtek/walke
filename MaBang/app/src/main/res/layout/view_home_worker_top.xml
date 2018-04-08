@@ -26,10 +26,11 @@
             android:background="@drawable/corners_search_input"
             android:gravity="center_vertical"
             android:iconifiedByDefault="false"
-            android:queryHint="(当前地址：)广州市天河区荷光街道"
+            android:queryHint=""
             android:searchIcon="@null"
             android:textColor="#000000"
             android:textSize="16sp"/>
+        <!--(当前地址：)广州市天河区荷光街道-->
 
         <ImageView
             android:layout_width="0dp"
