@@ -187,6 +187,10 @@ public abstract class MapActivity extends AppActivity {
 
                 if (!NetWorkUtil.isNetworkConnected(MapActivity.this)) {
                     toast("网络连接不可用");//
+
+                    // 现象 当重定位(如：客户首页点击定位icon)无网络时isFirstSearch为true，请求不到数据，当如果一会后网络恢复，移动地图会在OnMapStatusChangeListener回调，
+                    // 并执行一次定位后请求。造成数据“怪异”。
+                    isFirstSearch = false;//避免上述情况
                     return;
                 }
 
@@ -576,16 +580,30 @@ public abstract class MapActivity extends AppActivity {
                         ivOverlay.setImageResource(R.mipmap.icon_overlay_red);
                         tvOverlayNumber.setText("" + (i + 1));
                         mBd = BitmapDescriptorFactory.fromView(mOverlayView);
+                        MarkerOptions ooA = new MarkerOptions().position(latLng).icon(mBd).zIndex(2).draggable(true);
+                        Marker marker = (Marker) (mBaiduMap.addOverlay(ooA));
+                        Bundle extraInfo = new Bundle();
+                        extraInfo.putSerializable(Constants.MARKER_INFO, bInfo);
+                        marker.setExtraInfo(extraInfo);
                     }else if (bInfo.getAdvanceType()==2){// 1为可预订的，2为我预订的，0就是其他数据
+
                         ivOverlay.setImageResource(R.mipmap.icon_overlay_blue_mine);
                         tvOverlayNumber.setText("" + (i + 1));
                         mBd = BitmapDescriptorFactory.fromView(mOverlayView);
+                        MarkerOptions ooA = new MarkerOptions().position(latLng).icon(mBd).zIndex(2).draggable(true);
+                        Marker marker = (Marker) (mBaiduMap.addOverlay(ooA));
+                        Bundle extraInfo = new Bundle();
+                        extraInfo.putSerializable(Constants.MARKER_INFO, bInfo);
+                        marker.setExtraInfo(extraInfo);
                     }
-                    MarkerOptions ooA = new MarkerOptions().position(latLng).icon(mBd).zIndex(2).draggable(true);
-                    Marker marker = (Marker) (mBaiduMap.addOverlay(ooA));
-                    Bundle extraInfo = new Bundle();
-                    extraInfo.putSerializable(Constants.MARKER_INFO, bInfo);
-                    marker.setExtraInfo(extraInfo);
+
+                    //用以下这个会导致：bInfo.getAdvanceType()==1也有一个默认覆盖物了
+//                    MarkerOptions ooA = new MarkerOptions().position(latLng).icon(mBd).zIndex(2).draggable(true);
+//                    Marker marker = (Marker) (mBaiduMap.addOverlay(ooA));
+//                    Bundle extraInfo = new Bundle();
+//                    extraInfo.putSerializable(Constants.MARKER_INFO, bInfo);
+//                    marker.setExtraInfo(extraInfo);
+
                 }
             }
         }
@@ -601,6 +619,7 @@ public abstract class MapActivity extends AppActivity {
                 LatLng latLng = new LatLng(locationLat,locationLng);
                 if (i < 100) {
                     if (bInfo.getAdvanceType()==1) {// 1为可预订的，2为我预订的，0就是其他数据
+
                         ivOverlay.setImageResource(R.mipmap.icon_overlay_blue);
                         tvOverlayNumber.setText("" + (i + 1));
                         mBd = BitmapDescriptorFactory.fromView(mOverlayView);
@@ -645,16 +664,23 @@ public abstract class MapActivity extends AppActivity {
                             ivOverlay.setImageResource(R.mipmap.icon_overlay_red);
                             tvOverlayNumber.setText("" + (i + 1));
                             mBd = BitmapDescriptorFactory.fromView(mOverlayView);
+                            MarkerOptions ooA = new MarkerOptions().position(latLng).icon(mBd).zIndex(2).draggable(true);
+                            Marker marker = (Marker) (mBaiduMap.addOverlay(ooA));
+                            Bundle extraInfo = new Bundle();
+                            extraInfo.putSerializable(Constants.MARKER_INFO, bInfo);
+                            marker.setExtraInfo(extraInfo);
                         }else if (bInfo.getAdvanceType()==2){// 1为可预订的，2为我预订的，0就是其他数据
+
                             ivOverlay.setImageResource(R.mipmap.icon_overlay_blue_mine);
                             tvOverlayNumber.setText("" + (i + 1));
                             mBd = BitmapDescriptorFactory.fromView(mOverlayView);
+                            MarkerOptions ooA = new MarkerOptions().position(latLng).icon(mBd).zIndex(2).draggable(true);
+                            Marker marker = (Marker) (mBaiduMap.addOverlay(ooA));
+                            Bundle extraInfo = new Bundle();
+                            extraInfo.putSerializable(Constants.MARKER_INFO, bInfo);
+                            marker.setExtraInfo(extraInfo);
                         }
-                        MarkerOptions ooA = new MarkerOptions().position(latLng).icon(mBd).zIndex(2).draggable(true);
-                        Marker marker = (Marker) (mBaiduMap.addOverlay(ooA));
-                        Bundle extraInfo = new Bundle();
-                        extraInfo.putSerializable(Constants.MARKER_INFO, bInfo);
-                        marker.setExtraInfo(extraInfo);
+
                     }
                 }
             }
@@ -672,6 +698,7 @@ public abstract class MapActivity extends AppActivity {
                         selectItem = i;
                         selectlatLng = latLng;
                     } else if (bInfo.getAdvanceType()==1) {// 1为可预订的，2为我预订的，0就是其他数据
+
                         ivOverlay.setImageResource(R.mipmap.icon_overlay_blue);
                         tvOverlayNumber.setText("" + (i + 1));
                         mBd = BitmapDescriptorFactory.fromView(mOverlayView);

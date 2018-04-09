@@ -202,6 +202,8 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
     protected void enterFirstData(SearchInfo result) {
         super.enterFirstData(result);
 //        mDefaultSearchInfo = result;
+
+        last_search_way = SEARCH_WAY_LOCATION;//---------------------------------查询成功再设定查询方式
         setSearchInfoData(result);
     }
 
@@ -260,7 +262,7 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
         resetRadioButton();
         mInputAddress = etSearch.getText().toString().trim();
         if (TextUtils.isEmpty(mInputAddress) || mInputAddress.equals(locationAddress)) {
-            last_search_way = SEARCH_WAY_LOCATION;//
+//            last_search_way = SEARCH_WAY_LOCATION;//
             /** 查询 ①默认进来传经纬度+(地图左上角经纬度、地图右下角经纬度 */
             resetLocation();
         } else {/** 查询 ③用户输入信息(模糊地址)，传区号id， */
@@ -334,11 +336,12 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
         }
         searchInfo.setAddress(etAddress + "");
         searchInfo.setZoneId(zoneId);
-        last_search_way = SEARCH_WAY_INPUT;
+//        last_search_way = SEARCH_WAY_INPUT;
         logI("inputSearchRequest 用户输入信息(模糊地址) address=" + etAddress);
         httpReuqest.sendMessage(Api.User_search, searchInfo, true, new HttpReuqest.CallBack<SearchInfo>() {
             @Override
             public void onSuccess(Message message, SearchInfo result) {
+                last_search_way = SEARCH_WAY_INPUT;// ---------------------------查询成功再设定查询方式
                 setInputOrDialogSearchResult(result);
             }
 
@@ -572,7 +575,7 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
                 }
                 break;
             case R.id.homeUser_ivLocation://地位图标
-                last_search_way = SEARCH_WAY_LOCATION;//
+//                last_search_way = SEARCH_WAY_LOCATION;//
                 etSearch.clearFocus();
                 resetRadioButton();
                 //重新地位
@@ -750,10 +753,11 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
         if (infoStreet != null)
             searchInfo.setStreetId(infoStreet.getAreaId());
         logI("dialogSearchRequest 地址栏选择后查询:");
-        last_search_way = SEARCH_WAY_DIALOG;
+//        last_search_way = SEARCH_WAY_DIALOG;
         httpReuqest.sendMessage(Api.User_search, searchInfo, true, new HttpReuqest.CallBack<SearchInfo>() {
             @Override
             public void onSuccess(Message message, SearchInfo result) {
+                last_search_way = SEARCH_WAY_DIALOG;//---------------------------查询成功再设定查询方式
                 // TODO: 2018/2/16 获取相应数据做对应显示
                 setInputOrDialogSearchResult(result);
             }

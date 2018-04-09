@@ -25,13 +25,8 @@ import walke.base.tool.WindowUtil;
 
 
 /**
- * @author View
- * @date 2016/12/16 8:35
- * <p>
- * 发现
- * 快速连续创建2个dialog，会产生指引异常，
- * 第二次创建时：确实会新建对象(mDialog+内部控件)，但使用这些对象时会指向第一次创建的对象
- * 故需要设置为全局变量
+ * @author walke
+ * @date 2018/03/29
  */
 public class BillboardInfoDialog extends MyDialog {
     private ImageView mIvLocation;

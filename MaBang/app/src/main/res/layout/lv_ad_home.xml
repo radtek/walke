@@ -22,7 +22,7 @@
             android:textColor="#ffffff"
             android:text="11"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="17dp"/>
+            android:layout_marginTop="16dp"/>
     </FrameLayout>
     <!--<ImageView
         android:id="@+id/lah_ivSelect"
