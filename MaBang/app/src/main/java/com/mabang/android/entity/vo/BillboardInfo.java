@@ -41,7 +41,7 @@ public class BillboardInfo extends VoBase {
 	private String statusText; // 状态 已使用、空闲
 
 	@DatabaseField(columnName = "statusDesc")
-	private String statusDesc ; // 有可能是空，有值就是公司名称
+	private String statusDesc ; // 状态描述 有可能是空，有值就是公司名称
 
 	@DatabaseField(columnName = "spec")
 	private String spec; // 规格
@@ -58,14 +58,21 @@ public class BillboardInfo extends VoBase {
 	@DatabaseField(columnName = "available")
 	private boolean available; // 是否可用、可被预约
 
-	private Integer areaId;
+	//	@DatabaseField(columnName = "isSelected") //应不要，会在app上用户改动
+	private boolean isSelected; // 预选广告位列表界面用来记录是否已勾选，仅用于本地(特有属性)，
 
 //	private boolean myAdvance; // 是否为我预约的  这个参数只会在“可预约”的条件中会有值体现，其它条件查询时值都为：false
 	// myAdvance 取消了，会导致解析出错
 	private int advanceType; // 1为可预订的，2为我预订的，0就是其他数据
 
-//	@DatabaseField(columnName = "isSelected") //应不要，会在app上用户改动
-	private boolean isSelected; // 预选广告位列表界面用来记录是否已勾选，仅用于本地(特有属性)，
+	private Integer provinceId; // 省份ID
+	private Integer cityId; // 城市ID
+	private Integer areaId; // 区域ID
+	private Integer streetId; // 街道ID
+
+	private String address; // 详细地址
+
+	private int status; // 状态：1为启用、非1为禁用
 
 	private List<BillboardImageInfo> advertisingImageList; // 广告位图
 	private List<BillboardImageInfo> acceptanceImageList; // 验收图
@@ -224,6 +231,46 @@ public class BillboardInfo extends VoBase {
 		isSelected = selected;
 	}
 
+	public Integer getProvinceId() {
+		return provinceId;
+	}
+
+	public void setProvinceId(Integer provinceId) {
+		this.provinceId = provinceId;
+	}
+
+	public Integer getCityId() {
+		return cityId;
+	}
+
+	public void setCityId(Integer cityId) {
+		this.cityId = cityId;
+	}
+
+	public Integer getStreetId() {
+		return streetId;
+	}
+
+	public void setStreetId(Integer streetId) {
+		this.streetId = streetId;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
+	}
+
 	public List<BillboardImageInfo> getAdvertisingImageList() {
 		return this.advertisingImageList;
 	}
@@ -264,6 +311,7 @@ public class BillboardInfo extends VoBase {
 				" id=" + id +
 				", uniqueCode='" + uniqueCode + '\'' +
 				", manageCode='" + manageCode + '\'' +
+				", advanceType=" + advanceType +
 				", shortName='" + shortName + '\'' +
 				", longAddress='" + longAddress + '\'' +
 				", shedMaterial='" + shedMaterial + '\'' +
@@ -275,7 +323,6 @@ public class BillboardInfo extends VoBase {
 				", locationLat='" + locationLat + '\'' +
 				", available=" + available +
 				", isSelected=" + isSelected +
-				", dbid=" + dbid +
 				", advertisingImageList=" + advertisingImageList +
 				", acceptanceImageList=" + acceptanceImageList +
 				", aliyunInfo=" + aliyunInfo +

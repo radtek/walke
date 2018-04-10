@@ -118,4 +118,10 @@ public class Api {
      */
     public final static String Worker_search = "2006";
 
+    /**
+     * 接口代码：2007 传入实体 billboardInfo
+     * 修改广告位基本信息
+     */
+    public final static String Worker_Ad_modify = "2007";
+
 }

@@ -36,14 +36,14 @@
                 android:layout_height="wrap_content"
                 app:rightArrowShow="false"
                 app:leftText="管理码"
-                app:rightEtEnable="false"/>
+                app:rightEtEnable="true"/>
             <com.mabang.android.widget.AdItemView
-                android:id="@+id/aae_itemUnicodeCode"
+                android:id="@+id/aae_itemUniqueCode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:rightArrowShow="false"
                 app:leftText="唯一码"
-                app:rightEtEnable="false"/>
+                app:rightEtEnable="true"/>
             <com.mabang.android.widget.AdItemView
                 android:id="@+id/aae_itemProvince"
                 android:layout_width="match_parent"
@@ -77,7 +77,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:rightArrowShow="false"
-                app:leftText="详情地址"
+                app:leftText="具体地址"
                 app:rightEtEnable="true"/>
             <com.mabang.android.widget.AdItemView
                 android:id="@+id/aae_itemShedMaterial"
@@ -101,7 +101,7 @@
                 app:leftText="备注"
                 app:rightEtEnable="true"/>
             <com.mabang.android.widget.AdItemView
-                android:id="@+id/aae_itemUse"
+                android:id="@+id/aae_itemUseStatus"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:rightArrowShow="true"

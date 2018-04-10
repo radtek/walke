@@ -132,6 +132,7 @@ public class DialogManager {
         ImageView ivCancel = (ImageView) inflate.findViewById(R.id.dbi_ivCancel);//“X”图标
         TextView tvAddress = (TextView) inflate.findViewById(R.id.dbi_tvAddress);//地址
         ImageView ivLocation = (ImageView) inflate.findViewById(R.id.dbi_ivLocation);//定位图标
+        ImageView ivEdit = (ImageView) inflate.findViewById(R.id.dbi_ivEdit);//定位图标
         TextView tvManagerCode = (TextView) inflate.findViewById(R.id.dbi_tvManagerCode);//管理编号
         TextView tvSoleCode = (TextView) inflate.findViewById(R.id.dbi_tvSoleCode);//唯一码
         TextTextView ttvCompany = (TextTextView) inflate.findViewById(R.id.dbi_ttvCompany);//公司---广告使用：广州技客科技
@@ -141,6 +142,7 @@ public class DialogManager {
         TextTextView ttvSpecification = (TextTextView) inflate.findViewById(R.id.dbi_ttvSpecification);//规格
         TextTextView ttvRemark = (TextTextView) inflate.findViewById(R.id.dbi_ttvRemark);//备注
         ivLocation.setVisibility(View.GONE);
+        ivEdit.setVisibility(View.GONE);
 
 //        tvAddress.setText(billboardInfo.getShortName());
         tvAddress.setText(AppUtils.textReplace(billboardInfo.getShortName(),""));

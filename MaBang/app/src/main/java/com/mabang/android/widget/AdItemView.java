@@ -60,4 +60,16 @@ public class AdItemView extends RelativeLayout {
         a.recycle();
 
     }
+
+    public TextView getTvName() {
+        return tvName;
+    }
+
+    public EditText getEtDesc() {
+        return etDesc;
+    }
+
+    public ImageView getIvArrow() {
+        return ivArrow;
+    }
 }

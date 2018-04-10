@@ -274,17 +274,17 @@ public class BaseActivity extends AppCompatActivity {
 
     public void logI(String message) {
         if (!TextUtils.isEmpty(message))
-            LogUtil.i(this.getClass().getSimpleName(), "-------------------> " + message);
+            LogUtil.i(this.getClass().getSimpleName(), "walke -------------------> " + message);
     }
 
     public void logD(String message) {
         if (!TextUtils.isEmpty(message))
-            LogUtil.d(this.getClass().getSimpleName(), "--------> " + message);
+            LogUtil.d(this.getClass().getSimpleName(), " walke--------> " + message);
     }
 
     public void logE(String message) {
         if (!TextUtils.isEmpty(message))
-            LogUtil.e(this.getClass().getSimpleName(), "---------      -----------> " + message);
+            LogUtil.e(this.getClass().getSimpleName(), "---------   walke   -----------> " + message);
     }
 
 
