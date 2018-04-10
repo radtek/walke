@@ -60,16 +60,27 @@
                         android:layout_marginRight="@dimen/adDetailMarginSize_dialog"
                         android:src="@mipmap/dialog_location_icon"/>
 
+                    <ImageView
+                        android:id="@+id/dbi_ivEdit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="16dp"
+                        android:layout_toLeftOf="@id/dbi_ivLocation"
+                        android:src="@mipmap/dialog_ad_edit"/>
+
                     <TextView
                         android:id="@+id/dbi_tvAddress"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="@dimen/adDetailMarginSize_dialog"
                         android:layout_marginRight="@dimen/adDetailMarginSize_dialog"
+                        android:layout_toLeftOf="@id/dbi_ivEdit"
                         android:gravity="center_vertical"
                         android:text=""
                         android:textColor="#333333"
-                        android:textSize="17sp"/>
+                        android:textSize="17sp"
+                        android:singleLine="true"
+                        android:enabled="true"/>
                     <!--天河区荷光路-->
 
                 </RelativeLayout>

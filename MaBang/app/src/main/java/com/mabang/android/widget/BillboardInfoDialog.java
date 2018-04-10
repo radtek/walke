@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.annotation.StyleRes;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,8 +16,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.mabang.android.R;
+import com.mabang.android.activity.worker.AdEditActivity;
 import com.mabang.android.activity.worker.PictureUploadingActivity;
 import com.mabang.android.config.Constants;
+import com.mabang.android.config.IntentCode;
 import com.mabang.android.entity.vo.BillboardInfo;
 import com.mabang.android.utils.AppUtils;
 
@@ -44,6 +47,7 @@ public class BillboardInfoDialog extends MyDialog {
     private Button mBtUploadPhotoAd;
     private Button mBtUploadPhotoDown;
     private BillboardInfo mBillboardInfo;
+    private ImageView mIvEdit;
 
     public BillboardInfoDialog(@NonNull Context context) {
         this(context, R.style.dialog_default);
@@ -70,8 +74,11 @@ public class BillboardInfoDialog extends MyDialog {
         mIvCancel = (ImageView) inflate.findViewById(R.id.dbi_ivCancel);
         //地址
         mTvAddress = (TextView) inflate.findViewById(R.id.dbi_tvAddress);
+
         //定位图标
         mIvLocation = (ImageView) inflate.findViewById(R.id.dbi_ivLocation);
+        //编辑图标
+        mIvEdit = (ImageView) inflate.findViewById(R.id.dbi_ivEdit);
         //管理编号
         mTvManagerCode = (TextView) inflate.findViewById(R.id.dbi_tvManagerCode);
         //唯一码
@@ -110,6 +117,15 @@ public class BillboardInfoDialog extends MyDialog {
             public void onClick(View v) {
                 if (mOnButtonClickListener != null)
                     mOnButtonClickListener.onClickLocation(mBillboardInfo);
+            }
+        });
+        mIvEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, AdEditActivity.class);
+                //添加一些参数
+                intent.putExtra(Constants.BILLBOARD_INFO, mBillboardInfo);
+                ((AppCompatActivity) context).startActivityForResult(intent, IntentCode.WORKER_TO_EDIT_AD);
             }
         });
         mBtBindLocation.setOnClickListener(new View.OnClickListener() {

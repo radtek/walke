@@ -53,7 +53,7 @@
                         android:background="@color/appPink"/>
 
                     <ImageView
-                        android:id="@+id/dbi_ivLocation"
+                        android:id="@+id/dbi2_ivLocation"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_alignParentRight="true"

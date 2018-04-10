@@ -1,5 +1,6 @@
 package com.mabang.android.activity.worker;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.text.TextUtils;
 import android.util.Log;
@@ -494,5 +495,10 @@ public class WorkerHomeActivity extends MapActivity {
         return false;
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        // TODO: 2018/4/10 当编辑返回后要处理a.弹窗内容改变，b.重新请求一次数据列表
 
+    }
 }

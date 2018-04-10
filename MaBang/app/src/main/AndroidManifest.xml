@@ -73,6 +73,7 @@
                   android:windowSoftInputMode="adjustResize|stateHidden"
             />
         <activity android:name=".activity.worker.PictureUploadingActivity"/>
+        <activity android:name=".activity.worker.AdEditActivity"/>
 
 
         <!-- 百度地图 -->

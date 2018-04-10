@@ -2,6 +2,7 @@
 <resources>
 
     <attr name="rightText" format="string|reference"/>
+    <attr name="leftText" format="string|reference"/>
 
     <declare-styleable name="TitleView">
         <attr name="ivLeft" format="reference|integer"/>
@@ -13,10 +14,20 @@
         <attr name="showBottom" format="boolean"/>
     </declare-styleable>
 
+    <declare-styleable name="AdItemView">
+        <attr name="leftText"/>
+        <attr name="rightArrowShow" format="boolean"/>
+        <attr name="rightEtEnable" format="boolean"/>
+    </declare-styleable>
+
+<!--
+    <attr name="leftText" format="string|reference"/>
+    -->
 
     <declare-styleable name="TextTextView">
         <!--<attr name="rightText" format="string|reference"/>  于前一个重复定义报错故提出来-->
-        <attr name="leftText" format="string|reference"/>
+       <!-- <attr name="leftText" format="string|reference"/>-->
+        <attr name="leftText" />
         <attr name="size" format="integer|reference"/>
         <attr name="rightText"/>
     </declare-styleable>

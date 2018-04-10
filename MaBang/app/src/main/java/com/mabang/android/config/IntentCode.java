@@ -8,4 +8,5 @@ package com.mabang.android.config;
 public class IntentCode {
     public static final int AdPreselect_to_AdDetails=40;
     public static final int AdDetails_Back=41;
+    public static final int WORKER_TO_EDIT_AD = 42;
 }
