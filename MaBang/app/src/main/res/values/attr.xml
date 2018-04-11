@@ -3,6 +3,7 @@
 
     <attr name="rightText" format="string|reference"/>
     <attr name="leftText" format="string|reference"/>
+    <attr name="rightHintText" format="string|reference"/>
 
     <declare-styleable name="TitleView">
         <attr name="ivLeft" format="reference|integer"/>
@@ -16,6 +17,7 @@
 
     <declare-styleable name="AdItemView">
         <attr name="leftText"/>
+        <attr name="rightHintText"/>
         <attr name="rightArrowShow" format="boolean"/>
         <attr name="rightEtEnable" format="boolean"/>
     </declare-styleable>

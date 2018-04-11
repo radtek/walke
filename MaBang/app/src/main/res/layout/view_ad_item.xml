@@ -23,7 +23,7 @@
             android:gravity="center_vertical"
             android:text="管理码"
             android:textColor="#333333"
-            android:textSize="17sp"/>
+            android:textSize="16sp"/>
 
         <ImageView
             android:id="@+id/vai_ivArrow"
@@ -33,19 +33,35 @@
             android:src="@mipmap/arrow_right"
             android:layout_alignParentRight="true"/>
 
-        <EditText
-            android:id="@+id/vai_etDesc"
+        <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginRight="@dimen/adDetailMarginSize"
+            android:layout_marginRight="4dp"
             android:layout_toLeftOf="@id/vai_ivArrow"
-            android:layout_toRightOf="@id/vai_tvName"
-            android:gravity="center_vertical|end"
-            android:hint="请选择"
-            android:textColorHint="@color/hintColor"
-            android:textColor="#333333"
-            android:textSize="17sp"
-            android:background="#fcfcfc"/>
+            android:layout_toRightOf="@id/vai_tvName">
+            <TextView
+                android:id="@+id/vai_tvDesc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical|end"
+                android:textSize="16sp"
+                android:text="请选择"/>
+            <com.mabang.android.widget.MyEditText
+                android:id="@+id/vai_etDesc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical|end"
+                android:hint=""
+                android:textColorHint="@color/hintColor"
+                android:textColor="#6b6b6b"
+                android:textSize="16sp"
+                android:background="#fcfcfc"
+                android:singleLine="true"
+                android:enabled="true"
+                />
+        </FrameLayout>
+
+
 
         <View
             android:id="@+id/vai_lineBottom"

@@ -36,6 +36,7 @@
                 android:layout_height="wrap_content"
                 app:rightArrowShow="false"
                 app:leftText="管理码"
+                app:rightHintText="请输入管理码"
                 app:rightEtEnable="true"/>
             <com.mabang.android.widget.AdItemView
                 android:id="@+id/aae_itemUniqueCode"
@@ -43,6 +44,7 @@
                 android:layout_height="wrap_content"
                 app:rightArrowShow="false"
                 app:leftText="唯一码"
+                app:rightHintText="请输入唯一码"
                 app:rightEtEnable="true"/>
             <com.mabang.android.widget.AdItemView
                 android:id="@+id/aae_itemProvince"
@@ -50,6 +52,7 @@
                 android:layout_height="wrap_content"
                 app:rightArrowShow="true"
                 app:leftText="所在省"
+                app:rightHintText="请选择"
                 app:rightEtEnable="false"/>
             <com.mabang.android.widget.AdItemView
                 android:id="@+id/aae_itemCity"
@@ -57,6 +60,7 @@
                 android:layout_height="wrap_content"
                 app:rightArrowShow="true"
                 app:leftText="所在市"
+                app:rightHintText="请选择"
                 app:rightEtEnable="false"/>
             <com.mabang.android.widget.AdItemView
                 android:id="@+id/aae_itemZone"
@@ -64,6 +68,7 @@
                 android:layout_height="wrap_content"
                 app:rightArrowShow="true"
                 app:leftText="所在区"
+                app:rightHintText="请选择"
                 app:rightEtEnable="false"/>
             <com.mabang.android.widget.AdItemView
                 android:id="@+id/aae_itemStreet"
@@ -71,6 +76,7 @@
                 android:layout_height="wrap_content"
                 app:rightArrowShow="true"
                 app:leftText="所在街道"
+                app:rightHintText="请选择"
                 app:rightEtEnable="false"/>
             <com.mabang.android.widget.AdItemView
                 android:id="@+id/aae_itemDetailAddress"
@@ -78,6 +84,7 @@
                 android:layout_height="wrap_content"
                 app:rightArrowShow="false"
                 app:leftText="具体地址"
+                app:rightHintText="请输入具体地址"
                 app:rightEtEnable="true"/>
             <com.mabang.android.widget.AdItemView
                 android:id="@+id/aae_itemShedMaterial"
@@ -85,6 +92,7 @@
                 android:layout_height="wrap_content"
                 app:rightArrowShow="false"
                 app:leftText="雨棚材质"
+                app:rightHintText="请输入雨棚材质"
                 app:rightEtEnable="true"/>
             <com.mabang.android.widget.AdItemView
                 android:id="@+id/aae_itemSpec"
@@ -92,6 +100,7 @@
                 android:layout_height="wrap_content"
                 app:rightArrowShow="false"
                 app:leftText="规格"
+                app:rightHintText="请输入规格"
                 app:rightEtEnable="true"/>
             <com.mabang.android.widget.AdItemView
                 android:id="@+id/aae_itemMarks"
@@ -99,6 +108,7 @@
                 android:layout_height="wrap_content"
                 app:rightArrowShow="false"
                 app:leftText="备注"
+                app:rightHintText="请输入备注"
                 app:rightEtEnable="true"/>
             <com.mabang.android.widget.AdItemView
                 android:id="@+id/aae_itemUseStatus"
@@ -106,6 +116,7 @@
                 android:layout_height="wrap_content"
                 app:rightArrowShow="true"
                 app:leftText="可使用状态"
+                app:rightHintText="请选择"
                 app:rightEtEnable="false"
                 android:visibility="gone"/>
 

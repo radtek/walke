@@ -124,4 +124,9 @@ public class Api {
      */
     public final static String Worker_Ad_modify = "2007";
 
+    /**
+     * 联动地址信息
+     */
+    public final static String Worker_address = "2008";
+
 }

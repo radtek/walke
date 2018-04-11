@@ -53,7 +53,7 @@ public class MyEditText extends EditText implements View.OnFocusChangeListener, 
         int drawablePadding = getCompoundDrawablePadding();
 
         //this.mClearDrawable.setBounds(0,0, this.mClearDrawable.getIntrinsicWidth()-drawablePadding, this.mClearDrawable.getIntrinsicHeight()-drawablePadding);
-        int temp = ViewUtil.dpToPx(context, 13);
+        int temp = ViewUtil.dpToPx(context, 0);//13
         this.mClearDrawable.setBounds(-temp,0, this.mClearDrawable.getIntrinsicWidth()-drawablePadding-temp, this.mClearDrawable.getIntrinsicHeight()-drawablePadding);
         //默认设置隐藏图标
         this.setClearIconVisible(false);

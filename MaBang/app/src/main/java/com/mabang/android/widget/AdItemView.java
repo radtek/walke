@@ -19,6 +19,7 @@ import com.mabang.android.R;
 public class AdItemView extends RelativeLayout {
     private TextView tvName;
     private EditText etDesc;
+    private TextView tvDesc;
     private ImageView ivArrow;
 
     public AdItemView(Context context) {
@@ -33,9 +34,10 @@ public class AdItemView extends RelativeLayout {
         super(context, attrs, defStyleAttr);
 
         LayoutInflater.from(context).inflate(R.layout.view_ad_item, this);
-        ivArrow = ((ImageView) findViewById(R.id.vai_ivArrow));//头部地址
-        etDesc = ((EditText) findViewById(R.id.vai_etDesc));//头部地址
-        tvName = ((TextView) findViewById(R.id.vai_tvName));//头部地址
+        ivArrow = ((ImageView) findViewById(R.id.vai_ivArrow));
+        etDesc = ((EditText) findViewById(R.id.vai_etDesc));
+        tvDesc = ((TextView) findViewById(R.id.vai_tvDesc));
+        tvName = ((TextView) findViewById(R.id.vai_tvName));
 
         TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.AdItemView, defStyleAttr, 0);
         int n = a.getIndexCount();
@@ -55,6 +57,14 @@ public class AdItemView extends RelativeLayout {
             }else if (attr == R.styleable.AdItemView_rightEtEnable) {
                 boolean istEnable = a.getBoolean(attr, true);
                 etDesc.setEnabled(istEnable);
+                if (istEnable)
+                    etDesc.setVisibility(VISIBLE);
+                else
+                    etDesc.setVisibility(GONE);
+            }else if (attr == R.styleable.AdItemView_rightHintText) {
+                String str = a.getString(attr);
+                if (!TextUtils.isEmpty(str))
+                    etDesc.setHint(str);
             }
         }
         a.recycle();
@@ -71,5 +81,9 @@ public class AdItemView extends RelativeLayout {
 
     public ImageView getIvArrow() {
         return ivArrow;
+    }
+
+    public TextView getTvDesc() {
+        return tvDesc;
     }
 }
