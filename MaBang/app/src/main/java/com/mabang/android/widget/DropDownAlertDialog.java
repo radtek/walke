@@ -460,6 +460,28 @@ public class DropDownAlertDialog extends AlertDialog implements View.OnClickList
             return;
         }
 
+        public void append(List<AreaInfo> list) {
+            this.clear();
+            if (list == null || list.size() == 0)
+                return;
+            int i = 0;
+//            boolean tag = false;
+            for (AreaInfo dropDownItemInfo : list) {
+                DropDownAlertDialogItem item = new DropDownAlertDialogItem(this.getContext(), dropDownItemInfo);
+                item.index = i;
+                item.setOnTouchListener(this);
+                item.topLine = DropDownAlertDialog.this.createLine(0xFFFFFFFF);
+                item.bootomLine = DropDownAlertDialog.this.createLine(0xFFDDDDDD);
+                this.addView(item.topLine);
+                this.addView(item);
+                this.addView(item.bootomLine);
+                i++;
+            }
+//            if (!tag && i > 0)
+//                this.activeItem = this.itemList.get(0).setChecked(true);
+            return;
+        }
+
         public void append(List<AreaInfo> list, Integer currentValue) {
             this.clear();
             if (list == null || list.size() == 0)

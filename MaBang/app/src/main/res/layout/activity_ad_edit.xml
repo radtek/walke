@@ -31,20 +31,20 @@
             android:layout_height="400dp"
             android:orientation="vertical">
             <com.mabang.android.widget.AdItemView
-                android:id="@+id/aae_itemManageCode"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:rightArrowShow="false"
-                app:leftText="管理码"
-                app:rightHintText="请输入管理码"
-                app:rightEtEnable="true"/>
-            <com.mabang.android.widget.AdItemView
                 android:id="@+id/aae_itemUniqueCode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:rightArrowShow="false"
                 app:leftText="唯一码"
                 app:rightHintText="请输入唯一码"
+                app:rightEtEnable="true"/>
+            <com.mabang.android.widget.AdItemView
+                android:id="@+id/aae_itemManageCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:rightArrowShow="false"
+                app:leftText="@string/ad_manageCode"
+                app:rightHintText="请输入管理编号"
                 app:rightEtEnable="true"/>
             <com.mabang.android.widget.AdItemView
                 android:id="@+id/aae_itemProvince"

@@ -53,6 +53,7 @@
                         android:background="@color/appPink"/>
 
                     <LinearLayout
+                        android:id="@+id/dbi_iconLayout"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_alignParentRight="true"
@@ -77,14 +78,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="@dimen/adDetailMarginSize_dialog"
-                        android:layout_marginRight="@dimen/adDetailMarginSize_dialog"
-                        android:layout_toLeftOf="@id/dbi_ivEdit"
+                        android:layout_marginRight="6dp"
+                        android:layout_toLeftOf="@id/dbi_iconLayout"
                         android:enabled="true"
                         android:gravity="center_vertical"
                         android:singleLine="true"
                         android:text=""
                         android:textColor="#333333"
-                        android:textSize="17sp"/>
+                        android:textSize="16sp"/>
                     <!--天河区荷光路-->
 
                 </RelativeLayout>

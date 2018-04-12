@@ -220,8 +220,8 @@ public abstract class MapActivity extends AppActivity {
                     public void onGetReverseGeoCodeResult(ReverseGeoCodeResult geoCodeResult) {
 //                        ReverseGeoCodeResult.AddressComponent addressDetail = geoCodeResult.getAddressDetail();
 //                        String streetNumber = addressDetail.streetNumber;//addressDetail可能为空
-                        if (geoCodeResult != null)
-                            locationZoneCode = geoCodeResult.getAdcode();
+                        if (geoCodeResult != null&&geoCodeResult.getAddressDetail()!=null)
+                            locationZoneCode = geoCodeResult.getAddressDetail().adcode;
                         if (MapActivity.this instanceof WorkerHomeActivity)
                             requestZoneDatas(locationZoneCode);
                     }

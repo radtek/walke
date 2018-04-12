@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">马邦广告</string>
+    <string name="ad_manageCode">管理编号</string>
 </resources>

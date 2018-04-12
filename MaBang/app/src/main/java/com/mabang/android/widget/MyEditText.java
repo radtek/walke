@@ -50,11 +50,17 @@ public class MyEditText extends EditText implements View.OnFocusChangeListener, 
         if (this.mClearDrawable == null)
             this.mClearDrawable = getResources().getDrawable(R.mipmap.icon_edittext_clear);
 
+        setCompoundDrawablePadding(ViewUtil.dpToPx(context, 2));
+
         int drawablePadding = getCompoundDrawablePadding();
 
         //this.mClearDrawable.setBounds(0,0, this.mClearDrawable.getIntrinsicWidth()-drawablePadding, this.mClearDrawable.getIntrinsicHeight()-drawablePadding);
         int temp = ViewUtil.dpToPx(context, 0);//13
         this.mClearDrawable.setBounds(-temp,0, this.mClearDrawable.getIntrinsicWidth()-drawablePadding-temp, this.mClearDrawable.getIntrinsicHeight()-drawablePadding);
+//        int right = this.mClearDrawable.getIntrinsicWidth() - drawablePadding - temp;
+//        int bottom = this.mClearDrawable.getIntrinsicHeight() - drawablePadding;
+//        this.mClearDrawable.setBounds(0,0, right, bottom);
+
         //默认设置隐藏图标
         this.setClearIconVisible(false);
         //设置焦点改变的监听
@@ -73,7 +79,7 @@ public class MyEditText extends EditText implements View.OnFocusChangeListener, 
     public boolean onTouchEvent(MotionEvent event) {
         if (event.getAction() == MotionEvent.ACTION_UP) {
             if (getCompoundDrawables()[2] != null) {
-                int left = ViewUtil.dpToPx(this.getContext(), 11);
+                int left = ViewUtil.dpToPx(this.getContext(), 1);
                 boolean touchable = event.getX() > (getWidth() - getTotalPaddingRight()-left)
                         && (event.getX() < ((getWidth() - getPaddingRight())));
 
@@ -105,8 +111,16 @@ public class MyEditText extends EditText implements View.OnFocusChangeListener, 
         void focusChange(View v, boolean hasFocus);
     }
 
+    /**
+     * 当外部需要监听焦点获取、失去时用，避免与 自定义的
+     *  “当ClearEditText焦点发生变化的时候，判断里面字符串长度设置清除图标的显示与隐藏”
+     *  冲突
+     */
     private MyFocusChangeListener mMyFocusChangeListener;
 
+    /**
+     * @param myFocusChangeListener
+     */
     public void setMyFocusChangeListener(MyFocusChangeListener myFocusChangeListener) {
         mMyFocusChangeListener = myFocusChangeListener;
     }

@@ -52,8 +52,8 @@ public class AdEditActivity extends AppActivity implements DropDownAlertDialog.O
     protected void initView() {
         initTitleViewById(R.id.aae_TitleView);
         btSave = ((Button) findViewById(R.id.aae_btSave));
-        itemManageCode = ((AdItemView) findViewById(R.id.aae_itemManageCode));//唯一码
         itemUniqueCode = ((AdItemView) findViewById(R.id.aae_itemUniqueCode));//唯一码
+        itemManageCode = ((AdItemView) findViewById(R.id.aae_itemManageCode));//管理码
         itemProvince = ((AdItemView) findViewById(R.id.aae_itemProvince));//省份
         itemCity = ((AdItemView) findViewById(R.id.aae_itemCity));//城市
         itemZone = ((AdItemView) findViewById(R.id.aae_itemZone));//区域
@@ -64,8 +64,9 @@ public class AdEditActivity extends AppActivity implements DropDownAlertDialog.O
         itemMarks = ((AdItemView) findViewById(R.id.aae_itemMarks));//备注
         itemUseStatus = ((AdItemView) findViewById(R.id.aae_itemUseStatus));//可使用状态
 
-        etManageCode = itemManageCode.getEtDesc();
         etUniqueCode = itemUniqueCode.getEtDesc();
+        etUniqueCode.setEnabled(false);
+        etManageCode = itemManageCode.getEtDesc();
 
         etDetailAddress = itemDetailAddress.getEtDesc();
         etShedMaterial = itemShedMaterial.getEtDesc();
@@ -187,20 +188,30 @@ public class AdEditActivity extends AppActivity implements DropDownAlertDialog.O
                 if (panelIndex > 1)
                     zoneInfo = mChoceAddressDialog.zonePanel.getDropDownItemInfo();
             }
+            if (provinceInfo != null)
+                addressInfo.setProvinceId(provinceInfo.getAreaId());
+            if (cityInfo != null)
+                addressInfo.setCityId(cityInfo.getAreaId());
+            if (zoneInfo != null)
+                addressInfo.setZoneId(zoneInfo.getAreaId());
         }else {
-            provinceInfo=mProvinceInfo;
-            cityInfo=mCityInfo;
-            zoneInfo=mZoneInfo;
+            if (mBillboardInfo!=null){
+                Integer provinceId = mBillboardInfo.getProvinceId();
+                if (provinceId!=null&&provinceId!=-1)
+                    addressInfo.setProvinceId(provinceId);
+                Integer cityId = mBillboardInfo.getCityId();
+                if (cityId!=null&&cityId!=-1)
+                    addressInfo.setCityId(cityId);
+                Integer areaId = mBillboardInfo.getAreaId();
+                if (areaId!=null&&areaId!=-1)
+                    addressInfo.setZoneId(areaId);
+            }
+
         }
 
-        if (provinceInfo != null)
-            addressInfo.setProvinceId(provinceInfo.getAreaId());
-        if (cityInfo != null)
-            addressInfo.setCityId(cityInfo.getAreaId());
-        if (zoneInfo != null)
-            addressInfo.setZoneId(zoneInfo.getAreaId());
 
-        this.httpReuqest.sendMessage(Api.Worker_address, addressInfo, false, new HttpReuqest.CallBack<AddressInfo>() {
+
+        httpReuqest.sendMessage(Api.Worker_address, addressInfo, false, new HttpReuqest.CallBack<AddressInfo>() {
             @Override
             public void onSuccess(Message message, AddressInfo result) {
                 if (result == null)
@@ -217,22 +228,35 @@ public class AdEditActivity extends AppActivity implements DropDownAlertDialog.O
 //                    }
 
                     mChoceAddressDialog.cityPanel.append(cityList, result.getCityId());
-                    if (panelIndex <= 1) {
+//                    if (panelIndex <= 1) {
                         mChoceAddressDialog.cityPanel.scrollActive();
-                    }
+//                    }
 
                     mChoceAddressDialog.zonePanel.append(zoneList, result.getZoneId());
-                    if (panelIndex <= 2) {
+//                    if (panelIndex <= 2) {
                         mChoceAddressDialog.zonePanel.scrollActive();
-                    }
+//                    }
 
                     if (streetList != null && streetList.size() > 0) {
                         mChoceAddressDialog.streetPanel.setVisibility(View.VISIBLE);
-                        mChoceAddressDialog.streetPanel.append(streetList, result.getStreetId());
-                        mChoceAddressDialog.streetPanel.scrollActive();
-                    } else
-                        mChoceAddressDialog.streetPanel.setVisibility(View.GONE);
 
+                        if (panelIndex == -1) {
+                            if (mBillboardInfo!=null&&mBillboardInfo.getStreetId()!=null&&mBillboardInfo.getStreetId()!=-1) {
+                                mChoceAddressDialog.streetPanel.append(streetList, mBillboardInfo.getStreetId());
+                                mChoceAddressDialog.streetPanel.scrollActive();
+                            }else {
+                                logI("panelIndex == -1   +   mBillboardInfo.getStreetId()=null");
+//                                mChoceAddressDialog.streetPanel.append(streetList);
+                                mChoceAddressDialog.streetPanel.append(streetList, result.getStreetId());
+                                mChoceAddressDialog.streetPanel.scrollActive();
+                            }
+                        }else {
+                            mChoceAddressDialog.streetPanel.append(streetList, result.getStreetId());
+                            mChoceAddressDialog.streetPanel.scrollActive();
+                        }
+                    } else {
+                        mChoceAddressDialog.streetPanel.setVisibility(View.GONE);
+                    }
                     mChoceAddressDialog.changeSize();
 
                     if (panelIndex == -1) {
@@ -240,16 +264,18 @@ public class AdEditActivity extends AppActivity implements DropDownAlertDialog.O
 
                         DropDownAlertDialog.DropDownAlertDialogPanel provincePanel = mChoceAddressDialog.provincePanel;
                         AreaInfo pInfo = provincePanel.getDropDownItemInfo();
-                        if (pInfo!=null)
+                        if (mBillboardInfo==null)
+                            return;
+                        if (pInfo!=null&&mBillboardInfo.getProvinceId()!=null&&mBillboardInfo.getProvinceId()!=-1)
                             tvProvince.setText(pInfo.getAreaName()+"");
                         AreaInfo cInfo = mChoceAddressDialog.cityPanel.getDropDownItemInfo();
-                        if (cInfo!=null)
+                        if (cInfo!=null&&mBillboardInfo.getCityId()!=null&&mBillboardInfo.getCityId()!=-1)
                             tvCity.setText(cInfo.getAreaName()+"");
                         AreaInfo zInfo = mChoceAddressDialog.zonePanel.getDropDownItemInfo();
-                        if (zInfo!=null)
+                        if (zInfo!=null&&mBillboardInfo.getAreaId()!=null&&mBillboardInfo.getAreaId()!=-1)
                             tvZone.setText(zInfo.getAreaName()+"");
                         AreaInfo sInfo = mChoceAddressDialog.streetPanel.getDropDownItemInfo();
-                        if (sInfo!=null)
+                        if (sInfo!=null&&mBillboardInfo.getStreetId()!=null&&mBillboardInfo.getStreetId()!=-1)
                             tvStreet.setText(sInfo.getAreaName()+"");
                     }
                 }
@@ -292,6 +318,212 @@ public class AdEditActivity extends AppActivity implements DropDownAlertDialog.O
 //            loadAddressInfo(index);
             enterLoadAddressInfo(index);
         }
+    }
+
+
+    @Override
+    public void onEnter(DropDownAlertDialog dialog) {
+        if (dialog == mChoceAddressDialog) {
+            mChoceAddressDialog.cancel();
+
+            mProvinceInfo = dialog.provincePanel.getDropDownItemInfo();//当断网选择会为null
+            if (mProvinceInfo != null) {
+                String name = mProvinceInfo.getAreaName();
+                tvProvince.setText(name+"");
+            }
+
+            mCityInfo = dialog.cityPanel.getDropDownItemInfo();//当断网选择会为null
+            if (mCityInfo != null) {
+                String name = mCityInfo.getAreaName();
+                tvCity.setText(name+"");
+            }
+
+            mZoneInfo = dialog.zonePanel.getDropDownItemInfo();//当断网选择会为null
+            if (mZoneInfo != null) {
+                String name = mZoneInfo.getAreaName();
+                tvZone.setText(name+"");
+            }
+            mStreetInfo = dialog.streetPanel.getDropDownItemInfo();//当断网选择会为null
+            if (mStreetInfo != null) {
+                String name = mStreetInfo.getAreaName();
+                tvStreet.setText(name+"");
+            }
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        super.onClick(v);
+        switch (v.getId()){
+            case R.id.aae_itemProvince:
+            case R.id.aae_itemCity:
+            case R.id.aae_itemZone:
+            case R.id.aae_itemStreet:
+                if (mChoceAddressDialog==null)
+                    return;
+                mChoceAddressDialog.show();
+                if (mChoceAddressDialog.provincePanel!=null)
+                    mChoceAddressDialog.provincePanel.scrollActive();//省份面板滑动到选中item
+                mChoceAddressDialog.cityPanel.scrollActive();//省份面板滑动到选中item
+                mChoceAddressDialog.zonePanel.scrollActive();//省份面板滑动到选中item
+                mChoceAddressDialog.streetPanel.scrollActive();//省份面板滑动到选中item
+                /*if (mChoceAddressDialog != null&&!TextUtils.isEmpty(mChoceAddressDialog.getChooseText())) {
+                    //mChoceAddressDialog不为空 且 有文本
+                    mChoceAddressDialog.show();
+
+                } else {//
+                    mChoceAddressDialog = new DropDownAlertDialog(this);
+                    mChoceAddressDialog.setOnItemChangeEvent(this);
+                    mChoceAddressDialog.setOnAlertDialogEvent(this);
+                    mChoceAddressDialog.show();
+//                    loadAddressInfo(-1);
+                    enterLoadAddressInfo(-1);
+                }*/
+                break;
+            case R.id.aae_btSave:// 保存
+                if (!fixInput()){
+                    return;
+                }
+                DialogUtil.tipsTwoButton(this, "取消", "确定", "保存当前修改？", new DialogUtil.TwoButtonClickListener() {
+                    @Override
+                    public void leftOnClick() {
+                    }
+
+                    @Override
+                    public void rightOnClick() {
+                        // TODO: 2018/4/10 a.做一个提交请求，b.成功后返回工人首页，并且带着参数
+//
+                        modifyBillboardInfo();
+                    }
+                });
+
+                break;
+
+
+        }
+    }
+
+
+    /**
+     * 修改广告位信息
+     */
+    private void modifyBillboardInfo() {
+//        BillboardInfo billboardInfo = new BillboardInfo();
+//
+
+        BillboardInfo billboardInfo = mBillboardInfo;
+
+        billboardInfo.setAccount(getMemberInfo().getAccount());
+        billboardInfo.setToken(getMemberInfo().getToken());
+
+        billboardInfo.setManageCode(etManageCode.getText().toString().trim());
+        billboardInfo.setUniqueCode(itemUniqueCode.getEtDesc().getText().toString().trim());
+        if (mProvinceInfo != null)
+            billboardInfo.setProvinceId(mProvinceInfo.getAreaId());
+        if (mCityInfo != null)
+            billboardInfo.setCityId(mCityInfo.getAreaId());
+        if (mZoneInfo != null)
+            billboardInfo.setAreaId(mZoneInfo.getAreaId());//区域id
+        if (mStreetInfo != null)
+            billboardInfo.setStreetId(mStreetInfo.getAreaId());
+
+        billboardInfo.setAddress(itemDetailAddress.getEtDesc().getText().toString().trim());
+        billboardInfo.setShedMaterial(itemShedMaterial.getEtDesc().getText().toString().trim());
+        billboardInfo.setSpec(itemSpec.getEtDesc().getText().toString().trim());
+        billboardInfo.setOtherDescribe(itemMarks.getEtDesc().getText().toString().trim());//备注
+
+        httpReuqest.sendMessage(Api.Worker_Ad_modify, billboardInfo, true, new HttpReuqest.CallBack<BillboardInfo>() {
+            @Override
+            public void onSuccess(Message message, BillboardInfo result) {
+                if (Api.OK == result.getCode()) {
+                    // 修改广告位信息 成功
+                    Intent data = new Intent(AdEditActivity.this, WorkerHomeActivity.class);
+                    data.putExtra(Constants.BILLBOARD_INFO,result);
+                    setResult(IntentCode.WORKER_TO_EDIT_AD, data);
+                    finish();
+
+                }//
+                 toast(result.getText() + "");
+            }
+
+            @Override
+            public void onError(Exception exc) {
+                logI(exc + "");
+            }
+
+            @Override
+            public void onFinish() {
+
+            }
+        });
+    }
+
+
+    /**
+     * @return  编辑内容筛查
+     */
+    private boolean fixInput() {
+
+       /* if (TextUtils.isEmpty(etManageCode.getText().toString().trim())
+                ||TextUtils.isEmpty(etUniqueCode.getText().toString().trim())
+                ||TextUtils.isEmpty(etProvince.getText().toString().trim())
+                ||TextUtils.isEmpty(etCity.getText().toString().trim())
+                ||TextUtils.isEmpty(etZone.getText().toString().trim())
+                ||TextUtils.isEmpty(etStreet.getText().toString().trim())
+                ||TextUtils.isEmpty(etDetailAddress.getText().toString().trim())
+                ||TextUtils.isEmpty(etShedMaterial.getText().toString().trim())
+                ||TextUtils.isEmpty(etSpec.getText().toString().trim())
+                ||TextUtils.isEmpty(etUseStatus.getText().toString().trim())
+                )
+            return false;*/
+        if (TextUtils.isEmpty(etManageCode.getText().toString().trim())){
+            toast("请输入管理码");
+            enterGetFocus(etManageCode);
+            return false;
+        }
+        if (TextUtils.isEmpty(etUniqueCode.getText().toString().trim())){
+            toast("请输入唯一码");
+            enterGetFocus(etUniqueCode);
+            return false;
+        }
+//        if (TextUtils.isEmpty(tvProvince.getText().toString().trim())||"请选择".equals(tvProvince.getText().toString().trim())){
+//            toast("请选择省份");
+//            return false;
+//        }
+//        if (TextUtils.isEmpty(tvCity.getText().toString().trim())||"请选择".equals(tvProvince.getText().toString().trim())){
+//            toast("请选择城市");
+//            return false;
+//        }
+//        if (TextUtils.isEmpty(tvZone.getText().toString().trim())||"请选择".equals(tvProvince.getText().toString().trim())){
+//            toast("请选择区域");
+//            return false;
+//        }
+//        if (TextUtils.isEmpty(tvStreet.getText().toString().trim())||"请选择".equals(tvProvince.getText().toString().trim())){
+//            toast("请选择街道");
+//            return false;
+//        }
+
+//        if (TextUtils.isEmpty(etDetailAddress.getText().toString().trim())){
+//            toast("请输入具体地址");
+//            enterGetFocus(etDetailAddress);
+//            return false;
+//        }
+//        if (TextUtils.isEmpty(etShedMaterial.getText().toString().trim())){
+//            toast("请输入雨棚材质");
+//            enterGetFocus(etShedMaterial);
+//            return false;
+//        }
+//        if (TextUtils.isEmpty(etSpec.getText().toString().trim())){
+//            toast("请输入规格");
+//            enterGetFocus(etSpec);
+//            return false;
+//        }
+//        if (TextUtils.isEmpty(etMarks.getText().toString().trim())){
+//            enterGetFocus(etMarks);
+//            toast("请输入备注");
+//            return false;
+//        }
+        return true;
     }
 
     /** 加载地址信息
@@ -371,201 +603,6 @@ public class AdEditActivity extends AppActivity implements DropDownAlertDialog.O
         });
 
         return;
-    }
-
-    @Override
-    public void onEnter(DropDownAlertDialog dialog) {
-        if (dialog == mChoceAddressDialog) {
-            mChoceAddressDialog.cancel();
-
-            mProvinceInfo = dialog.provincePanel.getDropDownItemInfo();//当断网选择会为null
-            if (mProvinceInfo != null) {
-                String name = mProvinceInfo.getAreaName();
-                tvProvince.setText(name+"");
-            }
-
-            mCityInfo = dialog.cityPanel.getDropDownItemInfo();//当断网选择会为null
-            if (mCityInfo != null) {
-                String name = mCityInfo.getAreaName();
-                tvCity.setText(name+"");
-            }
-
-            mZoneInfo = dialog.zonePanel.getDropDownItemInfo();//当断网选择会为null
-            if (mZoneInfo != null) {
-                String name = mZoneInfo.getAreaName();
-                tvZone.setText(name+"");
-            }
-            mStreetInfo = dialog.streetPanel.getDropDownItemInfo();//当断网选择会为null
-            if (mStreetInfo != null) {
-                String name = mStreetInfo.getAreaName();
-                tvStreet.setText(name+"");
-            }
-        }
-    }
-
-    @Override
-    public void onClick(View v) {
-        super.onClick(v);
-        switch (v.getId()){
-            case R.id.aae_itemProvince:
-            case R.id.aae_itemCity:
-            case R.id.aae_itemZone:
-            case R.id.aae_itemStreet:
-                if (mChoceAddressDialog==null)
-                    return;
-                mChoceAddressDialog.show();
-                if (mChoceAddressDialog.provincePanel!=null)
-                    mChoceAddressDialog.provincePanel.scrollActive();//省份面板滑动到选中item
-                /*if (mChoceAddressDialog != null&&!TextUtils.isEmpty(mChoceAddressDialog.getChooseText())) {
-                    //mChoceAddressDialog不为空 且 有文本
-                    mChoceAddressDialog.show();
-
-                } else {//
-                    mChoceAddressDialog = new DropDownAlertDialog(this);
-                    mChoceAddressDialog.setOnItemChangeEvent(this);
-                    mChoceAddressDialog.setOnAlertDialogEvent(this);
-                    mChoceAddressDialog.show();
-//                    loadAddressInfo(-1);
-                    enterLoadAddressInfo(-1);
-                }*/
-                break;
-            case R.id.aae_btSave:// 保存
-//                if (!fixInput()){
-//                    return;
-//                }
-                DialogUtil.tipsTwoButton(this, "取消", "确定", "保存当前修改？", new DialogUtil.TwoButtonClickListener() {
-                    @Override
-                    public void leftOnClick() {
-                    }
-
-                    @Override
-                    public void rightOnClick() {
-                        // TODO: 2018/4/10 a.做一个提交请求，b.成功后返回工人首页，并且带着参数
-//
-                        modifyBillboardInfo();
-                    }
-                });
-
-                break;
-
-
-        }
-    }
-
-    private boolean fixInput() {
-
-       /* if (TextUtils.isEmpty(etManageCode.getText().toString().trim())
-                ||TextUtils.isEmpty(etUniqueCode.getText().toString().trim())
-                ||TextUtils.isEmpty(etProvince.getText().toString().trim())
-                ||TextUtils.isEmpty(etCity.getText().toString().trim())
-                ||TextUtils.isEmpty(etZone.getText().toString().trim())
-                ||TextUtils.isEmpty(etStreet.getText().toString().trim())
-                ||TextUtils.isEmpty(etDetailAddress.getText().toString().trim())
-                ||TextUtils.isEmpty(etShedMaterial.getText().toString().trim())
-                ||TextUtils.isEmpty(etSpec.getText().toString().trim())
-                ||TextUtils.isEmpty(etUseStatus.getText().toString().trim())
-                )
-            return false;*/
-        if (TextUtils.isEmpty(etManageCode.getText().toString().trim())){
-            toast("请输入管理码");
-            enterGetFocus(etManageCode);
-            return false;
-        }
-        if (TextUtils.isEmpty(etUniqueCode.getText().toString().trim())){
-            toast("请输入唯一码");
-            enterGetFocus(etUniqueCode);
-            return false;
-        }
-        if (TextUtils.isEmpty(tvProvince.getText().toString().trim())){
-            toast("请选择省份");
-            return false;
-        }
-        if (TextUtils.isEmpty(tvCity.getText().toString().trim())){
-            toast("请选择城市");
-            return false;
-        }
-        if (TextUtils.isEmpty(tvZone.getText().toString().trim())){
-            toast("请选择区域");
-            return false;
-        }
-        if (TextUtils.isEmpty(tvStreet.getText().toString().trim())){
-            toast("请选择街道");
-            return false;
-        }
-        if (TextUtils.isEmpty(etDetailAddress.getText().toString().trim())){
-            toast("请输入具体地址");
-            enterGetFocus(etDetailAddress);
-            return false;
-        }
-        if (TextUtils.isEmpty(etShedMaterial.getText().toString().trim())){
-            toast("请输入雨棚材质");
-            enterGetFocus(etShedMaterial);
-            return false;
-        }
-        if (TextUtils.isEmpty(etSpec.getText().toString().trim())){
-            toast("请输入规格");
-            enterGetFocus(etSpec);
-            return false;
-        }
-        if (TextUtils.isEmpty(etMarks.getText().toString().trim())){
-            enterGetFocus(etMarks);
-            toast("请输入备注");
-            return false;
-        }
-        return true;
-    }
-
-    /**
-     * 修改广告位信息
-     */
-    private void modifyBillboardInfo() {
-//        BillboardInfo billboardInfo = new BillboardInfo();
-//        billboardInfo.setAccount(getMemberInfo().getAccount());
-//        billboardInfo.setToken(getMemberInfo().getToken());
-
-        BillboardInfo billboardInfo = mBillboardInfo;
-
-        billboardInfo.setManageCode(etManageCode.getText().toString().trim());
-        billboardInfo.setUniqueCode(itemUniqueCode.getEtDesc().getText().toString().trim());
-        if (mProvinceInfo != null)
-            billboardInfo.setProvinceId(mProvinceInfo.getAreaId());
-        if (mCityInfo != null)
-            billboardInfo.setCityId(mCityInfo.getAreaId());
-        if (mZoneInfo != null)
-            billboardInfo.setAreaId(mZoneInfo.getAreaId());//区域id
-        if (mStreetInfo != null)
-            billboardInfo.setStreetId(mStreetInfo.getAreaId());
-
-        billboardInfo.setAddress(itemDetailAddress.getEtDesc().getText().toString().trim());
-        billboardInfo.setShedMaterial(itemShedMaterial.getEtDesc().getText().toString().trim());
-        billboardInfo.setSpec(itemSpec.getEtDesc().getText().toString().trim());
-        billboardInfo.setOtherDescribe(itemMarks.getEtDesc().getText().toString().trim());//备注
-
-        httpReuqest.sendMessage(Api.Worker_Ad_modify, billboardInfo, true, new HttpReuqest.CallBack<BillboardInfo>() {
-            @Override
-            public void onSuccess(Message message, BillboardInfo result) {
-                if (Api.OK == result.getCode()) {
-                    // 修改广告位信息 成功
-                    BillboardInfo billboardInfo = new BillboardInfo();
-                    Intent data = new Intent(AdEditActivity.this, WorkerHomeActivity.class);
-                    data.putExtra(Constants.BILLBOARD_INFO,billboardInfo);
-                    setResult(IntentCode.WORKER_TO_EDIT_AD, data);
-                    finish();
-
-                }//
-                 toast(result.getText() + "");
-            }
-
-            @Override
-            public void onError(Exception exc) {
-                logI(exc + "");
-            }
-
-            @Override
-            public void onFinish() {
-
-            }
-        });
     }
 
 }

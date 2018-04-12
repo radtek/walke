@@ -21,6 +21,7 @@ import com.baidu.mapapi.search.geocode.ReverseGeoCodeResult;
 import com.mabang.android.R;
 import com.mabang.android.activity.base.MapActivity;
 import com.mabang.android.config.Api;
+import com.mabang.android.config.Constants;
 import com.mabang.android.entity.vo.BillboardInfo;
 import com.mabang.android.entity.vo.Message;
 import com.mabang.android.entity.vo.SearchInfo;
@@ -499,6 +500,12 @@ public class WorkerHomeActivity extends MapActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         // TODO: 2018/4/10 当编辑返回后要处理a.弹窗内容改变，b.重新请求一次数据列表
-
+        if (data!=null&&data.getSerializableExtra(Constants.BILLBOARD_INFO)!=null) {
+            BillboardInfo info = (BillboardInfo) data.getSerializableExtra(Constants.BILLBOARD_INFO);
+            mBillboardInfoDialog.setBillboardInfo(info);
+            if (!isFinishing() && !mBillboardInfoDialog.isShowing())
+                mBillboardInfoDialog.show();
+            reSearchRequest();//重新请求搜索信息，目的是更新刚改动的覆盖图标对应广告为
+        }
     }
 }
