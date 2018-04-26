@@ -76,8 +76,8 @@ public abstract class MapActivity extends AppActivity {
     private BitmapDescriptor mBd;
 
     protected BDLocation mBDLocation;
-    protected double[] mStartPoint;
-    protected double[] mEndPoint;
+//    protected double[] mStartPoint;
+//    protected double[] mEndPoint;
     //    private Marker mMarkerA;
     private Marker mMarkerBind;
 
@@ -224,6 +224,9 @@ public abstract class MapActivity extends AppActivity {
                             locationZoneCode = geoCodeResult.getAddressDetail().adcode;
                         if (MapActivity.this instanceof WorkerHomeActivity)
                             requestZoneDatas(locationZoneCode);
+                        else if (MapActivity.this instanceof UserHomeActivity)
+                            requestZoneDatas(Api.User_search,locationZoneCode);
+
                     }
                 });
                 if (!NetWorkUtil.isNetworkConnected(MapActivity.this)) {
@@ -258,6 +261,37 @@ public abstract class MapActivity extends AppActivity {
         searchInfo.setZoneId(locationZoneCode);
         logI("requesrZoneDatas 工人首页定位后默认查询");
         httpReuqest.sendMessage(Api.Worker_search, searchInfo, false, new HttpReuqest.CallBack<SearchInfo>() {
+            @Override
+            public void onSuccess(Message message, SearchInfo result) {
+//                initTypeOverlay(result);
+                enterFirstData(result);
+            }
+
+            @Override
+            public void onError(Exception exc) {
+                logI(exc + "");
+            }
+
+            @Override
+            public void onFinish() {
+
+            }
+        });
+    }
+
+    private void requestZoneDatas(String api,int locationZoneCode) {
+        SearchInfo searchInfo = new SearchInfo();
+        // TODO: 2018/2/14 设置对应参数
+        searchInfo.setAccount(getMemberInfo().getAccount());
+        searchInfo.setToken(getMemberInfo().getToken());
+        if (locationZoneCode == 0) {
+            toast("无法准确获取当前位置，请到网络较好的地方重试");
+            return;
+        }
+//        searchInfo.setAddress(zoneName + "");
+        searchInfo.setZoneId(locationZoneCode);
+        logI("requesrZoneDatas 工人首页定位后默认查询");
+        httpReuqest.sendMessage(api, searchInfo, false, new HttpReuqest.CallBack<SearchInfo>() {
             @Override
             public void onSuccess(Message message, SearchInfo result) {
 //                initTypeOverlay(result);
@@ -318,15 +352,15 @@ public abstract class MapActivity extends AppActivity {
             if (isFirstSearch) {
                 isFirstSearch = false;
 //                isFirstLoc = false;//改为 onMapStatusChangeFinish方法里修改值--这个有异常 因为onMapStatusChange不一定执行
-                mStartPoint = new double[2];
-                mEndPoint = new double[2];
-                mStartPoint[0] = ll.latitude;
-                mStartPoint[1] = ll.longitude;
-                mEndPoint[0] = lly.latitude;
-                mEndPoint[1] = lly.longitude;
+//                mStartPoint = new double[2];
+//                mEndPoint = new double[2];
+//                mStartPoint[0] = ll.latitude;
+//                mStartPoint[1] = ll.longitude;
+//                mEndPoint[0] = lly.latitude;
+//                mEndPoint[1] = lly.longitude;
 
                 if (MapActivity.this instanceof UserHomeActivity) {
-                    searchRequestFirst(Api.User_search, mStartPoint, mEndPoint);
+//                    searchRequestFirst(Api.User_search, mStartPoint, mEndPoint);
                 } else {
 //                    searchRequestFirst(Api.Worker_search, mStartPoint, mEndPoint);
                 }

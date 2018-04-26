@@ -98,6 +98,11 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
     private boolean inputTextGetLatLng;
     private HomeAdListAdapter mAdapter;
     private List<BillboardInfo> mTypeList;
+
+    /**
+     * 选择的区号
+     */
+    protected int mZoneCode;//定位到的区号
 //    private SearchInfo mDefaultSearchInfo;
 
     @Override
@@ -201,8 +206,7 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
     @Override
     protected void enterFirstData(SearchInfo result) {
         super.enterFirstData(result);
-//        mDefaultSearchInfo = result;
-
+        mZoneCode=locationZoneCode;
         last_search_way = SEARCH_WAY_LOCATION;//---------------------------------查询成功再设定查询方式
         setSearchInfoData(result);
     }
@@ -213,7 +217,6 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
         if (mTypeList == null)
             initOverlay(mSearchInfo, markerInfo);
         else {
-//            initTypeOverlay(mDefaultSearchInfo, mTypeList, markerInfo);
             initTypeOverlay(mSearchInfo, mTypeList, markerInfo);
         }
         setMapCenter(marker.getPosition(), new LocateDoneListener() {
@@ -241,6 +244,8 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
                 this.changeAddressDialog.show();
             } else {
                 this.changeAddressDialog = new DropDownAlertDialog(this);
+                this.changeAddressDialog.streetPanel.setVisibility(View.GONE);
+                this.changeAddressDialog.changeSize();
                 this.changeAddressDialog.setOnItemChangeEvent(this);
                 this.changeAddressDialog.setOnAlertDialogEvent(this);
                 this.changeAddressDialog.show();
@@ -248,6 +253,8 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
             }
         } else {
             this.changeAddressDialog = new DropDownAlertDialog(this);
+            this.changeAddressDialog.streetPanel.setVisibility(View.GONE);
+            this.changeAddressDialog.changeSize();
             this.changeAddressDialog.setOnItemChangeEvent(this);
             this.changeAddressDialog.setOnAlertDialogEvent(this);
             this.changeAddressDialog.show();
@@ -272,7 +279,7 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
                 inputTextGetLatLng = false;
 //                toast("获取对应地理位置失败,请重试");
                 //todo 加没取成功就直接用文本请求服务器查？
-                inputSearchRequest(mInputAddress, locationZoneCode);//③再请求模糊查询
+                inputSearchRequest(mInputAddress, mZoneCode);//③再请求模糊查询
                 return;
             }
             inputTextGetLatLng = true;
@@ -284,8 +291,8 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
 
                 @Override
                 public void onGetReverseGeoCodeResult(ReverseGeoCodeResult geoCodeResult) {
-                    locationZoneCode = geoCodeResult.getAdcode();
-                    inputSearchRequest(mInputAddress, locationZoneCode);//③再请求模糊查询
+                    mZoneCode = geoCodeResult.getAdcode();
+                    inputSearchRequest(mInputAddress, mZoneCode);//③再请求模糊查询
                 }
             });
             if (!NetWorkUtil.isNetworkConnected(UserHomeActivity.this)) {
@@ -414,22 +421,23 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
             if (infoProvince != null)
                 searchInfo.setStreetId(infoStreet.getAreaId());
         } else if (last_search_way == SEARCH_WAY_INPUT) {
-            if (locationZoneCode == 0) {
+            if (mZoneCode == 0) {
                 toast("无法准确获取当前位置，请到网络较好的地方重试");
                 return;
             }
             logI("searchRequestType 用户输入信息(模糊地址)：" + searchType.getText());
             searchInfo.setAddress(mInputAddress + "");
-            searchInfo.setZoneId(locationZoneCode);
+            searchInfo.setZoneId(mZoneCode);
         } else {
             logI("searchRequestType 初始进入查询mStartPoint+mEndPoint：" + searchType.getText());
-            if (mStartPoint != null && mEndPoint != null) {
-                searchInfo.setStartPoint(mStartPoint);
-                searchInfo.setEndPoint(mEndPoint);
-            } else {
-                toast("无法准确获取当前位置，请到网络较好的地方重试");
-                return;
-            }
+            searchInfo.setZoneId(locationZoneCode);
+//            if (mStartPoint != null && mEndPoint != null) {
+//                searchInfo.setStartPoint(mStartPoint);
+//                searchInfo.setEndPoint(mEndPoint);
+//            } else {
+//                toast("无法准确获取当前位置，请到网络较好的地方重试");
+//                return;
+//            }
         }
         httpReuqest.sendMessage(Api.User_search, searchInfo, true, new HttpReuqest.CallBack<SearchInfo>() {
             @Override
@@ -653,13 +661,13 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
                         UserHomeActivity.this.changeAddressDialog.zonePanel.scrollActive();
                     }
 
-                    if (streetList != null && streetList.size() > 0) {
-                        UserHomeActivity.this.changeAddressDialog.streetPanel.setVisibility(View.VISIBLE);
-                        UserHomeActivity.this.changeAddressDialog.streetPanel.append(streetList, result.getStreetId());
-                        UserHomeActivity.this.changeAddressDialog.streetPanel.scrollActive();
-                    } else
-                        UserHomeActivity.this.changeAddressDialog.streetPanel.setVisibility(View.GONE);
-                    UserHomeActivity.this.changeAddressDialog.changeSize();
+//                    if (streetList != null && streetList.size() > 0) {
+//                        UserHomeActivity.this.changeAddressDialog.streetPanel.setVisibility(View.VISIBLE);
+//                        UserHomeActivity.this.changeAddressDialog.streetPanel.append(streetList, result.getStreetId());
+//                        UserHomeActivity.this.changeAddressDialog.streetPanel.scrollActive();
+//                    } else
+//                        UserHomeActivity.this.changeAddressDialog.streetPanel.setVisibility(View.GONE);
+//                    UserHomeActivity.this.changeAddressDialog.changeSize();
                 }
                 return;
             }
@@ -712,14 +720,14 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
             AreaInfo areaInfo = dialog.cityPanel.getDropDownItemInfo();//当断网选择会为null
             if (areaInfo != null) {
                 String cityName = areaInfo.getAreaName();
-                locationZoneCode = dialog.zonePanel.getDropDownItemInfo().getAreaId();
+                mZoneCode = dialog.zonePanel.getDropDownItemInfo().getAreaId();
                 if (!TextUtils.isEmpty(cityName)) {
                     if (cityName.endsWith("市")) {
                         cityName = cityName.substring(0, cityName.length() - 1);
                     }
                     tvCity.setText(cityName);
                 }
-                logI("locationZoneCode = " + locationZoneCode + " -----cityName = " + cityName);
+                logI("mZoneCode = " + mZoneCode + " -----cityName = " + cityName);
                 resetRadioButton();
                 /** 查询 ② 地址选择弹窗，传四级联动地址id dialogSearchRequest*/
                 dialogSearchRequest(this.changeAddressDialog);
