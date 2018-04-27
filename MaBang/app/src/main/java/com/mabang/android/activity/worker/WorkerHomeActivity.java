@@ -142,7 +142,7 @@ public class WorkerHomeActivity extends MapActivity {
         mBillboardInfoList = result.getBillboardInfoList();
 
         if (mBillboardInfoList != null && mBillboardInfoList.size() > 0) {
-            logI("enterFirstData  mBillboardInfoList.size = "+mBillboardInfoList.size());
+            logI("enterFirstData  mBillboardInfoList.size = " + mBillboardInfoList.size());
             for (BillboardInfo billboardInfo : mBillboardInfoList) {
                 logI("billboardInfo = " + billboardInfo.toString());
             }
@@ -370,7 +370,7 @@ public class WorkerHomeActivity extends MapActivity {
                     logI("更新广告位位置坐标:onSuccess: result.getText = " + text + "  BillboardInfo = " + result.toString());
 //                    DialogManager.dialogDismiss(WorkerHomeActivity.this);//现在仅在手动点击弹窗的“X”关闭
                     billboardInfo.setLocationLng(result.getLocationLng());
-                    billboardInfo.setLocationLat( result.getLocationLat());
+                    billboardInfo.setLocationLat(result.getLocationLat());
                     currentLocationBillboard = billboardInfo;//②广告更新绑定当前定位的请求成功之后
                     itvPreview.getvCover().setVisibility(View.GONE);//去掉"预览"蒙层
                     //更新广告位位置成功后将该位置移动至中心,本来就在中心
@@ -419,7 +419,7 @@ public class WorkerHomeActivity extends MapActivity {
             public void onSuccess(Message message, SearchInfo result) {
                 initWorkerOverlay(result, currentLocationBillboard);
                 if (result != null) {
-                    logI("reSearchRequest  result.BillboardInfoList.size = "+result.getBillboardInfoList().size());
+                    logI("reSearchRequest  result.BillboardInfoList.size = " + result.getBillboardInfoList().size());
                     List<BillboardInfo> list = result.getBillboardInfoList();
                     if (list != null) {
                         for (BillboardInfo billboardInfo : list) {
@@ -500,9 +500,11 @@ public class WorkerHomeActivity extends MapActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         // TODO: 2018/4/10 当编辑返回后要处理a.弹窗内容改变，b.重新请求一次数据列表
-        if (data!=null&&data.getSerializableExtra(Constants.BILLBOARD_INFO)!=null) {
+        if (data != null && data.getSerializableExtra(Constants.BILLBOARD_INFO) != null) {
             BillboardInfo info = (BillboardInfo) data.getSerializableExtra(Constants.BILLBOARD_INFO);
             mBillboardInfoDialog.setBillboardInfo(info);
+            if (currentLocationBillboard != null && currentLocationBillboard.getId().equals(info.getId()))
+                currentLocationBillboard = info;
             if (!isFinishing() && !mBillboardInfoDialog.isShowing())
                 mBillboardInfoDialog.show();
             reSearchRequest();//重新请求搜索信息，目的是更新刚改动的覆盖图标对应广告为

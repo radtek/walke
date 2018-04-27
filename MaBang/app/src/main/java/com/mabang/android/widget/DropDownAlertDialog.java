@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -503,6 +504,14 @@ public class DropDownAlertDialog extends AlertDialog implements View.OnClickList
 //                    tag = true;
                 }
                 i++;
+            }
+
+            //增加了当只有一个地址信息是内容居中，比如省份只有广东省
+            if (list.size()==1){
+                ViewGroup.LayoutParams lp = contentLayout.getLayoutParams();
+                FrameLayout.LayoutParams layoutParams = (LayoutParams) contentLayout.getLayoutParams();
+                layoutParams.gravity=Gravity.CENTER;
+                contentLayout.setLayoutParams(layoutParams);
             }
 //            if (!tag && i > 0)
 //                this.activeItem = this.itemList.get(0).setChecked(true);

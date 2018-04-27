@@ -84,7 +84,8 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
 
 
     protected int last_search_way = SEARCH_WAY_LOCATION;
-    private AreaInfo infoProvince, infoCity, infoZone, infoStreet;
+    private AreaInfo infoProvince, infoCity, infoZone;
+//    private AddressInfo infoStreet;
     private String mInputAddress;
 
     private RadioButton rbCanBooking, rbMineBooked, rbMineUsing, rbUsed;
@@ -414,12 +415,12 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
             logI("searchRequestType 地址栏查询：" + searchType.getText());
             if (infoProvince != null)
                 searchInfo.setProvinceId(infoProvince.getAreaId());
-            if (infoProvince != null)
+            if (infoCity != null)
                 searchInfo.setCityId(infoCity.getAreaId());
-            if (infoProvince != null)
+            if (infoZone != null)
                 searchInfo.setZoneId(infoZone.getAreaId());
-            if (infoProvince != null)
-                searchInfo.setStreetId(infoStreet.getAreaId());
+//            if (infoStreet != null)
+//                searchInfo.setStreetId(infoStreet.getAreaId());
         } else if (last_search_way == SEARCH_WAY_INPUT) {
             if (mZoneCode == 0) {
                 toast("无法准确获取当前位置，请到网络较好的地方重试");
@@ -751,15 +752,15 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
         infoProvince = addressDialog.provincePanel.getDropDownItemInfo();
         infoCity = addressDialog.cityPanel.getDropDownItemInfo();
         infoZone = addressDialog.zonePanel.getDropDownItemInfo();
-        infoStreet = addressDialog.streetPanel.getDropDownItemInfo();
+//        infoStreet = addressDialog.streetPanel.getDropDownItemInfo();
         if (infoProvince != null)
             searchInfo.setProvinceId(infoProvince.getAreaId());
         if (infoCity != null)
             searchInfo.setCityId(infoCity.getAreaId());
         if (infoZone != null)
             searchInfo.setZoneId(infoZone.getAreaId());
-        if (infoStreet != null)
-            searchInfo.setStreetId(infoStreet.getAreaId());
+//        if (infoStreet != null)
+//            searchInfo.setStreetId(infoStreet.getAreaId());
         logI("dialogSearchRequest 地址栏选择后查询:");
 //        last_search_way = SEARCH_WAY_DIALOG;
         httpReuqest.sendMessage(Api.User_search, searchInfo, true, new HttpReuqest.CallBack<SearchInfo>() {

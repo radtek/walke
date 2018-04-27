@@ -290,7 +290,7 @@ public abstract class MapActivity extends AppActivity {
         }
 //        searchInfo.setAddress(zoneName + "");
         searchInfo.setZoneId(locationZoneCode);
-        logI("requesrZoneDatas 工人首页定位后默认查询");
+        logI("requesrZoneDatas 定位后默认查询");
         httpReuqest.sendMessage(api, searchInfo, false, new HttpReuqest.CallBack<SearchInfo>() {
             @Override
             public void onSuccess(Message message, SearchInfo result) {
