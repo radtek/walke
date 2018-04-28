@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/login_logo"
+        android:layout_width="@dimen/logoSize"
+        android:layout_height="@dimen/logoSize"
+        android:layout_gravity="center_horizontal"
+        android:src="@mipmap/logo512x512"
+        android:layout_marginTop="25dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="用户登录"
+        android:textSize="24sp"
+        android:textColor="@color/textWhite"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="25dp"
+        android:layout_marginTop="25dp"/>
+
+    <walke.base.widget.IconInputView
+        android:id="@+id/login_iivUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:img="@mipmap/input_phone_3x"
+        app:hintText="请输入手机号"
+        app:etType="phone"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"/>
+    <walke.base.widget.IconInputView
+        android:id="@+id/login_iivPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:img="@mipmap/input_lock_3x"
+        app:hintText="请输入密码"
+        app:etType="password"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="5dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:id="@+id/login_tvRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="注册"
+            android:textColor="@color/textWhite"
+            android:textSize="16sp"
+            android:layout_marginRight="12dp"/>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:background="@color/white"/>
+        <!--@color/hintColor-->
+
+        <TextView
+            android:id="@+id/login_tvForgotPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="忘记密码"
+            android:textColor="@color/textWhite"
+            android:textSize="16sp"
+            android:layout_marginLeft="12dp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/login_btLogin"
+        style="@style/loginButton"
+        android:layout_marginBottom="30dp"
+        android:text="登录"/>
+
+    <include
+        layout="@layout/third_login"
+        android:visibility="gone"/>
+
+</LinearLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <View
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center_horizontal"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/lineHeight_View"
+            android:layout_weight="0.4"
+            android:background="@color/line"></View>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:gravity="center_horizontal"
+            android:text="第三方账号登录"
+            android:textColor="#ffffff" />
+
+        <View
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center_horizontal"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/lineHeight_View"
+            android:layout_weight="0.4"
+            android:background="@color/line"></View>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+
+        <walke.base.widget.ImageTextView
+            android:id="@+id/tl_qqLogin"
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:background="@drawable/pressed_transparent"
+            app:textsColor="#ffffff"
+            app:img="@mipmap/third_qq"
+            app:text=" QQ" />
+        <walke.base.widget.ImageTextView
+            android:id="@+id/tl_wechatLogin"
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:background="@drawable/pressed_transparent"
+            app:textsColor="#ffffff"
+            app:img="@mipmap/third_wx"
+            app:text=" 微信"
+            android:layout_marginLeft="30dp"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

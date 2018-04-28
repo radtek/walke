@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <CylinderTarget name="2015Mejon-SA-CAB" sideLength="15.550000"/>
+    <CylinderTarget name="2014lc" sideLength="15.550000"/>
+    <CylinderTarget name="2009mv" sideLength="15.500000"/>
+    <CylinderTarget name="2015Mejon" sideLength="15.500000"/>
+  </Tracking>
+</QCARConfig>

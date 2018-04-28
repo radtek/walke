@@ -275,56 +275,53 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
             resetLocation();
         } else {/** 查询 ③用户输入信息(模糊地址)，传区号id， */
             //①先通过文本信息获取经纬度然后
-            LatLng latLngBystr = getLatLngBystrAndMoveTo(mInputAddress);
-            if (latLngBystr == null) {
-                inputTextGetLatLng = false;
-//                toast("获取对应地理位置失败,请重试");
-                //todo 加没取成功就直接用文本请求服务器查？
-                inputSearchRequest(mInputAddress, mZoneCode);//③再请求模糊查询
-                return;
-            }
-            inputTextGetLatLng = true;
-            GeoCoder mSearch = GeoCoder.newInstance();//②用GeoCoder获取区号
-            mSearch.setOnGetGeoCodeResultListener(new OnGetGeoCoderResultListener() {
+            getLatLngByAddress(mInputAddress, new LocationBack() {
                 @Override
-                public void onGetGeoCodeResult(GeoCodeResult geoCodeResult) {
-                }
+                public void onBack(LatLng locationLL) {
+                    if (locationLL==null){
+                        inputTextGetLatLng = false;
+                        //todo 加没取成功就直接用文本请求服务器查？
+                        inputSearchRequest(mInputAddress, mZoneCode);//③再请求模糊查询
+                        return;
+                    }else {
 
-                @Override
-                public void onGetReverseGeoCodeResult(ReverseGeoCodeResult geoCodeResult) {
-                    mZoneCode = geoCodeResult.getAdcode();
-                    inputSearchRequest(mInputAddress, mZoneCode);//③再请求模糊查询
+                        inputTextGetLatLng = true;
+                        GeoCoder mSearch = GeoCoder.newInstance();//②用GeoCoder获取区号
+                        mSearch.setOnGetGeoCodeResultListener(new OnGetGeoCoderResultListener() {
+                            @Override
+                            public void onGetGeoCodeResult(GeoCodeResult geoCodeResult) {
+                            }
+
+                            @Override
+                            public void onGetReverseGeoCodeResult(ReverseGeoCodeResult geoCodeResult) {
+                                mZoneCode = geoCodeResult.getAdcode();
+                                inputSearchRequest(mInputAddress, mZoneCode);//③再请求模糊查询
+                            }
+                        });
+
+                        if (!NetWorkUtil.isNetworkConnected(UserHomeActivity.this)) {
+                            toast("网络连接不可用");
+                        } else {
+                            //
+                            mSearch.reverseGeoCode(new ReverseGeoCodeOption().location(locationLL));
+                        }
+
+                        String cityName = BDMapUtils.getCityName(UserHomeActivity.this, locationLL);
+                        logI(" BDMapUtils.getCityName city=" + cityName);
+                        if (tvCity != null && !TextUtils.isEmpty(cityName)) {
+                            if (cityName.endsWith("市")) {
+                                cityName = cityName.substring(0, cityName.length() - 1);
+                            }
+                            tvCity.setText(cityName);
+                        } else {
+                            //toast("获取对应地理位置失败,请重试");
+                        }
+                    }
+
                 }
             });
-            if (!NetWorkUtil.isNetworkConnected(UserHomeActivity.this)) {
-                toast("网络连接不可用");
-            } else {
-                //
-                mSearch.reverseGeoCode(new ReverseGeoCodeOption().location(latLngBystr));
-            }
 
-            BDMapUtils.getCityName(latLngBystr, new BDMapUtils.BDGetCityListener() {
-                @Override
-                public void success(String cityName) {
-                    logI("BDMapUtils api cityName = " + cityName);
-                }
 
-                @Override
-                public void fail(Exception exc) {
-                    logI("BDMapUtils api exc = " + exc);
-                }
-            });
-
-            String cityName = BDMapUtils.getCityName(this, latLngBystr);
-            logI(" BDMapUtils.getCityName city=" + cityName);
-            if (tvCity != null && !TextUtils.isEmpty(cityName)) {
-                if (cityName.endsWith("市")) {
-                    cityName = cityName.substring(0, cityName.length() - 1);
-                }
-                tvCity.setText(cityName);
-            } else {
-//                toast("获取对应地理位置失败,请重试");
-            }
 
         }
     }
@@ -799,39 +796,27 @@ public class UserHomeActivity extends MapActivity implements HomeUserTopView.Hom
                 if (latLngList != null && latLngList.size() > 0) {
                     double distance = MapUtils.getDistance(latLngList);
                     LatLng center = MapUtils.getCenter(latLngList);
-                    moveToNewCenter(center.latitude, center.longitude);
+                    moveToNewCenter(center);
                     setLevel(distance);
                 }
-
-//                for (BillboardInfo billboardInfo : biList) {
-//                    LatLng latLng = getLatLng(billboardInfo);
-//                    if (latLng != null) {
-//                        moveToNewCenter(latLng.latitude, latLng.longitude);
-//                        break;
-//                    }
-//                }
             } else {//可能地址栏选择，或者
+
                 if (last_search_way == SEARCH_WAY_INPUT) {//用户输入
                     if (!inputTextGetLatLng) {// 点击搜索时不能能根据输入文本获取经纬度
                         toast("获取对应地理位置失败,请重试");
                     }
-
                 } else {
+
                     String addressTrim = etSearch.getText().toString().trim();//可能地址栏选择，或者
-                    LatLng latLngBystr = getLatLngBystrAndMoveTo(addressTrim);
-                    if (latLngBystr == null) {
-                        toast("获取对应地理位置失败,请重试");
-                    }
+                    //目的：地图移动到选择的地方
+                    mapMoveByAddress(addressTrim);
+//                    LatLng latLngBystr = getLatLngBystrAndMoveTo(addressTrim);
+//                    if (latLngBystr == null) {
+//                        toast("获取对应地理位置失败,请重试");
+//                    }
                 }
             }
 
-//            List<LatLng> latLngList = getLatLngList(result);
-//            if (latLngList != null && latLngList.size() > 0) {
-//                double distance = MapUtils.getDistance(latLngList);
-//                LatLng center = MapUtils.getCenter(latLngList);
-//                moveToNewCenter(center.latitude, center.longitude);
-//                setLevel(distance);
-//            }
 
         }
     }

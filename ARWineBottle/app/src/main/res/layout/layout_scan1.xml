@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+                android:background="#3f000000">
+
+
+    <ImageView
+        android:id="@+id/scan1_ivBack"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:padding="13dp"
+        android:src="@mipmap/icon_back_3x"
+        android:onClick="back"
+        android:layout_marginTop="10dp"/>
+
+    <ImageView
+        android:id="@+id/scan1_ivScan"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@mipmap/scanning"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/scan1_ivScan"
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+        <TextView
+            android:id="@+id/scan1_tvTips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="将酒标放入框内"
+            android:gravity="center"
+            android:textColor="@color/text_ffffff"
+            android:textSize="13sp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+
+        <ImageView
+            android:id="@+id/scan1_ivFlash"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:onClick="openFlashLight"
+            android:padding="10dp"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/icon_lightning_3x"/>
+    </RelativeLayout>
+
+
+
+
+
+
+</RelativeLayout>

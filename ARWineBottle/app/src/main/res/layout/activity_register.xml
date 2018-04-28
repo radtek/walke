@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/register_logo"
+        android:layout_width="@dimen/logoSize"
+        android:layout_height="@dimen/logoSize"
+        android:layout_gravity="center_horizontal"
+        android:src="@mipmap/logo512x512"
+        android:layout_marginTop="25dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="用户注册"
+        android:textSize="22sp"
+        android:textColor="@color/textWhite"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="25dp"
+        android:layout_marginTop="25dp"/>
+
+    <walke.base.widget.IconInputView
+        android:id="@+id/register_iivPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:img="@mipmap/input_phone_3x"
+        app:hintText="请输入手机号"
+        app:etType="phone"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/inputHeight"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="horizontal">
+
+        <walke.base.widget.IconInputView
+            android:id="@+id/register_iivPhoneCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:paddingRight="100dp"
+            app:etType="phoneAuthCode"
+            app:hintText="请输入手机验证码"
+            app:img="@mipmap/input_code_3x"/>
+
+        <walke.base.widget.CountdownView
+            android:id="@+id/register_tvGetCode"
+            android:layout_width="110dp"
+            android:layout_height="32dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/selector_login_button"
+            android:gravity="center"
+            android:text="获取验证码"
+            android:textColor="@color/white"/>
+        <!--<TextView
+            android:id="@+id/register_tvGetCode"
+            android:layout_width="100dp"
+            android:layout_height="32dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/selector_login_button"
+            android:gravity="center"
+            android:text="获取验证码"
+            android:textColor="@color/white"/>-->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/lineHeight_Frame"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="46dp"
+            android:background="@color/line"/>
+    </RelativeLayout>
+
+
+    <walke.base.widget.IconInputView
+        android:id="@+id/register_iivPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:img="@mipmap/input_lock2_3x"
+        app:hintText="请输入确认密码"
+        app:etType="password"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="5dp"/>
+    <walke.base.widget.IconInputView
+        android:id="@+id/register_iivPasswordConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:img="@mipmap/input_lock2_3x"
+        app:hintText="请再次输入确认密码"
+        app:etType="password"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="5dp"/>
+    <walke.base.widget.IconInputView
+        android:id="@+id/register_iivSellCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:img="@mipmap/input_sell_3x"
+        app:hintText="请输入销售代码"
+        app:inputLength="10"
+        app:etType="sellCode"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="5dp"/>
+
+
+    <Button
+        android:id="@+id/register_btRegister"
+        style="@style/loginButton"
+        android:layout_marginTop="40dp"
+        android:text="注册"/>
+
+
+
+
+</LinearLayout>

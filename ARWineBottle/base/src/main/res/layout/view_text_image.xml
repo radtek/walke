@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/vti_ivBg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@mipmap/test"
+        android:scaleType="centerCrop"/>
+    <ImageView
+        android:id="@+id/vti_ivLayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="40dp"
+        android:background="#00000000"/>
+    <!--8e000000-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/vti_tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AR扫码互动"
+            android:textSize="17sp"
+            android:textColor="@color/text_E4BD79"/>
+        <TextView
+            android:id="@+id/vti_tvDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="隐藏在酒标中的秘密"
+            android:textSize="13sp"
+            android:textColor="@color/text_ffffff"
+            android:layout_below="@id/vti_tvTitle"
+            android:layout_marginTop="2dp"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

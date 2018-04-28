@@ -3,7 +3,6 @@ package com.mabang.android.activity.worker;
 import android.content.Intent;
 import android.graphics.Color;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,12 +11,6 @@ import android.widget.ImageView;
 import com.baidu.location.BDLocation;
 import com.baidu.mapapi.map.MapView;
 import com.baidu.mapapi.map.Marker;
-import com.baidu.mapapi.model.LatLng;
-import com.baidu.mapapi.search.geocode.GeoCodeResult;
-import com.baidu.mapapi.search.geocode.GeoCoder;
-import com.baidu.mapapi.search.geocode.OnGetGeoCoderResultListener;
-import com.baidu.mapapi.search.geocode.ReverseGeoCodeOption;
-import com.baidu.mapapi.search.geocode.ReverseGeoCodeResult;
 import com.mabang.android.R;
 import com.mabang.android.activity.base.MapActivity;
 import com.mabang.android.config.Api;
@@ -33,7 +26,6 @@ import com.mabang.android.widget.KeyboardPatch;
 
 import java.util.List;
 
-import walke.base.tool.NetWorkUtil;
 import walke.base.widget.DialogUtil;
 import walke.base.widget.ImageTextView;
 
@@ -206,30 +198,31 @@ public class WorkerHomeActivity extends MapActivity {
                     // ①当输入框为null或者与定位地址一样，执行重定位即可
                     resetLocation();
                 } else {
-                    // ②当输入框有输入与定位地址不一样，   基本不會用到
-                    LatLng latLngBystr = getLatLngBystrAndMoveTo(etTopText);
-                    if (latLngBystr == null) {
-                        toast("获取对应地理位置失败,请重试");
-                        return;
-                    }
-                    GeoCoder mSearch = GeoCoder.newInstance();
-                    mSearch.setOnGetGeoCodeResultListener(new OnGetGeoCoderResultListener() {
-                        @Override
-                        public void onGetGeoCodeResult(GeoCodeResult geoCodeResult) {
-                            Log.i("walke", "onGetGeoCodeResult: geoCodeResult");
-                        }
-
-                        @Override
-                        public void onGetReverseGeoCodeResult(ReverseGeoCodeResult geoCodeResult) {
-                            int adcode = geoCodeResult.getAdcode();
-                            requestSearchInfo(etTopText, adcode);
-                        }
-                    });
-                    if (!NetWorkUtil.isNetworkConnected(WorkerHomeActivity.this)) {
-                        toast("网络连接不可用");
-                        return;
-                    }
-                    mSearch.reverseGeoCode(new ReverseGeoCodeOption().location(latLngBystr));
+                    resetLocation();
+//                    // ②当输入框有输入与定位地址不一样，   基本不會用到
+//                    LatLng latLngBystr = getLatLngBystrAndMoveTo(etTopText);
+//                    if (latLngBystr == null) {
+//                        toast("获取对应地理位置失败,请重试");
+//                        return;
+//                    }
+//                    GeoCoder mSearch = GeoCoder.newInstance();
+//                    mSearch.setOnGetGeoCodeResultListener(new OnGetGeoCoderResultListener() {
+//                        @Override
+//                        public void onGetGeoCodeResult(GeoCodeResult geoCodeResult) {
+//                            Log.i("walke", "onGetGeoCodeResult: geoCodeResult");
+//                        }
+//
+//                        @Override
+//                        public void onGetReverseGeoCodeResult(ReverseGeoCodeResult geoCodeResult) {
+//                            int adcode = geoCodeResult.getAdcode();
+//                            requestSearchInfo(etTopText, adcode);
+//                        }
+//                    });
+//                    if (!NetWorkUtil.isNetworkConnected(WorkerHomeActivity.this)) {
+//                        toast("网络连接不可用");
+//                        return;
+//                    }
+//                    mSearch.reverseGeoCode(new ReverseGeoCodeOption().location(latLngBystr));
                 }
                 break;
             case R.id.homeWorker_btSearch://底部查询按钮

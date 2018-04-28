@@ -1,0 +1,67 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "26.0.2"
+    defaultConfig {
+        applicationId "com.roadjun.arwinebottle"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    aaptOptions {
+        noCompress '.unity3d', '.ress', '.resource', '.obb'
+    }
+    signingConfigs {
+        release {
+            storeFile file('D:\\askey\\mejon_wine_bottle_ar.jks')
+            keyPassword 'PgyMeJonApp2017^'
+            keyAlias 'mejon_wine_bottle_ar'
+            storePassword 'PgyMeJonApp2017^'
+        }
+    }
+
+    buildTypes {
+        debug {
+            jniDebuggable true
+            signingConfig signingConfigs.release //(debug)使用签名
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+    compile project(':base')
+    //黄油刀
+    //黄油刀
+    compile 'com.jakewharton:butterknife:8.4.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+    //必備，不然無效
+    //okhttp框架
+    compile 'com.zhy:okhttputils:2.6.2'
+    //圆形图片
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    //谷歌官方推荐的图片加载框架
+    //    compile 'com.github.bumptech.glide:glide:4.3.0'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    //Gosn
+    compile 'com.google.code.gson:gson:2.8.2'
+}

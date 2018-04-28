@@ -2,8 +2,6 @@ package com.mabang.android.activity.base;
 
 import android.app.Dialog;
 import android.graphics.Point;
-import android.location.Address;
-import android.location.Geocoder;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -27,6 +25,8 @@ import com.baidu.mapapi.map.Marker;
 import com.baidu.mapapi.map.MarkerOptions;
 import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.model.LatLng;
+import com.baidu.mapapi.search.core.SearchResult;
+import com.baidu.mapapi.search.geocode.GeoCodeOption;
 import com.baidu.mapapi.search.geocode.GeoCodeResult;
 import com.baidu.mapapi.search.geocode.GeoCoder;
 import com.baidu.mapapi.search.geocode.OnGetGeoCoderResultListener;
@@ -42,9 +42,7 @@ import com.mabang.android.entity.vo.Message;
 import com.mabang.android.entity.vo.SearchInfo;
 import com.mabang.android.okhttp.HttpReuqest;
 
-import java.io.IOException;
 import java.util.List;
-import java.util.Locale;
 
 import walke.base.tool.LoadingDialog;
 import walke.base.tool.NetWorkUtil;
@@ -848,31 +846,114 @@ public abstract class MapActivity extends AppActivity {
      */
     public LatLng getLatLngBystrAndMoveTo(String str) {
         LatLng latLng = null;
-        if (str != null) {
-            Geocoder gc = new Geocoder(MapActivity.this, Locale.CHINA);
-            List<Address> addressList = null;
-            try {
-                String name = Thread.currentThread().getName();
-                logI("getLatLngBystrAndMoveTo    Thread().getName = " + name);
-                addressList = gc.getFromLocationName(str, 1);
-                if (!addressList.isEmpty()) {
-                    Address address_temp = addressList.get(0);
-                    //计算经纬度
-                    double latitude = address_temp.getLatitude();
-                    double longitude = address_temp.getLongitude();
-                    System.out.println("经度：" + latitude);
-                    System.out.println("纬度：" + longitude);
-                    //生产GeoPoint
-                    latLng = new LatLng(latitude, longitude);
-                    moveToNewCenter(latitude, longitude);
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-                logE("getLatLngBystrAndMoveTo  e=" + e.getMessage());
-            }
-        }
+//        if (str != null) {
+//            Geocoder gc = new Geocoder(MapActivity.this, Locale.CHINA);
+//            List<Address> addressList = null;
+//            try {
+//                String name = Thread.currentThread().getName();
+//                logI("getLatLngBystrAndMoveTo    Thread().getName = " + name);
+//                addressList = gc.getFromLocationName(str, 1);
+//                if (!addressList.isEmpty()) {
+//                    Address address_temp = addressList.get(0);
+//                    //计算经纬度
+//                    double latitude = address_temp.getLatitude();
+//                    double longitude = address_temp.getLongitude();
+//                    System.out.println("经度：" + latitude);
+//                    System.out.println("纬度：" + longitude);
+//                    //生产GeoPoint
+//                    latLng = new LatLng(latitude, longitude);
+//                    moveToNewCenter(latitude, longitude);
+//                }
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//                logE("getLatLngBystrAndMoveTo  e=" + e.getMessage());
+//            }
+//        }
         return latLng;
     }
+
+    /**
+     * 通过文本地址获取经纬度并移动该定位
+     * @param address
+     * @return
+     */
+    public void mapMoveByAddress(String address) {
+
+        GeoCoder mSearch = GeoCoder.newInstance();
+        mSearch.setOnGetGeoCodeResultListener(new OnGetGeoCoderResultListener() {
+            public void onGetGeoCodeResult(GeoCodeResult result) {
+                if (result == null || result.error != SearchResult.ERRORNO.NO_ERROR) {
+                    Log.i("walke", "getLatLngByAddress --------- 通过文本地址获取经纬度: 没有检索到结果");
+                    toast("获取对应地理位置失败,请重试");
+                    return;
+                }
+                Log.i("walke", "getLatLngByAddress --------- 通过文本地址获取经纬度: 获取到地理编码结果");
+                LatLng locationLL = result.getLocation();
+                if (locationLL!=null)
+                    moveToNewCenter(locationLL);
+            }
+
+            @Override
+            public void onGetReverseGeoCodeResult(ReverseGeoCodeResult result) {
+                if (result == null || result.error != SearchResult.ERRORNO.NO_ERROR) {
+                    //没有找到检索结果
+                }
+                //获取反向地理编码结果
+            }
+        });
+        //发起地理编码检索；
+        mSearch.geocode(new GeoCodeOption()
+                .city("")//必要，不然崩溃
+                .address(address));
+    }
+
+    /**
+     * 通过文本地址获取经纬度并移动该定位
+     *
+     * @param address
+     * @return
+     */
+    public void getLatLngByAddress(final String address, final LocationBack locationBack) {
+
+        final GeoCoder mSearch = GeoCoder.newInstance();
+        mSearch.setOnGetGeoCodeResultListener(new OnGetGeoCoderResultListener() {
+            public void onGetGeoCodeResult(GeoCodeResult result) {
+                if (result == null || result.error != SearchResult.ERRORNO.NO_ERROR) {
+                    //没有检索到结果
+                    Log.i("walke", "getLatLngByAddress --------- 通过文本地址获取经纬度: 没有检索到结果");
+//                    toast("获取对应地理位置失败,请重试");
+                    if (locationBack!=null)
+                        locationBack.onBack(null);
+                    return;
+                }
+                LatLng locationLL = result.getLocation();
+                if (locationBack!=null) {
+                    locationBack.onBack(locationLL);
+                    moveToNewCenter(locationLL);
+                }
+                Log.i("walke", "getLatLngByAddress --------- 通过文本地址获取经纬度: 获取到地理编码结果");
+                //获取地理编码结果
+            }
+
+            @Override
+            public void onGetReverseGeoCodeResult(ReverseGeoCodeResult result) {
+                if (result == null || result.error != SearchResult.ERRORNO.NO_ERROR) {
+                    //没有找到检索结果
+                }
+                //获取反向地理编码结果
+            }
+        });
+
+        //发起地理编码检索；
+        mSearch.geocode(new GeoCodeOption()
+                .city("")//必要，不然崩溃
+                .address(address));
+    }
+
+    public interface LocationBack{
+        void onBack(LatLng location);
+    }
+
 
     /**
      * 获取某广告位的经纬度

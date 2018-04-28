@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--                    -->
+    <attr name="img" format="reference"/>
+    <attr name="text" format="string|reference"/>
+    <attr name="hintText" format="string|reference"/>
+    <attr name="textsColor" format="color|reference"/>
+    <declare-styleable name="ImageTextView">
+        <attr name="img"/>
+        <attr name="text"/>
+        <attr name="textsColor"/>
+    </declare-styleable>
+
+    <attr name="inputLength" format="integer|dimension|reference" />
+    <attr name="etType" format="enum">
+        <enum name="phone" value="0"/>
+        <enum name="password" value="1"/>
+        <enum name="phoneAuthCode" value="2"/>
+        <enum name="imageAuthCode" value="3"/>
+        <enum name="sellCode" value="4"/>
+    </attr>
+    <declare-styleable name="IconInputView">
+        <attr name="img"/>
+        <attr name="hintText"/>
+        <attr name="inputLength"/>
+        <attr name="etType"/>
+
+    </declare-styleable>
+    <!--                    -->
+    <attr name="desc" format="string|reference"/>
+    <attr name="ivLayer" format="reference"/>
+    <declare-styleable name="TextImageView">
+        <attr name="img"/>
+        <attr name="ivLayer"/>
+        <attr name="text"/>
+        <attr name="desc"/>
+    </declare-styleable>
+
+
+</resources>

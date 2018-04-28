@@ -504,15 +504,25 @@ public class DropDownAlertDialog extends AlertDialog implements View.OnClickList
 //                    tag = true;
                 }
                 i++;
+
+                //增加了当只有一个地址信息是内容居中，比如省份只有广东省
+                if (list.size()==1){
+                    ViewGroup.LayoutParams lp = contentLayout.getLayoutParams();
+                    FrameLayout.LayoutParams layoutParams = (LayoutParams) contentLayout.getLayoutParams();
+                    layoutParams.gravity=Gravity.CENTER;
+                    contentLayout.setLayoutParams(layoutParams);
+                    item.bootomLine.setVisibility(GONE);
+                }
+
             }
 
             //增加了当只有一个地址信息是内容居中，比如省份只有广东省
-            if (list.size()==1){
-                ViewGroup.LayoutParams lp = contentLayout.getLayoutParams();
-                FrameLayout.LayoutParams layoutParams = (LayoutParams) contentLayout.getLayoutParams();
-                layoutParams.gravity=Gravity.CENTER;
-                contentLayout.setLayoutParams(layoutParams);
-            }
+//            if (list.size()==1){
+//                ViewGroup.LayoutParams lp = contentLayout.getLayoutParams();
+//                FrameLayout.LayoutParams layoutParams = (LayoutParams) contentLayout.getLayoutParams();
+//                layoutParams.gravity=Gravity.CENTER;
+//                contentLayout.setLayoutParams(layoutParams);
+//            }
 //            if (!tag && i > 0)
 //                this.activeItem = this.itemList.get(0).setChecked(true);
             return;

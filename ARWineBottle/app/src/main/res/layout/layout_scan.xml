@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+                android:background="#3f000000">
+   <!-- <com.unity3d.player.UnityPlayer  不能直接在布局中引用
+        android:id="@+id/scan_unityPlayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignTop="@+id/scan_tvTips"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>-->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/scan_ivBack"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="10dp"
+            android:onClick="back"
+            android:padding="16dp"
+            android:src="@mipmap/icon_back_3x"/>
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <ImageView
+            android:id="@+id/scan_ivScan"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@mipmap/scan_frame"
+            android:layout_gravity="center"/>
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:id="@+id/scan_tvTips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="将酒标放入框内"
+            android:gravity="center"
+            android:textColor="@color/text_ffffff"
+            android:textSize="13sp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+
+        <ImageView
+            android:id="@+id/scan_ivFlashLight"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:onClick="openFlashLight"
+            android:padding="10dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/icon_lightning_3x"/>
+    </FrameLayout>
+
+
+
+
+
+
+</LinearLayout>

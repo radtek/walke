@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+    android:background="@mipmap/bg_home">
+    <!--<ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@mipmap/bg_home"/>-->
+
+    <walke.base.widget.TextImageView
+        android:id="@+id/home_ARScan"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:img="@mipmap/bg_transparent"
+        app:ivLayer="@mipmap/scan"
+        app:text="AR扫码互动"
+        app:desc="隐藏在酒标中的秘密"/>
+
+    <walke.base.widget.TextImageView
+        android:id="@+id/home_item2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:img="@mipmap/bg_transparent"
+        app:text="土澳酩侦探"
+        app:desc="深入发掘真正澳洲本土红酒匠艺"/>
+    <walke.base.widget.TextImageView
+        android:id="@+id/home_item3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:img="@mipmap/bg_transparent"
+        app:text="美爵绿色生活"
+        app:desc="超全超实用的澳洲本土生活品介绍"/>
+
+
+</LinearLayout>

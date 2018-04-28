@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="@dimen/inputHeight">
+    <ImageView
+        android:id="@+id/vii_icon"
+        android:layout_width="@dimen/inputHeight"
+        android:layout_height="match_parent"
+        android:src="@mipmap/ic_launcher"
+        android:padding="7dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0"
+        android:orientation="vertical"
+        android:layout_marginLeft="0dp"
+        android:padding="2dp">
+
+        <walke.base.widget.ClearEditText
+            android:id="@+id/vii_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="请输入手机号"
+            android:textColorHint="@color/hintColor"
+            android:paddingLeft="12dp"
+            android:textSize="18sp"
+            android:textColor="#f0f0f0"/>
+
+        <View
+            android:id="@+id/vii_line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/lineHeight_Frame"
+            android:background="@color/hintColor"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

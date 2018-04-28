@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="lineHeight_Frame">1px</dimen>
+    <dimen name="lineHeight_View">1px</dimen>
+    <dimen name="inputHeight">44dp</dimen>
+</resources>
