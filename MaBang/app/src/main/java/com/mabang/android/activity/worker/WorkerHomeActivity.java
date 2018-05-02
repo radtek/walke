@@ -58,7 +58,6 @@ public class WorkerHomeActivity extends MapActivity {
     @Override
     protected void initView() {
         AppUtils.adaptiveNdk_StatusBar(this, findViewById(R.id.homeWorker_statusBar));
-//        initSearchView(findViewById(R.id.homeWorker_svBottom));
         itvExit = ((ImageTextView) findViewById(R.id.homeWorker_exit));
         itvPreview = ((ImageTextView) findViewById(R.id.homeWorker_preview));
 
@@ -80,7 +79,6 @@ public class WorkerHomeActivity extends MapActivity {
         etTop.setFocusable(false);
         etTop.clearFocus();
         etTop.setTextColor(Color.BLACK);
-
 
         mBillboardInfoDialog = new BillboardInfoDialog(this);
         mBillboardInfoDialog.setOnButtonClickListener(new BillboardInfoDialog.OnButtonClickListener() {
@@ -114,13 +112,10 @@ public class WorkerHomeActivity extends MapActivity {
                 });
             }
         });
-
     }
 
     @Override
     protected void initData() {
-
-//        View contentView = View.inflate(this, R.layout.activity_home_worker, null);
         View contentView = findViewById(R.id.homeWorker_linearLayout);
         KeyboardPatch keyboardPatch = new KeyboardPatch(this, contentView);
         keyboardPatch.enable();
@@ -147,14 +142,12 @@ public class WorkerHomeActivity extends MapActivity {
     @Override
     protected void mapMarkerClick(Marker marker, final BillboardInfo markerInfo) {
         // ②点击地图上的覆盖物，
-//        showUploadPhotoDialog(billboardInfo);
         setMapCenter(marker.getPosition(), new LocateDoneListener() {
             @Override
             public void done() {
                 showUploadPhotoDialog(markerInfo);
             }
         });
-
     }
 
     /**
@@ -199,34 +192,15 @@ public class WorkerHomeActivity extends MapActivity {
                     resetLocation();
                 } else {
                     resetLocation();
-//                    // ②当输入框有输入与定位地址不一样，   基本不會用到
-//                    LatLng latLngBystr = getLatLngBystrAndMoveTo(etTopText);
-//                    if (latLngBystr == null) {
-//                        toast("获取对应地理位置失败,请重试");
-//                        return;
-//                    }
-//                    GeoCoder mSearch = GeoCoder.newInstance();
-//                    mSearch.setOnGetGeoCodeResultListener(new OnGetGeoCoderResultListener() {
-//                        @Override
-//                        public void onGetGeoCodeResult(GeoCodeResult geoCodeResult) {
-//                            Log.i("walke", "onGetGeoCodeResult: geoCodeResult");
-//                        }
-//
-//                        @Override
-//                        public void onGetReverseGeoCodeResult(ReverseGeoCodeResult geoCodeResult) {
-//                            int adcode = geoCodeResult.getAdcode();
-//                            requestSearchInfo(etTopText, adcode);
-//                        }
-//                    });
-//                    if (!NetWorkUtil.isNetworkConnected(WorkerHomeActivity.this)) {
-//                        toast("网络连接不可用");
-//                        return;
-//                    }
-//                    mSearch.reverseGeoCode(new ReverseGeoCodeOption().location(latLngBystr));
                 }
                 break;
             case R.id.homeWorker_btSearch://底部查询按钮
-                requestBillboardInfo();
+                String trim = etBottom.getText().toString().trim();
+                if (TextUtils.isEmpty(trim)) {
+                    toast("请输入广告位唯一码或管理码");
+                    return;
+                }
+                requestBillboardInfo(trim);
                 break;
         }
     }
@@ -272,19 +246,15 @@ public class WorkerHomeActivity extends MapActivity {
 
     /**
      * 广告位信息 直接按管理码查询
+     * @param infoCode
      */
-    private void requestBillboardInfo() {
+    private void requestBillboardInfo(String infoCode) {
         final BillboardInfo billboardInfo = new BillboardInfo();
         // TODO: 2018/2/14 设置对应参数
         billboardInfo.setAccount(getMemberInfo().getAccount());
         billboardInfo.setToken(getMemberInfo().getToken());
         // TODO: 2018/2/21  替换具体数据
-        String trim = etBottom.getText().toString().trim();
-        if (TextUtils.isEmpty(trim)) {
-            toast("请输入广告位唯一码或管理码");
-            return;
-        }
-        billboardInfo.setManageCode(trim);
+        billboardInfo.setManageCode(infoCode);
         httpReuqest.sendMessage(Api.Worker_billboard, billboardInfo, true, new HttpReuqest.CallBack<BillboardInfo>() {
             @Override
             public void onSuccess(Message message, final BillboardInfo result) {
@@ -305,21 +275,6 @@ public class WorkerHomeActivity extends MapActivity {
                         mBillboardInfoDialog.setBillboardInfo(result);
                         if (!isFinishing() && !mBillboardInfoDialog.isShowing())
                             mBillboardInfoDialog.show();
-//                        DialogManager.dialogBillboardInfoOneButton(WorkerHomeActivity.this, result, "绑定当前定位", new DialogManager.OneButtonClickListener() {
-//                            @Override
-//                            public void onClicked(final BillboardInfo info) {
-////                                updateCoordinates(info);//更新广告位位置坐标
-//                                DialogUtil.tipsTwoButton(WorkerHomeActivity.this, "取消", "确定", "确定绑定到当前定位？", new DialogUtil.TwoButtonClickListener() {
-//                                    @Override
-//                                    public void leftOnClick() {
-//                                    }
-//                                    @Override
-//                                    public void rightOnClick() { //定位校正 更新修改广告位经纬度为 当前定位
-//                                        updateCoordinates(info);//更新广告位位置坐标
-//                                    }
-//                                });
-//                            }
-//                        });
                     }
                 } else {
                     toast(text + "");
@@ -346,10 +301,8 @@ public class WorkerHomeActivity extends MapActivity {
             toast("很抱歉，未获取到有效定位");
             return;
         }
-        // TODO: 2018/2/14 设置对应参数
         billboardInfo.setAccount(getMemberInfo().getAccount());
         billboardInfo.setToken(getMemberInfo().getToken());
-        // TODO: 2018/2/21  替换具体数据 id和经
         billboardInfo.setAreaId(locationZoneCode);
         billboardInfo.setLongAddress(locationAddress);
         billboardInfo.setLocationLng(mBDLocation.getLongitude());//
@@ -359,22 +312,10 @@ public class WorkerHomeActivity extends MapActivity {
             public void onSuccess(Message message, final BillboardInfo result) {
                 String text = result.getText();
                 if (Api.OK == result.getCode()) {
-                    // TODO: 2018/2/16 获取相应数据做对应显示
-                    logI("更新广告位位置坐标:onSuccess: result.getText = " + text + "  BillboardInfo = " + result.toString());
-//                    DialogManager.dialogDismiss(WorkerHomeActivity.this);//现在仅在手动点击弹窗的“X”关闭
-                    billboardInfo.setLocationLng(result.getLocationLng());
-                    billboardInfo.setLocationLat(result.getLocationLat());
-                    currentLocationBillboard = billboardInfo;//②广告更新绑定当前定位的请求成功之后
-                    itvPreview.getvCover().setVisibility(View.GONE);//去掉"预览"蒙层
-                    //更新广告位位置成功后将该位置移动至中心,本来就在中心
-//                    moveToNewCenter(Double.parseDouble(lat),Double.parseDouble(lng));
-
-                    // ①按照管理码查询后，返回的广告位有经纬度
-                    showUploadPhotoDialog(currentLocationBillboard);
-
+                    //再次请求一次数据[业务规范，查询业务/绑定业务]
+                    requestBillboardInfo(billboardInfo.getUniqueCode());
                     reSearchRequest();//重新请求搜索信息，目的是用特殊覆盖物突出显示刚绑定的广告位[此时该广告位就在定位位置]
                 }//
-
                 toast(text + "");
             }
 
@@ -394,7 +335,6 @@ public class WorkerHomeActivity extends MapActivity {
      * 重新请求搜索信息
      */
     private void reSearchRequest() {
-
         SearchInfo searchInfo = new SearchInfo();
         // TODO: 2018/2/14 设置对应参数
         searchInfo.setAccount(getMemberInfo().getAccount());
