@@ -1,0 +1,562 @@
+<html>
+<head>
+<title>玩法介绍</title>
+<meta http-equiv="Content-Type" charset="utf-8"/>
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>	
+<link rel="shortcut icon" href=""/>
+<style type="text/css">
+*{margin:0; padding:0; font:normal 1em "微软雅黑";}
+.font75{font-size:0.75em;}
+.font15{font-size:1.5em;}
+.font125{font-size:1.25em;}
+.font875{font-size:0.875em;}
+.fontb{font-weight:bold;}
+.fontArial{font-family:Arial;}
+span.zs_blue{color:#0365c4;}
+span.zs_red{color:#ff0065;}
+span.zs_purple{color:#fd01fc;}
+
+body{padding-top:30px;}
+header{width:100%; height:40px; color:#fff; line-height:40px; background-color:#E26B1B; position:fixed; top:0; z-index:9;}
+header span{display:block; text-align:center; width:100%; max-width:640px; position:relative; margin:0 auto;}
+header .title{margin:4px auto; display:inline-block; height:26px; line-height:24px; background-color:#D86417; border:2px solid #D05909; -web-border-radius:10px; -moz-border-radius:10px; border-radius:10px; padding:0 32px 0 14px; cursor:pointer; position:relative;}
+header .title span{display:inline-block; width:13px; height:12px; background-image:url(img/k3_sel.jpg); background-repeat:no-repeat; background-size:13px 12px; background-position:0 0; position:absolute; right:10px; top:8px;}
+header .xc_return{display:inline-block; width:30px; height:30px; background-image:url(img/xc_zz_return.jpg); background-repeat:no-repeat; background-position:0 0; background-size:30px 30px; cursor:pointer; position:absolute; left:13px; top:4px;}
+.xc_br{display:inline-block; width:2px; height:40px; background-image:url(img/xc_zz_br.jpg); background-repeat:repeat-y; background-position:0 0; position:absolute; left:60px; top:0;}
+header img.xc_refresh{right:30px; top:28px;}
+.c{float:none; height:0; overflow:hidden; clear:both;}
+
+i.del,i.add,i.del2,i.add2{background-color:#EAEAEA; background-image:url(img/zhicondel.jpg); background-repeat:no-repeat; background-size:15px 2px; background-position:center center; cursor:pointer; display:inline-block; width:25px; height:25px; vertical-align:middle;}
+i.add{background-image:url(img/zhiconadd.jpg); background-size:15px 15px;}
+i.del2,i.add2{background-image:url(img/btn_del1.png); background-size:25px 25px; margin-left:10px;}
+i.add2{background-image:url(img/btn_add1.png); margin-left:0; margin-right:5px;}
+
+.inp_txt{border:0; border-top:1px solid #ddd; border-bottom:1px solid #ddd; box-shadow:3px 3px 3px #E7E7E7 inset; width:40px; height:23px; color:#666; line-height:23px; text-align:center; vertical-align:middle;}
+
+.yd_tip{background-color:#000; border-radius:3px; display:none; width:200px; color:#fff; margin-left:-100px; padding:4px 10px 7px; text-align:center; position:fixed; left:50%; bottom:115px; z-index:9;}
+
+header .title{padding-right:14px;}
+.maincon{width:100%; text-align:center;}
+
+.wf_con{display:inline-block; width:95%; max-width:640px; text-align:left; margin:0 auto; position:relative;}
+.czlist{margin-bottom:10px; position:fixed; top:0; z-index:9; background-color:#fff;}
+.czlist label{width:145px; overflow:hidden; display:inline-block; height:34px; padding-top:1px; vertical-align:middle;}
+.czlist em{display:inline-block; white-space:nowrap;}
+.czlist a,.czlist i.fq_left,.czlist i.fq_right{display:inline-block; width:68px; height:33px; border:1px solid #e6e6e6; color:#666; line-height:33px; text-align:center; text-decoration:none; vertical-align:middle; margin-left:-1px;}
+.czlist a:hover,.czlist a.fq_cur{display:inline-block; background-image:url(img/hm_gk.jpg); background-repeat:no-repeat; background-size:70px 35px; width:70px; height:35px; line-height:35px; color:#fff; border:0;}
+.czlist i.fq_left,.czlist i.fq_right{background-image:url(img/icon-more.png); background-repeat:no-repeat; width:34px; background-size:30px 30px; background-position:center center; cursor:pointer;}
+.czlist i.fq_right{background-image:url(img/icon-right.png);}
+.czlist label a{margin-top:-1px;}
+
+.play_con label,.play_con span,td,p{font-size:0.875em;}
+th,h4{font-size:0.875em;}
+.play_con a,h3{font-weight:bold;}
+h3{color:#333; font-size:0.875em; margin-top:20px;}
+p{color:#666; line-height:20px; margin-top:0; text-indent:28px;}
+h4{color:#e16a1a; margin-top:15px;}
+h5{color:#fe0000; height:18px; margin-top:10px;}
+table{border-top:1px solid #ddd; border-left:1px solid #ddd; width:100%; margin-top:5px;}
+th,td{border-bottom:1px solid #ddd; border-right:1px solid #ddd; height:30px;}
+th{background-color:#eee; color:#666;}
+td,td p{color:#666; line-height:20px; text-align:center;}
+.play_con td p{text-align:left; text-indent:28px; margin:5px 0;}
+.play_con h2 a{background:none; text-align:left; display:inline; border:0; color:#d68f5f; height:28px; line-height:28px; margin-top:20px; text-decoration:none;}
+.play_con h2 a:hover{text-decoration:none; color:#d68f5f;}
+.play_con span{display:block; width:100%; color:#888; line-height:24px; margin-top:5px;}
+.play_con label{display:block; color:#999; line-height:18px; margin-top:5px; padding-left:28px;}
+
+.play_li{display:none;}
+.wf_con a.to_top{display:inline-block; width:45px; height:45px; background-image:url(img/totop.png); background-repeat:no-repeat; background-size:45px 45px; position:fixed; bottom:20px; right:2%; cursor:pointer;} 
+</style> 
+<script src="js/jquery.js" ></script>
+<script src="js/hm.js"></script> 
+</head>
+<body>
+<div class="maincon">
+<span class="wf_con">
+
+<div class="czlist"><i class="fq_left"></i><label class="fq_bli font875"><em style=""><a href="javascript:;" class="fq_cur">双色球</a><a href="javascript:;">大乐透</a><a href="javascript:;">福彩3D</a><a href="javascript:;">11选5</a><a href="javascript:;">12选5</a><a href="javascript:;">快三</a><a href="javascript:;">排列3</a><a href="javascript:;">竞彩足球</a><a href="javascript:;">竞彩篮球</a></em></label><i class="fq_right"></i></div>
+
+<div class="play_con">
+<div class="play_li" style="display:block;">
+<h3>1、投注方式：</h3>
+<p>双色球投注区分为红球号码区和蓝球号码区，红球号码范围为01～33，蓝球号码范围为01～16。双色球每期从33个红球中开出6个号码，从16个蓝球中开出1个号码作为中奖号码，双色球玩法即是竞猜开奖号码的6个红球号码和1个蓝球号码，顺序不限.</p>
+<h4>1、标准投注</h4>
+<p>从红球号码中选择6个号码，从蓝球号码中选择1个号码为一注，红球最多可选20个号码，蓝球最多可全选。单注最高奖金可达1000万元。</p>
+<h4>2、胆拖投注</h4>
+<p>在33个红球号码中选择1～5个号码作为每注都有的胆码，再补充其它不同的红球号码作为拖码进行投注，蓝球无胆码和拖码之分。单注最高奖金可达1000万元。</p>
+
+<h3>2、设奖及中奖：</h3>
+<TABLE cellSpacing="1" cellPadding="0">
+<colgroup><col width="10%"/><col width="10%"/><col width="10%"/><col width="10%"/><col width="50%"/><col width="10%"/></colgroup>
+<TR><Th rowSpan="2">奖级</Th><Th colSpan="2">中奖条件</Th><Th rowSpan="2">中奖说明</Th><Th rowSpan="2">单注奖金</Th><Th rowSpan="2">单注赔率</Th></TR>
+<TR><Th width="13%">红球</Th><Th width="7%">蓝球</Th></TR>
+<TR><Td>一等奖</TD><TD>●●●●●●</TD><TD>●</TD><TD>中6+1</TD><TD><p>当奖池资金低于1亿元时，奖金总额为当期高等奖奖金的70%与奖池中累积的奖金之和，单注奖金按注均分，单注最高限额封顶500万元。</p>
+<p>当奖池资金高于1亿元（含）时，奖金总额包括两部分，一部分为当期高等奖奖金的50%与奖池中累积的奖金之和，单注奖金按注均分，单注最高限额封顶500万元；另一部分为当期高等奖奖金的20%，单注奖金按注均分，单注最高限额封顶500万元。</p></TD><TD>--</TD></TR>
+<TR><TD>二等奖</TD><TD>●●●●●●</TD><TD> </TD><TD>中6+0</TD><TD><p>当期高等奖奖金的30%<p></TD><TD> </TD></TR>
+<TR><TD>三等奖</TD><TD>●●●●●</TD><TD>●</TD><TD>中5+1</TD><TD><p>单注奖金额固定为3000元<p></TD><TD>1:1500</TD></TR>
+<TR><TD rowSpan="2">四等奖</TD><TD>●●●●●</TD><TD> </TD><TD>中5+0</TD><TD rowSpan="2"><p>单注奖金额固定为200元<p></TD><TD rowSpan="2">1:100</TD></TR>
+<TR><TD>●●●●</TD><TD>●</TD><TD>中4+1</TD></TR>
+<TR><TD rowSpan="2">五等奖</TD><TD>●●●●</TD><TD> </TD><TD>中4+0</TD><TD rowSpan="2"><p>单注奖金额固定为10元<p></TD><TD rowSpan="2">1:5</TD></TR>
+<TR><TD>●●●</TD><TD>●</TD><TD>中3+1</TD></TR>
+<TR><TD rowSpan="3">六等奖</TD><TD>●●</TD><TD>●</TD><TD>中2+1</TD><TD rowSpan="3"><p>单注奖金额固定为5元<p></TD><TD rowSpan="3">1:2.5</TD></TR>
+<TR><TD>●</TD><TD>●</TD><TD>中1+1</TD></TR>
+<TR><TD> </TD><TD>●</TD><TD>中0+1</TD></TR>
+</TABLE>
+<h5>注：</h5>
+<label>1、高等奖奖金＝奖金总额－固定奖奖金。<br/>
+2、当奖池奖金超过1亿元(含)时，下期一等奖奖金总额包括两部分，一部分为高等奖奖金的50%与奖池奖金之和，单注奖金按注均分，封顶500万元；另一部分为高等奖奖金的20%，单注奖金按注均分，封顶500万元。<br/>
+3、奖池奖金在1亿元以下时，单注奖金封顶500万元。</label>
+
+<h3>3、开奖返奖:</h3>
+<p>每周二、四、日21:30开奖，每周三期，开奖号码通过摇奖方式产生，中国教育电视台对开奖进行现场直播.</p>
+
+</div>
+
+<div class="play_li">
+<h3>1、投注方式:</h3>
+<h4>1、标准投注</h4>
+<p>基本投注：从前区号码中选择5个号码，从后区号码中选择2个号码为一注，前区号码最多可选18个号码，后区号码最多可全选。单注最高奖金1000万元。</p>
+<p>追加投注：在基本投注的基础上，进行追加投注，追加后3元一注。追加投注单注最高奖金1600万元。</p>
+<h4>2、胆拖投注</h4>
+<p>基本投注：在35个前区号码中选择1～4个号码作为每注都有的胆码，再补充其它不同的前区号码作为拖码进行投注，后区无胆码和拖码之分。单注最高奖金1000万元。追加投注：在基本投注的基础上，进行追加投注，追加后3元一注。追加投注单注最高奖金1600万元。 </p>
+<h3>2、设奖及中奖:	</h3>
+<TABLE cellSpacing="1" cellPadding="0">
+<colgroup><col width="10%"/><col width="20%"/><col width="10%"/><col width="10%"/><col width="50%"/></colgroup>
+<TR><Th rowSpan="2">奖级</Th><Th colSpan="2">中奖条件</Th><Th rowSpan="2">中奖说明</Th><Th rowSpan="2">单注奖金</Th></TR>
+<TR><Th>前区</Th><Th>后区</Th></TR>
+<TR><TD>一等奖</TD><TD>●●●●●</TD><TD>●●</TD><TD>中5+2</TD><TD><p>高等奖奖金的75%与奖池奖金之和除以中奖注数。</p></TD></TR>
+<TR><TD>二等奖</TD><TD>●●●●●</TD><TD>●</TD><TD>中5+1</TD><TD><p>高等奖奖金的18%除以中奖注数。</p></TD></TR>
+<TR><TD rowSpan="2">三等奖</TD><TD>●●●●●</TD><TD>&nbsp;</TD><TD>中5+0</TD><TD rowSpan="2"><p>高等奖奖金的7%除以中奖注数。</p></TD></TR>
+<TR><TD>●●●●</TD><TD>●●</TD><TD>中4+2</TD></TR>  
+<TR><TD rowSpan="2">四等奖</TD><TD>●●●●</TD><TD>●</TD><TD>中4+1</TD><TD rowSpan="2"><p>200元</p></TD></TR>
+<TR><TD>●●●</TD><TD>●●</TD><TD>中3+2</TD></TR>  
+<TR><TD rowSpan="3">五等奖</TD><TD>●●●●</TD><TD>&nbsp;</TD><TD>中4+0</TD><TD rowSpan="3"><p>10元</p></TD></TR>
+<TR><TD>●●●</TD><TD>●</TD><TD>中3+1</TD></TR>  
+<TR><TD>●●</TD><TD>●●</TD><td>&nbsp;</TD></TR>  
+<TR><TD rowSpan="4">六等奖</TD><TD>●●●</TD><TD>&nbsp;</TD><TD>中3+0</TD><TD rowSpan="4"><p>5元</p></TD></TR>
+<TR><TD>●</TD><TD>●●</TD><TD>中1+2</TD></TR>
+<TR><TD>●●</TD><TD>●</TD><TD>中2+1</TD></TR>
+<TR><TD>&nbsp;</TD><TD>●●</TD><TD>中0+2</TD></TR>
+</TABLE>
+<h5>注：</h5>
+<label>1、高等奖奖金＝奖金总额－固定奖奖金。</br>
+2、当奖池奖金累积超过1亿元(含)时，下期一、二等奖奖金分配比例倒置。一等奖奖金总额由两部分组成，一部分为奖池奖金 (基本投注单注奖金封顶500万元，追加投注单注奖金封顶300万元)，另一部分为高等奖奖金的20%；二等奖奖金总额为高等奖奖金的75% (基本投注单注奖金封顶500万元，追加投注单注奖金封顶300万元)。</br>
+3、在一、二等奖奖金分配比例不倒置的情况下，基本投注单注奖金封顶500万元。</label>
+<h3>3、开奖</h3>
+<p>每周一、三、六晚开奖，每周三期，开奖号码通过摇奖方式产生，CCTV－5《天天体彩》21:50～22:00播出开奖节目。</p>
+
+</div>
+
+<div class="play_li">
+<h3>1、投注方式:</h3>
+<TABLE cellSpacing="1" cellPadding="0">
+<colgroup><col width="20%"/><col width="80%"/></colgroup>
+<TR><Th>玩法</Th><Th>规则</Th></TR>
+<TR><Td>直选</Td><Td><p>竟猜三位开奖号码，即百位、十位和个位，且顺序一致。</p></Td></TR>
+<TR><Td>组选三</Td><Td><p>竟猜三位开奖号码，即百位、十位和个位，顺序不限，且投注时三位号码有两位相同。</p></Td></TR>
+<TR><Td>组选六</Td><Td><p>竟猜三位开奖号码，即百位、十位和个位，顺序不限，且投注时三位号码各不相同。</p></Td></TR>
+</TABLE>
+<h5>注：</h5>
+<label>&lt;1&gt;直选：将投注号码以惟一的排列方式进行投注。<br/>
+&lt;2&gt;组选：将投注号码的所有排列方式作为一注投注号码进行投注。示例：123，排列方式有123、132、213、231、312、321，共计6种。<br/>
+&lt;3&gt;组选三：在组选中，如果一注组选号码的3个数字有两个数字相同，则有3种不同的排列方式，因而就有3个中奖机会，这种组选投注方式简称组选。</label>
+<h3>2、设奖及中奖:	</h3>
+<TABLE cellSpacing="1" cellPadding="0">
+<colgroup><col width="10%"/><col width="20%"/><col width="20%"/><col width="20%"/><col width="20%"/><col width="10%"/></colgroup>
+<TR><Th>奖级</Th><Th>中奖条件</Th><Th>中奖号码示例</Th><Th>单注奖金</Th><Th>中奖概率</Th><Th>单注赔率</Th></TR>
+<TR><TD>直选奖</TD><TD>定位中三码</TD><TD>678</TD><TD>1040元</TD><TD>1/1000</TD><TD>1:520</TD></TR>
+<TR><TD>组选三奖</TD><TD>不定位中三码</TD><TD>668、686、866</TD><TD>346元</TD><TD>1/333</TD><TD>1:173</TD></TR>
+<TR><TD>组选六奖</TD><TD>不定位中三码</TD><TD>678、687、768、786、867、876</TD><TD>173元</TD><TD>1/167</TD><TD>1:86.5</TD></TR>
+</TABLE>
+<h5>注：</h5>
+<label>&lt;1&gt;、假设当期的开奖号码为678（组选三适用开奖号码为668）。<br/>
+&lt;2&gt;、定位和不定位：定位指投注号码与开奖号码按位一致，不定位指投注号码与开奖号码一致，顺序不限。示例：开奖号码为678，678    则定位中三码，768或867则为不定位中三码。</label>
+<h3>3、开奖</h3>
+<p>每天20:30开奖，每天一期，开奖号码通过摇奖方式产生，中央广播电台中国之声对开奖进行现场直播。</p>
+
+</div>
+
+<div class="play_li">
+<h3>1、投注方式:</h3>
+<p>11选5投注区号码范围为01～11，每期开出5个号码作为中奖号码。11选5玩法即是竞猜5位开奖号码的全部或部分号码。</p>
+<TABLE cellSpacing="1" cellPadding="0">
+<colgroup><col width="10%"/><col width="10%"/><col width="80%"/></colgroup>
+<TR><Th colSpan="2">玩法 </Th><Th>规则 </Th></TR>
+<TR><TD rowSpan="8">任选 </TD><TD>任选一 </TD><TD><p>至少选择1个号码投注，选号与开奖号码第1位一致即中奖13元</p></TD></TR>
+<TR><TD>任选二</TD><TD><p>至少选择2个号码投注，选号与开奖号码任意2位一致即中奖6元</p></TD></TR>
+<TR><TD>任选三</TD><TD><p>至少选择3个号码投注，选号与开奖号码任意3位一致即中奖19元</p></TD></TR>
+<TR><TD>任选四</TD><TD><p>至少选择4个号码投注，选号与开奖号码任意4位一致即中奖78元</p></TD></TR>
+<TR><TD>任选五</TD><TD><p>至少选择5个号码投注，选号与开奖号码全部一致即中奖540元</p></TD></TR>
+<TR><TD>任选六</TD><TD><p>至少选择6个号码投注，选号与开奖号码任意5位一致即中奖90元</p></TD></TR>
+<TR><TD>任选七</TD><TD><p>至少选择7个号码投注，选号与开奖号码任意5位一致即中奖26元</p></TD></TR>
+<TR><TD>任选八</TD><TD><p>至少选择8个号码投注，选号与开奖号码任意5位一致即中奖9元</p></TD></TR>
+<TR><TD rowSpan="2">前二</TD><TD>直选</TD><TD><p>每位各选1个或多个号码投注，选号与开奖号码前2位号码(顺序一致),即中奖130元</p></TD></TR>
+<TR><TD>组选</TD><TD><p>至少选择2个号码投注，选号与开奖号码前2位号码(顺序不限),即中奖65元</p></TD></TR>
+<TR><TD bgColor="#ffffff" rowSpan="2">前三 </TD><TD bgColor="#ffffff" height="25">直选 </TD><TD bgColor="#ffffff" height="25"><p>每位各选1个或多个号码投注，选号与开奖号码前3位号码(顺序一致),即中奖1170元</p></TD></TR>
+<TR><TD>组选 </TD><TD><p>至少选择3个号码投注，选号与开奖号码前3位号码(顺序不限),即中奖195元</p></TD></TR>
+</TABLE>
+<h5>注：</h5>
+<label>&lt;1&gt;直选：将投注号码以惟一的排列方式进行投注。</br>
+&lt;2&gt;组选：将投注号码的所有排列方式作为一注投注号码进行投注。示例：前三组选01   02 03，排列方式有01 02 03、01 03 02、02 01 03、02 03 01、03 01 02、03 02 01，共计6种。</label>
+<h5>注：</h5>
+<label>&lt;1&gt;、假设当期的开奖号码为01 02 03 04   05。<br/>
+&lt;2&gt;、前1码、前2码和前3码：前1码指开奖号码的第1位号码，前2码指开奖号码的前2位号码，示例：开奖号码为01   02 03 04 05，前1码为01，前2码为01 02。<br/>
+&lt;3&gt;、定位和不定位：定位指投注号码与开奖号码按位一致，不定位指投注号码与开奖号码一致，顺序不限。示例：开奖号码为01 02 03   04 05，01 02则定位中前2码，01 02或02 01则为不定位中前2码。</label>
+<h3>3、开奖</h3>
+<p>每天09:07第一期开奖，21:55分最后一期开奖，每10分钟开奖一次，每天65期。开奖通过电子开奖系统进行，开奖结果由视频信号或公众媒体播出。</p>
+
+</div>
+
+<div class="play_li">
+<TABLE cellSpacing="1" cellPadding="0">
+<colgroup><col width="10%"/><col width="10%"/><col width="80%"/></colgroup>
+<TR><Th colSpan="2">玩法</Th><Th>规则</Th></TR>
+<TR><TD rowSpan="8">任选</TD><TD>任选一</TD><TD><p>至少选择1个号码投注，选号与开奖号码第1位一致即中奖14元</p></TD></TR>
+<TR><TD>任选二</TD><TD><p>至少选择3个号码投注，选号与开奖号码任意3位一致即中奖25元</p></TD></TR>
+<TR><TD>任选三</TD><TD><p>至少选择3个号码投注，选号与开奖号码任意3位一致即中奖25元</p></TD></TR>
+<TR><TD>任选四</TD><TD><p>至少选择4个号码投注，选号与开奖号码任意4位一致即中奖115元</p></TD></TR>
+<TR><TD>任选五</TD><TD><p>至少选择5个号码投注，选号与开奖号码全部一致即中奖930元</p></TD></TR>
+<TR><TD>任选六</TD><TD><p>至少选择6个号码投注，选号与开奖号码任意5位一致即中奖155元</p></TD></TR>
+<TR><TD>任选七</TD><TD><p>至少选择7个号码投注，选号与开奖号码任意5位一致即中奖44元</p></TD></TR>
+<TR><TD>任选八</TD><TD><p>至少选择8个号码投注，选号与开奖号码任意5位一致即中奖16元</p></TD></TR>
+<TR><TD rowSpan="2">前二 </TD><TD>直选 </TD><TD><p>每位各选1个或多个号码投注，选号与开奖号码前2位号码(顺序一致),即中奖155元</p></TD></TR>
+<TR><TD>组选 </TD><TD><p>至少选择2个号码投注，选号与开奖号码前2位号码(顺序不限),即中奖77元</p></TD></TR>
+<TR><TD rowSpan="2">前三 </TD><TD>直选 </TD><TD><p>每位各选1个或多个号码投注，选号与开奖号码前3位号码(顺序一致),即中奖1550元</p></TD></TR>
+<TR><TD>组选 </TD><TD><p>至少选择3个号码投注，选号与开奖号码前3位号码(顺序不限),即中奖255元</p></TD></TR>
+</TABLE>
+<h5>注：</h5>
+<label>&lt;1&gt;直选：将投注号码以惟一的排列方式进行投注。<br/>
+&lt;2&gt;组选：将投注号码的所有排列方式作为一注投注号码进行投注。示例：前三组选01   02 03，排列方式有01 02 03、01 03 02、02 01 03、02 03 01、03 01 02、03 02 01，共计6种。</label>
+
+<h5>注：</h5>
+<label>&lt;1&gt;、假设当期的开奖号码为01 02 03 04   05。<br/>
+&lt;2&gt;、前1码、前2码：前1码指开奖号码的第1位号码，前2码指开奖号码的前2位号码，示例：开奖号码为01   02 03 04 05，前1码为01，前2码为01 02.<br/>
+&lt;3&gt;、定位和不定位：定位指投注号码与开奖号码按位一致，不定位指投注号码与开奖号码一致，顺序不限。示例：开奖号码为01 02 03   04 05，01 02则定位中前2码，01 02或02 01则为不定位中前2码。</label>
+<h3>3、开奖</h3>
+<p>每天09:05第一期开奖，21:55最后一期开奖，每10分钟开奖一次，每天78期。开奖通过电子开奖系统进行，开奖结果由视频信号或公众媒体播出。</p>
+
+</div>
+
+<div class="play_li">
+<h3>1、投注方式:</h3>
+<TABLE cellSpacing="1" cellPadding="0">
+<colgroup><col width="20%"/><col width="80%"/></colgroup>
+<TR><Th>玩法</Th><Th>规则</Th></TR>
+<TR><TD>和值</TD><TD><p>竟猜三位开奖号码之和</p></TD></TR>
+<TR><TD>三同号通选</TD><TD><p>选(111,222,333,444,555,666)，开出任意豹子即中奖。</p></TD></TR>
+<TR><TD>三同号单选</TD><TD><p>单选1个豹子(111)投注，选号与开奖号码一致即中奖。</p></TD></TR>
+<TR><TD>二同号复选</TD><TD><p>选对子(11*,22*,33*,44*,55*,66*)投注，开奖号码中包含选择的对子即中奖。</p></TD></TR>
+<TR><TD>二同号单选</TD><TD><p>择1个对子和1个不同号码投注，选号与开奖号码一致即中奖。</p></TD></TR>
+<TR><TD>三不同号</TD><TD><p>选择3个不同号码投注，选号与开奖号码一致即中奖。</p></TD></TR>
+<TR><TD>二不同号</TD><TD><p>选择2个不同号码投注，选号与开奖号码一致即中奖。</p></TD></TR>
+<TR><TD>三连号通选</TD><TD><p>全包顺子(123,234,345,456)投注，开出任意顺子即中奖。</p></TD></TR>
+</TABLE>
+<h3>2、设奖及中奖:</h3>
+<TABLE cellSpacing="1" cellPadding="0">
+<colgroup><col width="20%"/><col width="20%"/><col width="20%"/><col width="20%"/><col width="20%"/></colgroup>
+<TR><Th>奖级</Th><Th>中奖条件</Th><Th>中奖号码示例</Th><Th>单注奖金</Th><Th>单注赔率</Th></TR>
+<TR><TD>和值</TD><TD>中一码</TD><TD>10</TD><TD>9元</TD><TD>1:4.5</TD></TR>
+<TR><TD>三同号通选</TD><TD>中任意豹子</TD><TD>555</TD><TD>40元</TD><TD>1:20</TD></TR>
+<TR><TD>三同号单选</TD><TD>中豹子</TD><TD>555</TD><TD>240元</TD><TD>1:120</TD></TR>
+<TR><TD>二同号复选</TD><TD>不定位中一码</TD><TD>55*</TD><TD>15元</TD><TD>1:7.5</TD></TR>
+<TR><TD>二同号单选</TD><TD>不定位中二码</TD><TD>55,6</TD><TD>80元</TD><TD>1:40</TD></TR>
+<TR><TD>三不同号</TD><TD>不定位中三码</TD><TD>3,5,6</TD><TD>40元</TD><TD>1:20</TD></TR>
+<TR><TD>二不同号</TD><TD>不定位中二码</TD><TD>4，6</TD><TD>8元</TD><TD>1:4</TD></TR>
+<TR><TD>三连号通选</TD><TD>中任意顺子</TD><TD>3，4，5</TD><TD>10元</TD><TD>1:5</TD></TR>
+</TABLE>
+<h5>注：</h5>
+<label>&lt;1&gt;、定位和不定位：定位指投注号码与开奖号码按位一致，不定位指投注号码与开奖号码一致，顺序不限。示例：开奖号码为345，345   则定位中三码，453或543则为不定位中三码。</label>
+<p align="right">
+
+</div>
+
+<div class="play_li">
+<h3>1、投注方式:</h3>
+<TABLE cellSpacing="1" cellPadding="0">
+<colgroup><col width="20%"/><col width="80%"/></colgroup>
+<TR><Th>玩法</Th><Th>规则</Th></TR>
+<TR><TD>直选</TD><TD><p>竟猜三位开奖号码，即百位、十位和个位，且顺序一致。</p></TD></TR>
+<TR><TD>组选三</TD><TD><p>竟猜三位开奖号码，即百位、十位和个位，顺序不限，且投注时三位号码有两位相同。</p></TD></TR>
+<TR><TD>组选六</TD><TD><p>竟猜三位开奖号码，即百位、十位和个位，顺序不限，且投注时三位号码各不相同。</p></TD></TR>
+</TABLE>
+<h5>注：</h5>
+<label>&lt;1&gt;直选：将投注号码以惟一的排列方式进行投注。<br/>
+&lt;2&gt;组选：将投注号码的所有排列方式作为一注投注号码进行投注。示例：123，排列方式有123、132、213、231、312、321，共计6种。<br/>
+&lt;3&gt;组选三：在组选中，如果一注组选号码的3个数字有两个数字相同，则有3种不同的排列方式，因而就有3个中奖机会，这种组选投注方式简称组选三。示例：112，排列方式有112、121、211。<br/>
+&lt;4&gt;组选六：在组选中，如果一注组选号码的3个数字各不相同，则有6种不同的排列方式，因而就有6个中奖机会，这种组选投注方式简称组选六。示例：123，排列方式有123、132、213、231、312、321，共计6种。</label>
+<h3>2、设奖及中奖:</h3>
+<TABLE cellSpacing="1" cellPadding="0">
+<colgroup><col width="10%"/><col width="10%"/><col width="40%"/><col width="10%"/><col width="10%"/><col width="10%"/></colgroup>
+<TR><Th>奖级</Th><Th>中奖条件</Th><Th>中奖号码示例</Th><Th>单注奖金</Th><Th>中奖概率</Th><Th>单注赔率</Th></TR>
+<TR><TD>直选奖</TD><TD>定位中三码</TD><TD>678</TD><TD>1040元</TD><TD>1/1000</TD><TD>1:520</TD></TR>
+<TR><TD>组选三奖</TD><TD>不定位中三码</TD><TD>668、686、866</TD><TD>346元</TD><TD>1/333</TD><TD>1:173</TD></TR>
+<TR><TD>组选六奖</TD><TD>不定位中三码</TD><TD>678、687、768、786、867、876</TD><TD>173元</TD><TD>1/167</TD><TD>1:86.5</TD></TR>
+</TABLE>
+<h5>注：</h5>
+<label>&lt;1&gt;、假设当期的开奖号码为678（组选三适用开奖号码为668）。<br/>
+&lt;2&gt;、定位和不定位：定位指投注号码与开奖号码按位一致，不定位指投注号码与开奖号码一致，顺序不限。示例：开奖号码为678，678   则定位中三码，768或867则为不定位中三码.</label>
+<h3>3、开奖</h3>
+<p>每天晚上开奖，每天一期，开奖号码通过摇奖方式产生，CCTV-5《天天体彩》21:50～22:00播出开奖节目。</p>
+
+</div>
+
+<div class="play_li">
+<h3>第一章 总 则</h3>
+<p><strong>第一条</strong>根据财政部《彩票发行与销售管理暂行规定》（财综[2002]13号）的有关规定，制定本游戏规则。</p>
+<p><strong>第二条</strong>中国足球彩票单场竞猜胜平负游戏（以下简称"单场胜平负游戏"）由国家体育总局体育彩票管理中心统一发行。</p>
+<p><strong>第三条</strong>"单场胜平负游戏"实行自愿购买，凡购买该彩票者即被视为同意并遵守本规则。</p>
+<h3>第二章 游戏方法</h3>
+<p><strong>第四条</strong></p>
+<p>"单场胜平负游戏"以国家体育总局体育彩票管理中心选定的国际重要足球比赛为竞猜对象，由购票人对指定的比赛场次在全场90分钟（含伤停补时）的比赛结果进行投注。每一场比赛设置3种比赛结果选项：</p>
+<span>（一）"胜"：表示主队胜，客队负；</span>
+<span>（二）"平"：表示主队与客队平；</span>
+<span>（三）"负"：表示主队负，客队胜。</span>
+<p>购买"单场胜平负游戏"时，选择1场比赛投注为单场投注，选择2场或2场以上比赛投注为过关投注。</p>
+<p>投注方式包括单式投注和复式投注。其中，对所选比赛场次的比赛结果均选择1种投注结果为单式投注。对于某个或某几个比赛场次选择2种或2种以上的投注结果为复式投注。</p>
+<p>购票人可对其选定的结果进行多倍投注，投注倍数范围为2至99倍。</p>
+<p><strong>第五条</strong>当进行比赛的两支球队强弱悬殊较大时，由国家体育总局体育彩票管理中心根据实际比赛情况采用让球方式确定胜平负关系。具体让球球队及让球数量和竞猜赛程一同公布。</p>
+<label>例如：</br>
+主队让1球。</br>
+1、"胜" 主队得分减去客队得分大于1时，主队胜，客队负；</br>
+2、"平" 主队得分减去客队得分等于1时，主队与客队平；</br>
+3、"负" 主队得分减去客队得分小于1时，主队负，客队胜。</br>
+客队让3球。</br>
+1、"胜" 客队得分减去主队得分小于3时，主队胜，客队负；</br>
+2、"平" 客队得分减去主队得分等于3时，主队与客队平；</br>
+3、"负" 客队得分减去主队得分大于3时，主队负，客队胜。</label>
+<p><strong>第六条</strong>"单场胜平负游戏"每注2元，单张彩票最大投注金额不超过20000元。彩票不记名、不挂失，不返还本金，不流通使用。</p>
+<p><strong>第七条</strong>投注内容由购票人选定，通过销售终端机人工输入进行投注或利用"单场胜平负游戏"销售终端提供的投注单辅助进行投注。投注内容经投注系统确认后打印出的兑奖凭证即为"单场胜平负游戏"彩票，交购票人保存。</p>
+<p><strong>第八条</strong>投注单投注：</p>
+<p>（一）投注单有4个供购票人填写的独立区域，分别为"过关方式"区、"赛事编号"区、"竞猜选项"区、"倍数"区。</p>
+<p>"过关方式"区的格式为："选择竞猜场次数量 * 购买彩票注数"，购票人必须且只能选择单场投注或过关投注中的1种方式，不选或多选均为无效投注。</p>
+<p>具体投注注数的分配如下表：</p>
+<table cellpadding="0" cellspacing="1">
+<colgroup><col width="10%"/><col width="10%"/><col width="10%"/><col width="10%"/><col width="10%"/><col width="10%"/><col width="10%"/><col width="10%"/><col width="10%"/><col width="10%"/></colgroup>
+<tr><th>&nbsp;</th><th>过关投注</th><th>单场</th><th>两关</th><th>三关</th><th>四关</th><th>五关</th><th>六关</th><th>七关</th><th>八关</th></tr>
+<tr><td>1</td><td>单场 </td><td>1</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>2</td><td>2串1</td><td>&nbsp;</td><td>1</td><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>3</td><td>3串1</td><td>&nbsp;</td><td>　</td><td>1</td><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>4</td><td>3串3</td><td>&nbsp;</td><td>3</td><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>5</td><td>3串4</td><td>&nbsp;</td><td>3</td><td>1</td><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>6</td><td>4串1</td><td>&nbsp;</td><td>　</td><td>　</td><td>1</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>7</td><td>4串4</td><td>&nbsp;</td><td>　</td><td>4</td><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>8</td><td>4串5</td><td>&nbsp;</td><td>　</td><td>4</td><td>1</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>9</td><td>4串6</td><td>&nbsp;</td><td>6</td><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>10</td><td>4串11</td><td>&nbsp;</td><td>6</td><td>4</td><td>1</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>11</td><td>5串1</td><td>&nbsp;</td><td>　</td><td>　</td><td>　</td><td>1</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>12</td><td>5串5</td><td>&nbsp;</td><td>　</td><td>　</td><td>5</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>13</td><td>5串6</td><td>&nbsp;</td><td>　</td><td>　</td><td>5</td><td>1</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>14</td><td>5串10</td><td>&nbsp;</td><td>10</td><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>15</td><td>5串16</td><td>&nbsp;</td><td>　</td><td>10</td><td>5</td><td>1</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>16</td><td>5串20</td><td>&nbsp;</td><td>10</td><td>10</td><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>17</td><td>5串26</td><td>&nbsp;</td><td>10</td><td>10</td><td>5</td><td>1</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>18</td><td>6串1</td><td>&nbsp;</td><td>　</td><td>　</td><td>　</td><td>　</td><td>1</td><td>　</td><td>　</td></tr>
+<tr><td>19</td><td>6串6</td><td>&nbsp;</td><td>　</td><td>　</td><td>　</td><td>6</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>20</td><td>6串7</td><td>&nbsp;</td><td>　</td><td>　</td><td>　</td><td>6</td><td>1</td><td>　</td><td>　</td></tr>
+<tr><td>21</td><td>6串15</td><td>&nbsp;</td><td>15</td><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>22</td><td>6串20</td><td>&nbsp;</td><td>　</td><td>20</td><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>23</td><td>6串22</td><td>&nbsp;</td><td>　</td><td>　</td><td>15</td><td>6</td><td>1</td><td>　</td><td>　</td></tr>
+<tr><td>24</td><td>6串35</td><td>&nbsp;</td><td>15</td><td>20</td><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>25</td><td>6串42</td><td>&nbsp;</td><td>　</td><td>20</td><td>15</td><td>6</td><td>1</td><td>　</td><td>　</td></tr>
+<tr><td>26</td><td>6串50</td><td>&nbsp;</td><td>15</td><td>20</td><td>15</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>27</td><td>6串57</td><td>&nbsp;</td><td>15</td><td>20</td><td>15</td><td>6</td><td>1</td><td>　</td><td>　</td></tr>
+<tr><td>28</td><td>7串7</td><td>&nbsp;</td><td>　</td><td>　</td><td>　</td><td>　</td><td>7</td><td>　</td><td>　</td></tr>
+<tr><td>29</td><td>7串8</td><td>&nbsp;</td><td>　</td><td>　</td><td>　</td><td>　</td><td>7</td><td>1</td><td>　</td></tr>
+<tr><td>30</td><td>7串21</td><td>&nbsp;</td><td>　</td><td>　</td><td>　</td><td>21</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>31</td><td>7串35</td><td>&nbsp;</td><td>　</td><td>　</td><td>35</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>32</td><td>7串120</td><td>&nbsp;</td><td>21</td><td>35</td><td>35</td><td>21</td><td>7</td><td>1</td><td>　</td></tr>
+<tr><td>33</td><td>8串8</td><td>&nbsp;</td><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td><td>8</td><td>　</td></tr>
+<tr><td>34</td><td>8串9</td><td>&nbsp;</td><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td><td>8</td><td>1</td></tr>
+<tr><td>35</td><td>8串28</td><td>&nbsp;</td><td>　</td><td>　</td><td>　</td><td>　</td><td>28</td><td>　</td><td>　</td></tr>
+<tr><td>36</td><td>8串56</td><td>&nbsp;</td><td>　</td><td>　</td><td>　</td><td>56</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>37</td><td>8串70</td><td>&nbsp;</td><td>　</td><td>　</td><td>70</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>38</td><td>8串247</td><td>&nbsp;</td><td>28</td><td>56</td><td>70</td><td>56</td><td>28</td><td>8</td><td>1</td></tr>
+<tr><td>&nbsp;</td>
+<td>过关投注</td>
+<td>单场</td>
+<td>两关</td>
+<td>三关</td>
+<td>四关</td>
+<td>五关</td>
+<td>六关</td>
+<td>七关</td>
+<td>八关</td>
+</tr>
+</table>
+<p>每个比赛场次所提供的过关投注方式由国家体育总局体育彩票管理中心选定，根据不同比赛场次情况，提供前表中全部或部分过关投注方式。</p>
+<p>"赛事编号"区：购票人填写所要竞猜的比赛场次的对应编号，包括日号和数字编号两部分。</p>
+<p>"竞猜选项"区：购票人对所选择的比赛场次的比赛结果进行投注，选择1个以上的结果即构成复式投注。所选择的场次数量应与"过关方式"区中所选择的竞猜场次数量一致，否则为无效投注。</p>
+<p>"倍数"区：此区域如不做出选择即为没有加倍投注；选择某项或某几项的组合即为对应的加倍投注，例如选择"5"为5倍投注、选择"50"加"6"为56倍投注、选择"50"加"40"加"9"为99倍投注。选择的倍数项之和大于99倍为无效投注。</p>
+<p><strong>第九条</strong>销售终端打印出的"单场胜平负游戏"彩票为该游戏唯一兑奖凭证。投注单只用于辅助购票人投注，不作为兑奖凭证，也不作为购票人投注结果的间接证明。</p>
+<h3>第三章 设 奖</h3>
+<p><strong>第十条</strong>奖金分配办法如下：</p>
+<span>（一）选择单场投注时，设置浮动奖金。</span>
+<span>单注奖金=2元×所选比赛场次的浮动奖金额。</span>
+<span>浮动奖金额=该比赛场次的单场投注总投注金额÷该比赛场次的单场投注中奖彩票总投注金额×68％。</span>
+<label>例如：选择第5场比赛竞猜，进行单场投注，则单注奖金=2元×浮动奖金额5，浮动奖金额5=第5场比赛的单场投注总投注金额÷第5场比赛的单场投注中奖彩票总投注金额×68％。</label>
+<span>（二）选择2场及2场以上过关投注时，设置固定奖金。国家体育总局体育彩票管理中心在每场选定比赛开始销售前，通过专用计算机分析系统，对每种有效的投注组合设一个固定奖金。该固定奖金在销售过程中根据投注额和其他相关因素调整，并通过销售系统和其他指定方式予以公布。购票人在完成有效投注时刻所获得的某个投注组合对应的固定奖金即为该有效投注中奖后的奖金。</span>
+<p><strong>第十一条</strong>"单场胜平负游戏"根据投注场次数量限定过关投注的单注彩票最高奖金限额，具体为：</p>
+<p>2场或3场过关投注，单注最高奖金限额20万元。</p>
+<p>4场或5场过关投注，单注最高奖金限额50万元。</p>
+<p>6场及6场以上过关投注，单注最高奖金限额100万元。</p>
+<p>彩票中奖后，若单注应兑奖金高于对应的最高奖金限额，则只兑付对应的最高限额奖金。</p>
+<h3>第四章 奖金管理</h3>
+<p><strong>第十二条</strong>"单场胜平负游戏"奖金为销售额的69％，其中68％为返奖奖金、1％为调节基金；公益金为销售额的18％；发行费为销售额的13％。</p>
+<p><strong>第十三条</strong>"单场胜平负游戏"</p>
+<p>设置奖池，奖池由每个竞猜场次的应计提奖金与实际中出奖金的差额累计而成。当某个竞猜场次的应计提奖金大于其实际中出奖金时，余额滚入奖池；当单场投注奖金没有中出时，未中出奖金滚入奖池。当某个竞猜场次的应计提奖金小于其实际中出奖金时，差额用奖池补足；若奖池不足时，用调节基金补足，调节基金不足时，从发行经费中垫支。在出现发行费垫支的情况下，当奖池有资金滚入时优先偿还发行费垫支部分。</p>
+<p><strong>第十四条</strong>"单场胜平负游戏" 设置调节基金，调节基金由销售额的1％、浮动奖奖金取整后的余额、弃奖收入和逾期未退票的票款组成，专项用于支付不可预见情况下的奖金支出风险及设置特别奖。</p>
+<p><strong>第十五条</strong> "单场胜平负游戏"单注奖金不足2元补足至2元，补足部分从调节基金支出，调节基金不足时，从发行经费中垫支。在出现发行费垫支的情况下，当调节基金有资金滚入时优先偿还发行费垫支部分。</p>
+<p><strong>第十六条</strong>"单场胜平负游戏"之奖池、调节基金与其它中国足球彩票单场竞猜游戏之奖池、调节基金统一管理，相互间可调剂使用。</p>
+<h3>第五章 开奖及公告</h3>
+<p><strong>第十七条</strong>"单场胜平负游戏"在竞猜的比赛场次结束后，根据实际比赛结果进行开奖。实际比赛结果以当值裁判员在本规则涉及的比赛时长结束时刻裁定的比赛结果为准，其后对比赛结果的各类更改不影响原确认的开奖结果。开奖结果、销售情况等信息，通过销售网点和指定的互联网网站及其他媒体等信息渠道向社会公布。</p>
+<h3>第六章 中 奖</h3>
+<p><strong>第十八条</strong>每注"单场胜平负游戏"有效投注与对应开奖结果对照，与开奖结果一致即为中奖。</p>
+<p><strong>第十九条</strong>在 "单场胜平负游戏"销售过程中，如遇以下情形发生，则特别规定如下：</p>
+<span>（一）在某个比赛场次开始销售前，其比赛时间提前或推迟或取消比赛，则相应更改该比赛场次的开始、截止销售时间或取消该比赛场次竞猜。</span>
+<span>（二）在某个比赛场次开始销售后，若其比赛时间提前，则相应提前该比赛场次的截止销售时间。</span>
+<span>（三）在某个比赛场次开始销售后，若其比赛时间提前，且比赛开始时仍在进行销售，则认定该比赛场次对于在比赛开始时刻前发生的投注为有效场次，所涉及投注可正常参与兑奖；认定该比赛场次对于在比赛开始时刻后发生的投注则为无效场次。</span>
+<span>（四）在某个比赛场次开始销售后，若其比赛时间推迟且未超过原定时间36小时，则相应推迟该比赛场次的截止销售时间。</span>
+<span>（五）在某个比赛场次开始销售后，若其比赛时间推迟且超过原定时间36小时或无法获知具体推迟时间或取消比赛，则认定该比赛场次为无效场次。</span>
+<span>（六）若某个比赛场次在比赛进行中因故中断，且自中断时刻起36小时内继续完成了比赛，则认定该比赛场次为有效场次，所涉及投注可正常参与兑奖。</span>
+<span>（七）若某个比赛场次在比赛进行中因故中断，且自中断时刻起36小时内未继续完成比赛或无法获知具体补赛时间或取消补赛，则认定该比赛场次为无效场次。</span>
+<span>（八）在某个比赛场次开始销售后，如果比赛主办方决定更换比赛场地，若是从一中立比赛场地更换至另一中立比赛场地，则认定该比赛场次为有效场次，所涉及投注可正常参与兑奖；若不符合前述更换条件，则认定该比赛场次为无效场次。</span>
+<span>（九）在某个比赛场次开始销售后，若参赛双方中有一方与原定参赛队伍不同，则认定该比赛场次为无效场次。</span>
+<span>（十）在某个比赛场次开始销售后，若比赛主办方决定在无观众、无转播的封闭条件下进行比赛，则认定该比赛场次为无效场次。</span>
+<span>（十一）对上述无效场次的认定由国家体育总局体育彩票管理中心最终解释。</span>
+<span>（十二）当某场比赛被认定为无效场次，则该比赛场次的所有单场投注按退票处理，于28天内在指定地点办理退票手续；在过关投注中对该比赛场次的所有选择均视为无效，涉及该比赛场次的过关投注组合之固定奖金按在原投注时刻去除该比赛场次后的投注组合对应的固定奖金计算。</span>
+<span>（十三）在某个比赛场次销售过程中，国家体育总局体育彩票管理中心可根据投注额、突发事件等因素，拒绝某些大额投注、暂停或提前截止针对该场比赛的某些特定过关组合特定结果选项的投注、暂停或提前截止针对该场比赛的所有投注。</span>
+<p><strong>第二十条</strong>每注彩票只有一次中奖机会，不兼中兼得。</p>
+<h3>第七章 兑 奖</h3>
+<p><strong>第二十一条</strong>"单场胜平负游戏"中奖者到当地指定的彩票机构或投注站进行兑奖。每张彩票所涉及的所有比赛场次的开奖结果全部公布后次日起28天为兑奖期，逾期未兑，视为弃奖。</p>
+<p><strong>第二十二条</strong>彩票机构和投注站进行兑奖时，有权查验中奖者的中奖彩票及有效身份证件，兑奖者应予配合。</p>
+<p><strong>第二十三条</strong>凡伪造、涂改中奖彩票，冒领奖金者，送交司法机关追究法律责任。</p>
+<h3>第八章 附 则</h3>
+<p><strong>第二十四条</strong>规则执行中有关重大事项，将通过销售系统和其他指定方式予以公布，国家体育总局体育彩票管理中心不再承担直接通知购票人的责任，购票人须自行知晓。</p>
+
+</div>
+
+<div class="play_li">
+<h3>第一章 总 则</h3>
+<p><strong>第一条</strong>根据财政部《彩票发行与销售管理暂行规定》（财综[2002]13号）的有关规定，制定本游戏规则。</p>
+<p><strong>第二条</strong>中国篮球彩票单场竞猜胜负游戏（以下简称"单场胜负游戏"）由国家体育总局体育彩票管理中心统一发行。</p>
+<p><strong>第三条</strong>"单场胜负游戏"实行自愿购买，凡购买该彩票者即被视为同意并遵守本规则。</p>
+<h3>第二章 游戏方法</h3>
+<p><strong>第四条</strong>"单场胜负游戏"以国家体育总局体育彩票管理中心选定的国际重要篮球比赛为竞猜对象，由购票人对指定的比赛场次在全场（含加时赛）的比赛结果进行投注。每一场比赛设置2种比赛结果选项：</p>
+<span>（一）"胜"：表示主队胜，客队负；</span>
+<span>（二）"负"：表示主队负，客队胜。</span>
+<p>购买"单场胜负游戏"时，选择1场比赛投注为单场投注，选择2场或2场以上比赛投注为过关投注。</p>
+<p>投注方式包括单式投注和复式投注。其中，对所选比赛场次的比赛结果均选择1种投注结果为单式投注。对于某个或某几个比赛场次选择2种或2种以上的投注结果为复式投注。</p>
+<p>购票人可对其选定的结果进行多倍投注，投注倍数范围为2至99倍。</p>
+<p><strong>第五条</strong>"单场胜负游戏"每注2元，单张彩票最大投注金额不超过20000元。彩票不记名、不挂失，不返还本金，不流通使用。</p>
+<p><strong>第六条</strong> 
+投注内容由购票人选定，通过销售终端机人工输入进行投注或利用"单场胜负游戏"销售终端提供的投注单辅助进行投注。投注内容经投注系统确认后打印出的兑奖凭证即为"单场胜负游戏"彩票，交购票人保存。</p>
+<p><strong>第七条</strong>投注单投注：</p>
+<span>（一）投注单有4个供购票人填写的独立区域，分别为"过关方式"区、"赛事编号"区、"竞猜选项"区、"倍数"区。1种方式，不选或多选均为无效投注。</span>
+<span>具体投注注数的分配如下表：</span>
+<table cellpadding="0" cellspacing="1">
+<colgroup><col width="10%"/><col width="10%"/><col width="10%"/><col width="10%"/><col width="10%"/><col width="10%"/><col width="10%"/><col width="10%"/><col width="10%"/><col width="10%"/></colgroup>
+<tr><th>&nbsp;</th><th>过关投注</th><th>单场</th><th>两关</th><th>三关</th><th>四关</th><th>五关</th><th>六关</th><th>七关</th><th>八关</th></tr>
+<tr><td>1</td><td>单场 </td><td>1</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>2</td><td>2串1</td><td>&nbsp;</td><td>1</td><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>3</td><td>3串1</td><td>&nbsp;</td><td>　</td><td>1</td><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>4</td><td>3串3</td><td>&nbsp;</td><td>3</td><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>5</td><td>3串4</td><td>&nbsp;</td><td>3</td><td>1</td><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>6</td><td>4串1</td><td>&nbsp;</td><td>　</td><td>　</td><td>1</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>7</td><td>4串4</td><td>&nbsp;</td><td>　</td><td>4</td><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>8</td><td>4串5</td><td>&nbsp;</td><td>　</td><td>4</td><td>1</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>9</td><td>4串6</td><td>&nbsp;</td><td>6</td><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>10</td><td>4串11</td><td>&nbsp;</td><td>6</td><td>4</td><td>1</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>11</td><td>5串1</td><td>&nbsp;</td><td>　</td><td>　</td><td>　</td><td>1</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>12</td><td>5串5</td><td>&nbsp;</td><td>　</td><td>　</td><td>5</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>13</td><td>5串6</td><td>&nbsp;</td><td>　</td><td>　</td><td>5</td><td>1</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>14</td><td>5串10</td><td>&nbsp;</td><td>10</td><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>15</td><td>5串16</td><td>&nbsp;</td><td>　</td><td>10</td><td>5</td><td>1</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>16</td><td>5串20</td><td>&nbsp;</td><td>10</td><td>10</td><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>17</td><td>5串26</td><td>&nbsp;</td><td>10</td><td>10</td><td>5</td><td>1</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>18</td><td>6串1</td><td>&nbsp;</td><td>　</td><td>　</td><td>　</td><td>　</td><td>1</td><td>　</td><td>　</td></tr>
+<tr><td>19</td><td>6串6</td><td>&nbsp;</td><td> </td><td>　</td><td>　</td><td>6</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>20</td><td>6串7</td><td>&nbsp;</td><td>　</td><td>　</td><td>　</td><td>6</td><td>1</td><td>　</td><td>　</td></tr>
+<tr><td>21</td><td>6串15</td><td>&nbsp;</td><td>15</td><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>22</td><td>6串20</td><td>&nbsp;</td><td>　</td><td>20</td><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>23</td><td>6串22</td><td>&nbsp;</td><td>　</td><td>　</td><td>15</td><td>6</td><td>1</td><td>　</td><td>　</td></tr>
+<tr><td>24</td><td>6串35</td><td>&nbsp;</td><td>15</td><td>20</td><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>25</td><td>6串42</td><td>&nbsp;</td><td>　</td><td>20</td><td>15</td><td>6</td><td>1</td><td>　</td><td>　</td></tr>
+<tr><td>26</td><td>6串50</td><td>&nbsp;</td><td>15</td><td>20</td><td>15</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>27</td><td>6串57</td><td>&nbsp;</td><td>15</td><td>20</td><td>15</td><td>6</td><td>1</td><td>　</td><td>　</td></tr>
+<tr><td>28</td><td>7串7</td><td>&nbsp;</td><td>　</td><td>　</td><td>　</td><td>　</td><td>7</td><td>　</td><td>　</td></tr>
+<tr><td>29</td><td>7串8</td><td>&nbsp;</td><td>　</td><td>　</td><td>　</td><td>　</td><td>7</td><td>1</td><td>　</td></tr>
+<tr><td>30</td><td>7串21</td><td>&nbsp;</td><td>　</td><td>　</td><td>　</td><td>21</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>31</td><td>7串35</td><td>&nbsp;</td><td>　</td><td>　</td><td>35</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>32</td><td>7串120</td><td>&nbsp;</td><td>21</td><td>35</td><td>35</td><td>21</td><td>7</td><td>1</td><td>　</td></tr>
+<tr><td>33</td><td>8串8</td><td>&nbsp;</td><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td><td>8</td><td>　</td></tr>
+<tr><td>34</td><td>8串9</td><td>&nbsp;</td><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td><td>8</td><td>1</td></tr>
+<tr><td>35</td><td>8串28</td><td>&nbsp;</td><td>　</td><td>　</td><td>　</td><td>　</td><td>28</td><td>　</td><td>　</td></tr>
+<tr><td>36</td><td>8串56</td><td>&nbsp;</td><td>　</td><td>　</td><td>　</td><td>56</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>37</td><td>8串70</td><td>&nbsp;</td><td>　</td><td>　</td><td>70</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+<tr><td>38</td><td>8串247</td><td>&nbsp;</td><td>28</td><td>56</td><td>70</td><td>56</td><td>28</td><td>8</td><td>1</td></tr>
+<tr><td>&nbsp;</td><td>过关投注</td><td>单场</td><td>两关</td><td>三关</td><td>四关</td><td>五关</td><td>六关</td><td>七关</td><td>八关</td></tr>
+</table>
+
+<p>每个比赛场次所提供的过关投注方式由国家体育总局体育彩票管理中心选定，根据不同比赛场次情况，提供前表中全部或部分过关投注方式。</p>
+<p>"赛事编号"区：购票人填写所要竞猜的比赛场次的对应编号，包括日号和数字编号两部分。</p>
+<p>"竞猜选项"区：购票人对所选择的比赛场次的比赛结果进行投注，选择1个以上的结果即构成复式投注。所选择的场次数量应与"过关方式"区中所选择的竞猜场次数量一致，否则为无效投注。</p>
+<p>"倍数"区：此区域如不做出选择即为没有加倍投注；选择某项或某几项的组合即为对应的加倍投注，例如选择"5"为5倍投注、选择"50"加"6"为56倍投注、选择"50"加"40"加"9"为99倍投注。选择的倍数项之和大于99倍为无效投注。</p>
+<p><strong>第八条</strong>销售终端打印出的"单场胜负游戏"彩票为该游戏唯一兑奖凭证。投注单只用于辅助购票人投注，不作为兑奖凭证，也不作为购票人投注结果的间接证明。</p>
+<h3>第三章 设 奖</h3>
+<p><strong>第九条</strong>奖金分配办法如下：</p>
+<span>（一）选择单场投注时，设置浮动奖金。</span>
+<span>单注奖金=2元×所选比赛场次的浮动奖金额。</span>
+<span>浮动奖金额=该比赛场次的单场投注总投注金额÷该比赛场次的单场投注中奖彩票总投注金额×68％。</span>
+<label>例如：选择第5场比赛竞猜，进行单场投注，则单注奖金=2元×浮动奖金额5，浮动奖金额5=第5场比赛的单场投注总投注金额÷第5场比赛的单场投注中奖彩票总投注金额×68％。</label>
+<span>（二）选择2场及2场以上过关投注时，设置固定奖金。国家体育总局体育彩票管理中心在每场选定比赛开始销售前，通过专用计算机分析系统，对每种有效的投注组合设一个固定奖金。该固定奖金在销售过程中根据投注额和其他相关因素调整，并通过销售系统和其他指定方式予以公布。购票人在完成有效投注时刻所获得的某个投注组合对应的固定奖金即为该有效投注中奖后的奖金。</span>
+<p><strong>第十条</strong>"单场胜负游戏"根据投注场次数量限定过关投注的单注彩票最高奖金限额，具体为：</p>
+<p>2场或3场过关投注，单注最高奖金限额20万元。</p>
+<p>4场或5场过关投注，单注最高奖金限额50万元。</p>
+<p>6场及6场以上过关投注，单注最高奖金限额100万元。</p>
+<p>彩票中奖后，若单注应兑奖金高于对应的最高奖金限额，则只兑付对应的最高限额奖金。</p>
+<h3>第四章 奖金管理</h3>
+<p><strong>第十一条</strong>"单场胜负游戏"奖金为销售额的69％，其中68％为返奖奖金、1％为调节基金；公益金为销售额的18％；发行费为销售额的13％。</p>
+<p><strong>第十二条</strong>"单场胜负游戏" 设置奖池，奖池由每个竞猜场次的应计提奖金与实际中出奖金的差额累计而成。当某个竞猜场次的应计提奖金大于其实际中出奖金时，余额滚入奖池；当单场投注奖金没有中出时，未中出奖金滚入奖池。当某个竞猜场次的应计提奖金小于其实际中出奖金时，差额用奖池补足；若奖池不足时，用调节基金补足，调节基金不足时，从发行经费中垫支。在出现发行费垫支的情况下，当奖池有资金滚入时优先偿还发行费垫支部分。</p>
+<p><strong>第十三条</strong>"单场胜负游戏" 设置调节基金，调节基金由销售额的1%、浮动奖奖金取整后的余额、弃奖收入和逾期未退票的票款组成，专项用于支付不可预见情况下的奖金支出风险及设置特别奖。</p>
+<p><strong>第十四条</strong>
+<p>"单场胜负游戏"单注奖金不足2元补足至2元，补足部分从调节基金支出，调节基金不足时，从发行经费中垫支。在出现发行费垫支的情况下，当调节基金有资金滚入时优先偿还发行费垫支部分。</p>
+<p><strong>第十五条</strong>"单场胜负游戏" 之奖池、调节基金与其它中国篮球彩票单场竞猜游戏之奖池、调节基金统一管理，相互间可调剂使用。</p>
+<h3>第五章 开奖及公告</h3>
+<p><strong>第十六条</strong> 
+<p>"单场胜负游戏"在竞猜的比赛场次结束后，根据实际比赛结果进行开奖。实际比赛结果以当值裁判员在本规则涉及的比赛时长结束时刻裁定的比赛结果为准，其后对比赛结果的各类更改不影响原确认的开奖结果。开奖结果、销售情况等信息，通过销售网点和指定的互联网网站及其他媒体等信息渠道向社会公布。</p>
+<h3>第六章 中 奖</h3>
+<p><strong>第十七条</strong>每注"单场胜负游戏"有效投注与对应开奖结果对照，与开奖结果一致即为中奖。</p>
+<p><strong>第十八条</strong>在 "单场胜负游戏"销售过程中，如遇以下情形发生，则特别规定如下：</p>
+<span>（一）在某个比赛场次开始销售前，其比赛时间提前或推迟或取消比赛，则相应更改该比赛场次的开始、截止销售时间或取消该比赛场次竞猜。</span>
+<span>（二）在某个比赛场次开始销售后，若其比赛时间提前，则相应提前该比赛场次的截止销售时间。</span>
+<span>（三）在某个比赛场次开始销售后，若其比赛时间提前，且比赛开始时仍在进行销售，则认定该比赛场次对于在比赛开始时刻前发生的投注为有效场次，所涉及投注可正常参与兑奖；认定该比赛场次对于在比赛开始时刻后发生的投注则为无效场次。</span>
+<span>（四）在某个比赛场次开始销售后，若其比赛时间推迟且未超过原定时间36小时，则相应推迟该比赛场次的截止销售时间。</span>
+<span>（五）在某个比赛场次开始销售后，若其比赛时间推迟且超过原定时间36小时或无法获知具体推迟时间或取消比赛，则认定该比赛场次为无效场次。</span>
+<span>（六）若某个比赛场次，在比赛进行至35分钟及以上（全场时长40分钟制比赛）或进行至43分钟及以上（全场时长48分钟制比赛）时因故中断，且当值裁判或比赛主办方裁决比赛正式完成，则认定该比赛场次为有效场次，所涉及投注可正常参与兑奖。</span>
+<span>（七）若某个比赛场次在比赛进行中因故中断，且不符合前述（六）中描述的条件，如果自中断时刻起36小时内继续完成了比赛，则认定该比赛场次为有效场次，所涉及投注可正常参与兑奖。</span>
+<span>（八）若某个比赛场次在比赛进行中因故中断，且不符合前述（六）中描述的条件，如果自中断时刻起36小时内未继续完成比赛或无法获知具体补赛时间或取消补赛，则认定该比赛场次为无效场次。</span>
+<span>（九）在某个比赛场次开始销售后，如果比赛主办方决定更换比赛场地，若是从一中立比赛场地更换至另一中立比赛场地，则认定该比赛场次为有效场次，所涉及投注可正常参与兑奖；若不符合前述更换条件，则认定该比赛场次为无效场次。</span>
+<span>（十）在某个比赛场次开始销售后，若参赛双方中有一方与原定参赛队伍不同，则认定该比赛场次为无效场次。</span>
+<span>（十一）在某个比赛场次开始销售后，若比赛主办方决定在无观众、无转播的封闭条件下进行比赛，则认定该比赛场次为无效场次。</span></p>
+<span>（十二）对上述无效场次的认定由国家体育总局体育彩票管理中心最终解释。</span>
+<span>（十三）当某场比赛被认定为无效场次，则该比赛场次的所有单场投注按退票处理，于28天内在指定地点办理退票手续；在过关投注中对该比赛场次的所有选择均视为无效，涉及该比赛场次的过关投注组合之固定奖金按在原投注时刻去除该比赛场次后的投注组合对应的固定奖金计算</span>
+<span>（十四）在某个比赛场次销售过程中，国家体育总局体育彩票管理中心可根据投注额、突发事件等因素，拒绝某些大额投注、暂停或提前截止针对该场比赛的某些特定过关组合特定结果选项的投注、暂停或提前截止针对该场比赛的所有投注。</span>
+<span><strong>第十九条</strong>每注彩票只有一次中奖机会，不兼中兼得。</span>
+<h3>第七章 兑 奖</h3>
+<p><strong>第二十条</strong>"单场胜负游戏"中奖者到当地指定的彩票机构或投注站进行兑奖。每张彩票所涉及的所有比赛场次的开奖结果全部公布后次日起28天为兑奖期，逾期未兑，视为弃奖。</p>
+<p><strong>第二十一条</strong>彩票机构和投注站进行兑奖时，有权查验中奖者的中奖彩票及有效身份证件，兑奖者应予配合。</p>
+<p><strong>第二十二条</strong>凡伪造、涂改中奖彩票，冒领奖金者，送交司法机关追究法律责任。</p>
+<h3>第八章 附 则</h3>
+<p><strong>第二十三条</strong>规则执行中有关重大事项，将通过销售系统和其他指定方式予以公布，国家体育总局体育彩票管理中心不再承担直接通知购票人的责任，购票人须自行知晓。</p>
+
+</div>
+</div>
+<a href="#" class="to_top"></a>
+</span>
+</div>
+</body>
+</html>

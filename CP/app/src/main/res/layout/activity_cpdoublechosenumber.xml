@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.aipiao.bkpk.views.TopView
+        android:id="@+id/choseTopView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></com.aipiao.bkpk.views.TopView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/yaoyiyao_style" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="摇一摇手机,随机选择号码"
+                    android:textColor="@color/gray3"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/redAndblueLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <com.aipiao.bkpk.views.choseview.SelectBallsView
+                    android:id="@+id/redSelectBallsView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:ballColor="#DD4636"
+                    app:end="33"
+                    app:hasZero="true"
+                    app:numCount="9"
+                    app:start="1"
+                    app:txtSelectedColor="#ffffff"
+                    app:txtUnselectedColor="@color/red" />
+
+                <com.aipiao.bkpk.views.choseview.SelectBallsView
+                    android:id="@+id/blueSelectBallsView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:ballColor="#0088ff"
+                    app:end="16"
+                    app:hasZero="true"
+                    app:numCount="8"
+                    app:start="1"
+                    app:txtSelectedColor="#ffffff"
+                    app:txtUnselectedColor="#0088ff" />
+            </LinearLayout>
+
+            <include
+                android:visibility="gone"
+                android:id="@+id/otherCohseLinearLayout"
+                layout="@layout/item_chose_view"></include>
+
+            <TextView
+                android:id="@+id/redTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="红球：暂没有选择"
+                android:textColor="@color/red"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/blueTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="蓝球：暂没有选择"
+                android:textColor="@color/blue"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/clean_style"
+                android:onClick="clenNumber" />
+
+            <Button
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@color/red5"
+                android:onClick="confirm"
+                android:text="确定复制到剪切板" />
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

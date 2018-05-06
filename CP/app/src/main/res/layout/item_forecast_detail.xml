@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="50dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:textSize="11sp"
+            android:id="@+id/openCode"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/edit_style"
+            android:gravity="center"
+            android:text="开奖号码"
+            android:textColor="#3C3F41" />
+
+        <TextView
+            android:textSize="11sp"
+            android:id="@+id/yuceCode"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/edit_style"
+            android:gravity="center"
+            android:text="预测号码"
+            android:textColor="#3C3F41" />
+
+        <TextView
+            android:textSize="11sp"
+            android:id="@+id/zhanjiCode"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/edit_style"
+            android:gravity="center"
+            android:text="战绩"
+            android:textColor="@color/red" />
+
+    </LinearLayout>
+</LinearLayout>

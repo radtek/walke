@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/account_background_low"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:tag="layout/activity_modify_nickname_0">
+
+    <include
+        android:id="@id/navigation_bar"
+        layout="@layout/inc_title_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/titlebar_height" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1.0px"
+        android:layout_marginTop="11.0dip"
+        android:background="#eee" />
+
+    <com.aipiao.bkpk.views.ClearEditText
+        android:id="@+id/et_nickname"
+        style="@style/account_edit_text_style"
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip"
+        android:focusable="true"
+        android:hint="请输入昵称"
+        android:inputType="text"
+        android:maxLength="6"
+        android:textSize="15.0sp" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1.0px"
+        android:background="#eee" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15.0dip"
+        android:layout_marginTop="8.5dip"
+        android:text="修改信息"
+        android:textColor="@color/account_text_gray_low"
+        android:textSize="13.0sp" />
+
+    <Button
+        android:layout_margin="10dp"
+        android:id="@+id/bt_save"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="345.0dip"
+        android:layout_height="50.0dip"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="75.0dip"
+        android:background="@color/red5"
+        android:gravity="center"
+        android:text="保存"
+        android:textColor="@color/white"
+        android:textSize="15.0sp" />
+</LinearLayout>

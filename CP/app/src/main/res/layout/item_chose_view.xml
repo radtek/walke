@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/wanweiLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="万位(选1~10个)"
+                android:textColor="@color/black2" />
+
+            <com.aipiao.bkpk.views.choseview.SelectBallsView
+                android:id="@+id/wanweiSelectBallsView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:ballColor="#DD4636"
+                app:end="10"
+                app:hasZero="true"
+                app:numCount="9"
+                app:start="0"
+                app:txtSelectedColor="#ffffff"
+                app:txtUnselectedColor="@color/red" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/qianweiLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="千位(选1~10个)"
+                android:textColor="@color/black2" />
+
+            <com.aipiao.bkpk.views.choseview.SelectBallsView
+                android:id="@+id/qianweiSelectBallsView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:ballColor="#DD4636"
+                app:end="10"
+                app:hasZero="true"
+                app:numCount="9"
+                app:start="0"
+                app:txtSelectedColor="#ffffff"
+                app:txtUnselectedColor="@color/red" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/baiweiLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="百位(选1~10个)"
+                android:textColor="@color/black2" />
+
+            <com.aipiao.bkpk.views.choseview.SelectBallsView
+                android:id="@+id/baiweiSelectBallsView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:ballColor="#DD4636"
+                app:end="10"
+                app:hasZero="true"
+                app:numCount="9"
+                app:start="0"
+                app:txtSelectedColor="#ffffff"
+                app:txtUnselectedColor="@color/red" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/shiweiLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="十位(选1~10个)"
+                android:textColor="@color/black2" />
+
+            <com.aipiao.bkpk.views.choseview.SelectBallsView
+                android:id="@+id/shiweiSelectBallsView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:ballColor="#DD4636"
+                app:end="10"
+                app:hasZero="true"
+                app:numCount="9"
+                app:start="0"
+                app:txtSelectedColor="#ffffff"
+                app:txtUnselectedColor="@color/red" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/geweiLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="个位(选1~10个)"
+                android:textColor="@color/black2" />
+
+            <com.aipiao.bkpk.views.choseview.SelectBallsView
+                android:id="@+id/geweiSelectBallsView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:ballColor="#DD4636"
+                app:end="10"
+                app:hasZero="true"
+                app:numCount="9"
+                app:start="0"
+                app:txtSelectedColor="#ffffff"
+                app:txtUnselectedColor="@color/red" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

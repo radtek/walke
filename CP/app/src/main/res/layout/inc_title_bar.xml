@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/titlebar_height"
+    android:layout_alignParentTop="true"
+    android:background="#AD3E4D"
+    android:tag="layout/inc_title_bar_0">
+
+    <View
+        android:id="@+id/layout_title_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+    <TextView
+        android:id="@+id/button_back"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/titlebar_btn_margin_left"
+        android:background="@color/transparent"
+        android:drawableLeft="@mipmap/btn_left_back"
+        android:drawablePadding="@dimen/titlebar_btn_drawable_padding"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:paddingRight="@dimen/titlebar_btn_padding_right"
+        android:text="返回"
+        android:textColor="@android:color/white"
+        android:textSize="16.0sp" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="@color/titlebar_textcolor"
+        android:textSize="17.0sp" />
+
+    <Button
+        android:visibility="gone"
+        android:id="@+id/button_right"
+        android:layout_width="78.0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/titlebar_btn_margin_left"
+        android:background="@color/transparent"
+        android:drawableRight="@mipmap/kefu"
+        android:gravity="center|right"
+        android:textColor="@color/white"
+        android:textSize="16.0sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="14dp" />
+</RelativeLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <com.aipiao.bkpk.views.TopView
+        android:id="@+id/trentTobView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></com.aipiao.bkpk.views.TopView>
+
+    <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+
+            android:id="@+id/radio1"
+            style="@style/forcesradioStyle"
+            android:layout_width="32dp"
+            android:layout_height="40dp"
+            android:background="@drawable/forecas_style"
+            android:checked="true"
+            android:text="前区一线"
+            android:textSize="12sp" />
+
+
+        <RadioButton
+            android:id="@+id/radio2"
+            style="@style/forcesradioStyle"
+            android:layout_width="32dp"
+            android:layout_height="40dp"
+            android:background="@drawable/forecas_style"
+            android:text="前区二线"
+            android:textColor="@color/red"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/radio3"
+
+            style="@style/forcesradioStyle"
+            android:layout_width="32dp"
+            android:layout_height="40dp"
+            android:background="@drawable/forecas_style"
+            android:text="后区一线"
+            android:textColor="@color/red"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/radio4"
+            style="@style/forcesradioStyle"
+            android:layout_width="32dp"
+            android:layout_height="40dp"
+            android:background="@drawable/forecas_style"
+            android:text="后区二线"
+            android:textColor="@color/red"
+            android:textSize="12sp" />
+    </RadioGroup>
+
+</LinearLayout>

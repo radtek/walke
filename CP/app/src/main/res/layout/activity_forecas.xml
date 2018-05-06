@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground"
+    android:orientation="vertical">
+
+    <com.aipiao.bkpk.views.TopView
+        android:id="@+id/foceTopView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"></com.aipiao.bkpk.views.TopView>
+
+    <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+
+            android:id="@+id/radio1"
+            style="@style/forcesradioStyle"
+            android:layout_width="32dp"
+            android:layout_height="50dp"
+            android:background="@drawable/forecas_style"
+            android:checked="true"
+            android:text="双色球"
+            android:textSize="15sp" />
+
+
+        <RadioButton
+            android:id="@+id/radio2"
+            style="@style/forcesradioStyle"
+            android:layout_width="32dp"
+            android:layout_height="50dp"
+            android:background="@drawable/forecas_style"
+            android:text="福彩3D"
+            android:textColor="@color/red"
+            android:textSize="15sp" />
+
+        <RadioButton
+            android:id="@+id/radio3"
+
+            style="@style/forcesradioStyle"
+            android:layout_width="32dp"
+            android:layout_height="50dp"
+            android:background="@drawable/forecas_style"
+            android:text="大乐透"
+            android:textColor="@color/red"
+            android:textSize="15sp" />
+
+        <RadioButton
+            android:id="@+id/radio4"
+            style="@style/forcesradioStyle"
+            android:layout_width="32dp"
+            android:layout_height="50dp"
+            android:background="@drawable/forecas_style"
+            android:text="排列3"
+            android:textColor="@color/red"
+            android:textSize="15sp" />
+    </RadioGroup>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/forceSwipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <RadioGroup
+                    android:visibility="gone"
+                    android:id="@+id/radioGroup2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/mr1"
+                        style="@style/forcesradioStyle"
+                        android:layout_width="32dp"
+                        android:layout_height="30dp"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/forecas_style"
+                        android:checked="true"
+                        android:text="篮球定三"
+                        android:textSize="15sp" />
+
+                    <RadioButton
+                        android:id="@+id/mr2"
+
+                        style="@style/forcesradioStyle"
+                        android:layout_width="32dp"
+                        android:layout_height="30dp"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/forecas_style"
+                        android:text="红球定胆"
+                        android:textColor="@color/gray3"
+                        android:textSize="15sp" />
+
+                    <RadioButton
+                        android:id="@+id/mr3"
+                        style="@style/forcesradioStyle"
+
+                        android:layout_width="32dp"
+                        android:layout_height="30dp"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/forecas_style"
+                        android:text="篮球定5"
+                        android:textColor="@color/gray3"
+                        android:textSize="15sp" />
+
+                    <RadioButton
+                        android:id="@+id/mr4"
+                        style="@style/forcesradioStyle"
+                        android:layout_width="32dp"
+                        android:layout_height="30dp"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/forecas_style"
+                        android:text="红球杀三"
+                        android:textColor="@color/gray3"
+                        android:textSize="15sp" />
+                </RadioGroup>
+
+                <RadioGroup
+                    android:visibility="gone"
+                    android:id="@+id/radioGroup3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/mrr1"
+                        style="@style/forcesradioStyle"
+                        android:layout_width="32dp"
+                        android:layout_height="30dp"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/forecas_style"
+                        android:text="篮球杀5"
+                        android:textColor="@color/gray3"
+                        android:textSize="15sp" />
+
+                    <RadioButton
+                        android:id="@+id/mrr2"
+                        style="@style/forcesradioStyle"
+                        android:layout_width="32dp"
+                        android:layout_height="30dp"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/forecas_style"
+                        android:text="红球双胆"
+                        android:textColor="@color/gray3"
+                        android:textSize="15sp" />
+
+                    <RadioButton
+                        android:id="@+id/mrr3"
+                        style="@style/forcesradioStyle"
+
+                        android:layout_width="32dp"
+                        android:layout_height="30dp"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/forecas_style"
+                        android:text="红球12码"
+                        android:textColor="@color/gray3"
+                        android:textSize="15sp" />
+
+                    <RadioButton
+                        android:id="@+id/mrr4"
+                        style="@style/forcesradioStyle"
+                        android:layout_width="32dp"
+                        android:layout_height="30dp"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/forecas_style"
+                        android:text="红球杀六"
+                        android:textColor="@color/gray3"
+                        android:textSize="15sp" />
+                </RadioGroup>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:background="@mipmap/img_yu_ce_hot" />
+
+
+                <com.aipiao.bkpk.views.ListViewForScrollView
+                    android:id="@+id/forceListViewForScrollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"></com.aipiao.bkpk.views.ListViewForScrollView>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</LinearLayout>

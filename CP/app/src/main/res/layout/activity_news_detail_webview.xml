@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <FrameLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <WebView
+            android:id="@+id/webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </WebView>
+        <View
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"></View>
+        <com.aipiao.bkpk.views.TopView
+            android:id="@+id/webTopView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"></com.aipiao.bkpk.views.TopView>
+
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/returnButton"
+ android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/red5"
+        android:text="返回" />
+
+
+</RelativeLayout>

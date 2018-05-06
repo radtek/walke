@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/mainFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"></FrameLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#eee"></View>
+
+    <LinearLayout
+        android:id="@+id/bottomLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_gravity="bottom">
+
+        <RadioGroup
+            android:background="@color/white"
+            android:id="@+id/radioGroup1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radio1"
+                style="@style/radioStyle"
+                android:layout_width="32dp"
+                android:layout_height="50dp"
+                android:checked="true"
+                android:drawableTop="@drawable/home_style"
+                android:text="首页"
+                android:textSize="12sp" />
+
+
+            <RadioButton
+                android:textSize="12sp"
+                android:id="@+id/radio2"
+                style="@style/radioStyle"
+                android:layout_width="32dp"
+                android:layout_height="50dp"
+                android:drawableTop="@drawable/open_style"
+                android:text="开奖" />
+
+            <RadioButton
+                android:textSize="12sp"
+
+                android:id="@+id/radio3"
+                style="@style/radioStyle"
+                android:layout_width="32dp"
+                android:layout_height="50dp"
+                android:drawableTop="@drawable/news_style"
+                android:text="发现" />
+
+            <RadioButton
+                android:textSize="12sp"
+
+                android:id="@+id/radio4"
+                style="@style/radioStyle"
+                android:layout_width="32dp"
+                android:layout_height="50dp"
+                android:drawableTop="@drawable/me_style"
+                android:text="我的" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+</LinearLayout>

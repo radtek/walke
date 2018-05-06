@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="three_grid_unit">24dp</dimen>
+    <dimen name="one_and_a_half_grid_unit">12dp</dimen>
+    <dimen name="account_item_text_size_normal">15.0sp</dimen>
+    <dimen name="corner_radius">4.0dip</dimen>
+    <dimen name="trend_x_item_width">33dp</dimen>
+    <dimen name="trend_x_item_name_width">44dp</dimen>
+    <dimen name="trend_x_item_height">33dp</dimen>
+    <dimen name="trend_y_item_width">60dp</dimen>
+    <dimen name="trend_y_item_height">33dp</dimen>
+    <dimen name="trend_x_text_size">14dp</dimen>
+    <dimen name="trend_y_text_size">12dp</dimen>
+    <dimen name="trend_content_text_size">14dp</dimen>
+    <dimen name="trend_corner_text_size">14dp</dimen>
+    <dimen name="trend_ball_radius">12dp</dimen>
+    <dimen name="trend_sulcus_width">6dp</dimen>
+    <dimen name="trend_sulcus_height">6dp</dimen>
+    <dimen name="trend_sulcus_bottom">9dp</dimen>
+    <dimen name="trend_time_height">26dp</dimen>
+    <dimen name="titlebar_btn_padding_right">7.0dip</dimen>
+    <dimen name="titlebar_btn_drawable_padding">8.0dip</dimen>
+    <dimen name="account_margin_left">15.0dip</dimen>
+    <dimen name="titlebar_btn_margin_left">16.0dip</dimen>
+    <dimen name="titlebar_height">48.0dip</dimen>
+    <dimen name="account_margin_vertical">20.0dip</dimen>
+
+
+    <dimen name="app_normal_margin">10dp</dimen>
+    <dimen name="app_plus_margin">12dp</dimen>
+    <dimen name="app_tiny_margin">4dp</dimen>
+    <dimen name="bottom_dialog_top_icon">38dp</dimen>
+    <dimen name="bottom_dialog_left_icon">32dp</dimen>
+
+    <dimen name="slidingmenu_offset">60dp</dimen>
+    <dimen name="list_padding">10dp</dimen>
+    <dimen name="shadow_width">15dp</dimen>
+
+    <integer name="num_cols">1</integer>
+
+</resources>

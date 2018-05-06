@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+   android:orientation="horizontal"
+   android:background="@color/white"
+    android:layout_height="match_parent">
+
+
+  <LinearLayout
+      android:orientation="vertical"
+      android:gravity="center"
+      android:layout_gravity="center"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content">
+      <LinearLayout
+        android:layout_centerInParent="true"
+          android:layout_margin="5dp"
+          android:orientation="horizontal"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+
+          <ImageView
+              android:layout_margin="5dp"
+              android:id="@+id/ananlyImageView"
+              android:layout_gravity="center"
+              android:layout_width="60dp"
+              android:layout_height="60dp" />
+
+          <LinearLayout
+              android:layout_marginLeft="10dp"
+              android:layout_gravity="center"
+              android:orientation="vertical"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content">
+
+
+              <TextView
+                  android:id="@+id/ananlyTitle"
+
+                  android:textColor="@color/gray1"
+                  android:text="双色球"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content" />
+
+
+              <TextView
+                  android:textSize="10sp"
+                  android:id="@+id/ananlyContent"
+                  android:textColor="@color/gray3"
+                  android:text="2018033期双色球预测：关注0路尾"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content" />
+          </LinearLayout>
+      </LinearLayout>
+
+      <View
+          android:layout_alignParentBottom="true"
+          android:background="#eee"
+          android:layout_width="match_parent"
+          android:layout_height="1dp"></View>
+  </LinearLayout>
+
+</LinearLayout>

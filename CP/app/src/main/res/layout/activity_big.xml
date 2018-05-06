@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray5"
+    android:orientation="vertical">
+
+  <android.support.v4.widget.SwipeRefreshLayout
+      android:id="@+id/bigSwipeRefreshLayout"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+      <ScrollView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+              <com.aipiao.bkpk.views.TopView
+                  android:id="@+id/bigTopView"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"></com.aipiao.bkpk.views.TopView>
+
+              <ImageView
+                  android:layout_width="match_parent"
+                  android:layout_height="150dp"
+                  android:background="@mipmap/big" />
+              <com.aipiao.bkpk.views.ListViewForScrollView
+                  android:layout_marginBottom="10dp"
+                  android:id="@+id/bigListViewForScrollView"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:background="@color/white"></com.aipiao.bkpk.views.ListViewForScrollView>
+          </LinearLayout>
+      </ScrollView>
+
+  </android.support.v4.widget.SwipeRefreshLayout>
+</LinearLayout>

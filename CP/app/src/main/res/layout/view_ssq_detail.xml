@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edit_style">
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/edit_style"
+            android:gravity="center"
+            android:text="等级"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/edit_style"
+            android:gravity="center"
+            android:text="中奖注数"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/edit_style"
+            android:gravity="center"
+            android:text="单注奖金"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/l1"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/gray_style"
+            android:gravity="center"
+            android:text="一等"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/oneZ"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/gray_style"
+            android:gravity="center"
+            android:text="0注"
+            android:textColor="@color/red" />
+
+        <TextView
+            android:id="@+id/oneP"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/gray_style"
+            android:gravity="center"
+            android:text="单注奖金11"
+            android:textColor="@color/red" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/l2"
+
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/gray_style"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/gray_style"
+            android:gravity="center"
+            android:text="二等"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/onesZ"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/gray_style"
+            android:gravity="center"
+            android:text="0注"
+            android:textColor="@color/red" />
+
+        <TextView
+            android:id="@+id/onesP"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/gray_style"
+            android:gravity="center"
+            android:text="单注奖金"
+            android:textColor="@color/red" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/l3"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/gray_style"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/gray_style"
+            android:gravity="center"
+            android:text="三等"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/onesssZ"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/gray_style"
+            android:gravity="center"
+            android:text="0注"
+            android:textColor="@color/red" />
+
+        <TextView
+            android:id="@+id/onesssP"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/gray_style"
+            android:gravity="center"
+            android:text="单注奖金"
+            android:textColor="@color/red" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/l4"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/gray_style"
+        android:visibility="gone">
+
+        <TextView
+
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/gray_style"
+            android:gravity="center"
+            android:text="四等"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/onessssZ"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/gray_style"
+            android:gravity="center"
+            android:text="0注"
+            android:textColor="@color/red" />
+
+        <TextView
+            android:id="@+id/onessssP"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/gray_style"
+            android:gravity="center"
+            android:text="单注奖金"
+            android:textColor="@color/red" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/l5"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/gray_style"
+        android:visibility="gone">
+
+        <TextView
+
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/gray_style"
+            android:gravity="center"
+            android:text="五等"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/onesssssZ"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/gray_style"
+            android:gravity="center"
+            android:text="0注"
+            android:textColor="@color/red" />
+
+        <TextView
+            android:id="@+id/onesssssP"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/gray_style"
+            android:gravity="center"
+            android:text="单注奖金"
+            android:textColor="@color/red" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/l6"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/gray_style"
+        android:visibility="gone">
+
+        <TextView
+
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/gray_style"
+            android:gravity="center"
+            android:text="六等"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/onessssssZ"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/gray_style"
+            android:gravity="center"
+            android:text="0注"
+            android:textColor="@color/red" />
+
+        <TextView
+            android:id="@+id/onessssssP"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/gray_style"
+            android:gravity="center"
+            android:text="单注奖金"
+            android:textColor="@color/red" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/gray_style"
+        android:visibility="gone">
+
+        <TextView
+
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/gray_style"
+            android:gravity="center"
+            android:text="七等"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/onesssssssZ"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/gray_style"
+            android:gravity="center"
+            android:text="0注"
+            android:textColor="@color/red" />
+
+        <TextView
+            android:id="@+id/onesssssssP"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/gray_style"
+            android:gravity="center"
+            android:text="单注奖金"
+            android:textColor="@color/red" />
+    </LinearLayout>
+</LinearLayout>

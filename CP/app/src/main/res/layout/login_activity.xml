@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/super_container"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/account_background_low"
+    android:fitsSystemWindows="true"
+    android:tag="layout/activity_login_0">
+
+    <include
+        android:id="@+id/navigation_bar"
+        layout="@layout/inc_title_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/titlebar_height"
+        android:layout_alignParentTop="true" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout_main"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/navigation_bar"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rel_input_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <View
+                android:id="@+id/view_line_top"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10.0dip"
+                android:background="#ffdce2e3" />
+
+            <LinearLayout
+                android:id="@+id/ll_phone"
+                android:layout_width="fill_parent"
+                android:layout_height="50.0dip"
+                android:layout_below="@id/view_line_top"
+                android:layout_marginBottom="1.0dip"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <com.aipiao.bkpk.views.ClearEditText
+                    android:id="@+id/editTextAccount"
+                    style="@style/account_edit_text_style"
+                    android:layout_width="0.0dip"
+                    android:layout_weight="1.0"
+                     android:focusable="true"
+                    android:hint="请输入账号"
+                    android:inputType="number"
+                    android:maxLength="13" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px"
+                android:layout_below="@id/ll_phone"
+                android:layout_marginLeft="15.0dip"
+                android:background="@color/gray3" />
+
+            <EditText
+                android:id="@+id/editTextPwd"
+                style="@style/account_edit_text_style"
+                android:layout_width="fill_parent"
+                android:layout_below="@id/ll_phone"
+                android:layout_marginTop="0.0dip"
+                android:hint="请输入密码"
+                android:inputType="numberPassword"
+                android:maxLength="19" />
+
+        </RelativeLayout>
+
+
+        <Button
+            android:background="@color/red4"
+            android:id="@+id/buttonLogin"
+            style="@style/account_big_btn_style"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15.0dip"
+            android:text="注册/登录" />
+
+        <LinearLayout
+            android:visibility="gone"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/account_margin_left"
+            android:layout_marginTop="10.0dip"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/cb_agree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5.0dip"
+                android:button="@drawable/selector_chexkbox_bg"
+                android:checked="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我同意"
+                android:textColor="@color/account_text_gray_high"
+                android:textSize="13.0sp" />
+
+            <TextView
+                android:id="@+id/tv_protocol_self"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="《用户协议》"
+                android:textColor="@color/text_blue"
+                android:textSize="13.0sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/img_login_weixin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20.0dip"
+             />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,122 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="radioStyle">
+        <item name="android:button">@null</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/black3</item>
+    </style>
+    <style name="account_item_image_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:src">@mipmap/account_right</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+    <style name="account_item_text_style">
+        <item name="android:textSize">15.0sp</item>
+        <item name="android:textColor">@color/account_text_gray_high</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+
+    <!-- pupupwindow的弹出和消失动画 -->
+    <style name="popup_window_anim">
+        <item name="android:windowEnterAnimation">@anim/anim_pop_in</item>
+        <item name="android:windowExitAnimation">@anim/anim_pop_out</item>
+    </style>
+
+    <style name="forcesradioStyle">
+        <item name="android:textStyle">bold</item>
+        <item name="android:button">@null</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/windowBackground</item>
+    </style>
+    <style name="account_error_text_style">
+        <item name="android:textColor">@color/red</item>
+        <item name="android:paddingTop">10.0dip</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/account_margin_vertical</item>
+        <item name="android:layout_alignParentLeft">true</item>
+    </style>
+
+    <style name="account_big_btn_style" parent="@android:style/Widget.Holo.Button.Borderless">
+        <item name="android:textSize">17.0sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">50.0dip</item>
+        <item name="android:layout_marginLeft">15.0dip</item>
+        <item name="android:layout_marginRight">15.0dip</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+    <style name="account_edit_text_style">
+        <item name="android:textSize">@dimen/account_item_text_size_normal</item>
+        <item name="android:textColor">@color/account_text_gray_high</item>
+        <item name="android:textColorHint">@color/account_text_gray_low</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:paddingLeft">@dimen/account_margin_left</item>
+        <item name="android:layout_height">50.0dip</item>
+        <item name="android:layout_marginBottom">0.0dip</item>
+        <item name="android:layout_alignParentLeft">true</item>
+    </style>
+
+    <style name="account_item_layout_style">
+        <item name="android:background">@android:color/white</item>
+        <item name="android:paddingLeft">20.0dip</item>
+        <item name="android:paddingRight">@dimen/account_margin_left</item>
+        <item name="android:descendantFocusability">blocksDescendants</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">44.0dip</item>
+    </style>
+
+    <style name="account_splitter_style">
+        <item name="android:background">@color/account_splitter_color</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">1.0px</item>
+        <item name="android:layout_marginLeft">0.0dip</item>
+    </style>
+
+
+
+    <!--设置动画效果-->
+    <style name="main_menu_animStyle">
+        <item name="android:windowEnterAnimation">@anim/photo_dialog_in_anim</item>
+        <item name="android:windowExitAnimation">@anim/photo_dialog_out_anim</item>
+    </style>
+
+    <style name="CustomBottomDialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowAnimationStyle">@style/main_menu_animStyle</item>
+        <item name="android:gravity">bottom</item>
+    </style>
+    <style name="transparentFrameWindowStyle" parent="android:style/Theme.Dialog">
+        <item name="android:windowBackground">@drawable/photo_choose_bg</item>
+    </style>
+
+    <style name="BottomDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowAnimationStyle">@style/main_menu_animStyle</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+    </style>
+
+</resources>

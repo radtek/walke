@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.aipiao.bkpk.views.TopView
+        android:id="@+id/signTopView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></com.aipiao.bkpk.views.TopView>
+
+    <com.aipiao.bkpk.views.sign.SignView
+        android:id="@+id/signView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+    <com.aipiao.bkpk.views.sign.SignLinesView
+        android:id="@+id/signLineView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+
+
+</LinearLayout>

@@ -1,0 +1,23 @@
+*{margin:0; padding:0; font-size:12px;}
+header{background-color:#E26B1B; }
+header span{display:block; width:90%; background-image:url(../img/icon_return.jpg); background-repeat:no-repeat; background-color:#E26B1B; background-position:0px center; color:#fff; font:normal 40px "微软雅黑"; height:85px; line-height:80px; margin:0 auto; text-indent:70px;}
+.maincon{width:90%; margin:0 auto;}
+.maincon .czlist{background-color:#FCF8F5; border:2px solid #F7A269; border-radius:5px; margin-top:15px; width:100%; height:74px; text-align:center; position:relative;}
+.maincon .czlist i{display:inline-block; background-image:url(../img/icon_kai.jpg); background-repeat:no-repeat; background-position:right center; width:100%; height:74px; color:#666; font:normal 38px "微软雅黑"; line-height:74px; cursor:pointer;}
+.maincon .czlist span{display:block; position:absolute; left:0; top:70px; text-indent:0; z-index:1; box-shadow:1px 2px 1px #eee;}
+.maincon .czlist a{display:inline-block; background-color:#FCF8F5; border:1px solid #ebebeb; height:70px; color:#888; font:normal 38px "微软雅黑"; line-height:70px; margin:0; text-decoration:none; text-align:center;}
+.maincon .czlist a:hover{background-color:#F9F0EA; text-decoration:none;}
+h2{color:#d68f5f; font:bold 18px "微软雅黑"; height:28px; line-height:28px; margin-top:20px;}
+h3{color:#333; font:bold 16px "微软雅黑"; margin-top:10px;}
+p{color:#666; font:normal 14px "微软雅黑"; line-height:20px; margin-top:5px; text-indent:28px;}
+h4{color:#e16a1a; font:bold 14px "微软雅黑"; margin-top:10px;}
+h5{color:#fe0000; font:bold 14px "微软雅黑"; height:18px; margin-top:10px;}
+table{border-top:1px solid #ddd; border-left:1px solid #ddd; width:100%; margin-top:10px;}
+th,td{border-bottom:1px solid #ddd; border-right:1px solid #ddd; height:30px;}
+th{background-color:#eee; color:#666; font:bold 12px "宋体";}
+td,td p{color:#666; font:normal 12px "Tahoma"; line-height:22px; text-align:center;}
+.maincon td p{text-align:left; text-indent:28px; margin:5px 0;}
+.maincon a{display:block; width:100%; height:50px; color:#fff; font:normal 20px "微软雅黑"; line-height:50px; letter-spacing:5px; margin:10px 0; background-color:#EC9962; text-decoration:none; text-align:center;}
+.maincon span{display:block; width:100%; color:#888; font:normal 14px "微软雅黑"; line-height:24px; margin-top:5px; text-indent:28px;}
+
+.maincon label{display:block; color:#999; font:normal 12px "Tahoma"; line-height:18px; margin-top:5px; padding-left:46px;}

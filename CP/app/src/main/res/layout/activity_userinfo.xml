@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ebebeb"
+    android:orientation="vertical">
+    <com.aipiao.bkpk.views.TopView
+        android:id="@+id/userinfoTopView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></com.aipiao.bkpk.views.TopView>
+    <com.handmark.pulltorefresh.library.PullToRefreshScrollView
+        android:id="@+id/mePullToRefreshScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+
+            <LinearLayout
+                android:id="@+id/cgt_ll_me_userInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:background="@drawable/cgt_selector_find_item_bg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/cgt_iv_me_userPic"
+                    android:layout_width="60dip"
+                    android:layout_height="60dip"
+                    android:layout_marginBottom="8dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginTop="8dip"
+                    android:src="@mipmap/account_default_header_icon" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/cgt_tv_me_userName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="暂无设置昵称"
+                        android:textColor="@color/color_353535"
+                        android:textSize="16sp" />
+
+                    <TextView
+
+                        android:id="@+id/cgt_tv_me_weixinNum"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dip"
+                        android:text="暂无设置心情:"
+                        android:textColor="@color/gray2"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:id="@+id/cgt_ll_me_collect"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cgt_selector_find_item_bg"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dip"
+                    android:paddingTop="8dip">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="20dip"
+                        android:src="@mipmap/cgt_me_collect"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="20dip"
+                        android:gravity="center"
+                        android:text="手机号码:"
+                        android:textColor="@color/color_353535"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/phoneTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dip"
+                        android:gravity="left|center"
+                        android:textColor="@color/gray1"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:background="@color/gray3" />
+
+                <LinearLayout
+                    android:id="@+id/sexLinearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cgt_selector_find_item_bg"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dip"
+                    android:paddingTop="8dip">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="20dip"
+                        android:src="@mipmap/cgt_me_collect"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="20dip"
+                        android:gravity="center"
+                        android:text="性      别:"
+                        android:textColor="@color/color_353535"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/sexTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dip"
+                        android:gravity="left|center"
+                        android:text="保密"
+                        android:textColor="@color/gray1"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:background="@color/gray3" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.handmark.pulltorefresh.library.PullToRefreshScrollView>
+</LinearLayout>
