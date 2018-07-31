@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_cancel_action.xml",
+        "source": "C:\\Users\\caihui\\.android\\build-cache\\0b508d7c5a38877966d55358b0c4baa32b08a9c4\\output\\res\\layout-v11\\notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_custom.xml",
+        "source": "C:\\Users\\caihui\\.android\\build-cache\\0b508d7c5a38877966d55358b0c4baa32b08a9c4\\output\\res\\layout-v11\\notification_template_big_media_custom.xml"
+    },
+    {
+        "merged": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media.xml",
+        "source": "C:\\Users\\caihui\\.android\\build-cache\\0b508d7c5a38877966d55358b0c4baa32b08a9c4\\output\\res\\layout-v11\\notification_template_big_media.xml"
+    },
+    {
+        "merged": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow.xml",
+        "source": "C:\\Users\\caihui\\.android\\build-cache\\0b508d7c5a38877966d55358b0c4baa32b08a9c4\\output\\res\\layout-v11\\notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow_custom.xml",
+        "source": "C:\\Users\\caihui\\.android\\build-cache\\0b508d7c5a38877966d55358b0c4baa32b08a9c4\\output\\res\\layout-v11\\notification_template_big_media_narrow_custom.xml"
+    },
+    {
+        "merged": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_action.xml",
+        "source": "C:\\Users\\caihui\\.android\\build-cache\\0b508d7c5a38877966d55358b0c4baa32b08a9c4\\output\\res\\layout-v11\\notification_media_action.xml"
+    }
+]

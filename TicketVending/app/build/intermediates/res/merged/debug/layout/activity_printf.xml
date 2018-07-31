@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--第一横条-->
+    <com.grandsea.ticketvendingapplication.view.TitleBar
+        android:id="@+id/apr_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:rightHide="true" />
+
+    <TextView
+        android:id="@+id/apr_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/topBlue"
+        android:gravity="center_vertical|right"
+        android:paddingRight="@dimen/margin_25dp"
+        android:text="顺风驴平板专用版V1.0.0930"
+        android:textColor="@drawable/white"
+        android:textSize="28dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/apr_bottom"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/apr_top"
+        android:layout_marginBottom="@dimen/margin_6dp"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/margin_5dp"
+        android:paddingRight="@dimen/margin_5dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="8"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/step4" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <LinearLayout
+                    android:id="@+id/apr_tipsPrintingLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="150dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="150dp"
+                            android:scaleType="fitCenter"
+                            android:src="@mipmap/thanks" />
+
+                        <TextView
+                            android:id="@+id/apr_tvThanks"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/margin_15dp"
+                            android:layout_marginRight="@dimen/margin_15dp"
+                            android:gravity="center_vertical"
+                            android:text="感谢您选择海珠机场快线"
+                            android:textColor="@color/text_006aae"
+                            android:textSize="@dimen/thanksTextSize" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="75dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/margin_30dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/apr_tvPrintingNu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="70dp"
+                            android:gravity="center"
+                            android:text="正在打印第0张乘车凭证,"
+                            android:textColor="@color/text_006aae"
+                            android:textSize="@dimen/thanksTextSize" />
+
+                        <TextView
+                            android:id="@+id/apr_tvTotalNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="70dp"
+                            android:gravity="center"
+                            android:text="共0张"
+                            android:textColor="@color/text_006aae"
+                            android:textSize="@dimen/thanksTextSize" />
+                    </LinearLayout>
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/apr_tipsError"
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:textSize="35sp"
+                    android:gravity="center"
+                    android:lineSpacingExtra="20dp"
+                    android:drawableLeft="@mipmap/tips_error"
+                    android:drawablePadding="@dimen/margin_15dp"
+                    android:textColor="@color/text_006aae"
+                    android:layout_centerInParent="true"
+                    android:text="购票成功，由于打印纸已用完，\n请凭身份证到人工售票处领取车票"/>
+                <!-- 很抱歉，由于打印机故障，\n请到人工售票台，出示身份证，获取帮助。 -->
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/margin_6dp"
+            android:layout_marginTop="@dimen/rightMarginTop"
+            android:layout_weight="2.3"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <com.grandsea.ticketvendingapplication.view.MyTimeView
+                android:id="@+id/adc_time"
+                android:layout_width="match_parent"
+                android:layout_height="150dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_10dp"
+                android:background="@drawable/bg_layout_corners">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@mipmap/printf" />
+
+                <com.grandsea.ticketvendingapplication.view.CustomButton
+                    android:id="@+id/apr_cbBackHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="20dp"
+                    app:img="@mipmap/arrow_left"
+                    app:textContent="返回首页" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/apr_testLinearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

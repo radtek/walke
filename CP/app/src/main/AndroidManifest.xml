@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.aipiao.bkpk"
+    package="com.aipiao.bkpkold"
     android:versionCode="312"
     android:versionName="1.10">
 
@@ -11,7 +11,7 @@
 
     <!-- Required -->
     <permission
-        android:name="com.aipiao.bkpk.permission.JPUSH_MESSAGE"
+        android:name="com.aipiao.bkpkold.permission.JPUSH_MESSAGE"
         android:protectionLevel="signature" />
 
     <!-- Required  一些系统要求的权限，如访问网络等-->
@@ -39,7 +39,7 @@
     <uses-permission android:name="android.permission.GET_TASKS" />
 
     <application
-        android:name="com.aipiao.bkpk.FbApplication"
+        android:name="com.aipiao.bkpkold.FbApplication"
         android:allowBackup="true"
         android:icon="@mipmap/pklogo"
         android:label="@string/app_name"
@@ -82,7 +82,7 @@
         <!--</intent-filter>-->
         <!--</activity>-->
         <activity
-            android:name="com.aipiao.bkpk.WelcomeActivity"
+            android:name="com.aipiao.bkpkold.WelcomeActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
 
         <activity
@@ -90,72 +90,72 @@
             android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
 
         <activity
-            android:name="com.aipiao.bkpk.acitivty.GameFootballDetailActivity"
+            android:name="com.aipiao.bkpkold.acitivty.GameFootballDetailActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
 
 
         <activity
-            android:name="com.aipiao.bkpk.acitivty.GameFootballActivity"
+            android:name="com.aipiao.bkpkold.acitivty.GameFootballActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
 
         <activity
-            android:name="com.aipiao.bkpk.HomeActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
-
-
-        <activity
-            android:name="com.aipiao.bkpk.acitivty.ForecastActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
-
-        <activity
-            android:name="com.aipiao.bkpk.acitivty.ForecastDetailActivity"
+            android:name="com.aipiao.bkpkold.HomeActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
 
 
         <activity
-            android:name="com.aipiao.bkpk.acitivty.ExpertManActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
-        <activity
-            android:name="com.aipiao.bkpk.acitivty.ExpertManDetailActivity"
+            android:name="com.aipiao.bkpkold.acitivty.ForecastActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
 
         <activity
-            android:name="com.aipiao.bkpk.acitivty.fb.FootBallActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
-
-        <activity
-            android:name="com.aipiao.bkpk.acitivty.active.BigGrandActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
-
-        <activity
-            android:name="com.aipiao.bkpk.acitivty.active.BigGrandDetailActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
-
-        <activity
-            android:name="com.aipiao.bkpk.acitivty.WebViewlActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
-
-        <activity
-            android:name="com.aipiao.bkpk.acitivty.miji.CheatsActivity"
+            android:name="com.aipiao.bkpkold.acitivty.ForecastDetailActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
 
 
         <activity
-            android:name="com.aipiao.bkpk.acitivty.cp.CpWebActivity"
+            android:name="com.aipiao.bkpkold.acitivty.ExpertManActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+        <activity
+            android:name="com.aipiao.bkpkold.acitivty.ExpertManDetailActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
 
         <activity
-            android:name="com.aipiao.bkpk.acitivty.cp.CpCurrentActivity"
+            android:name="com.aipiao.bkpkold.acitivty.fb.FootBallActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+
+        <activity
+            android:name="com.aipiao.bkpkold.acitivty.active.BigGrandActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+
+        <activity
+            android:name="com.aipiao.bkpkold.acitivty.active.BigGrandDetailActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+
+        <activity
+            android:name="com.aipiao.bkpkold.acitivty.WebViewlActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+
+        <activity
+            android:name="com.aipiao.bkpkold.acitivty.miji.CheatsActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
 
 
         <activity
-            android:name="com.aipiao.bkpk.acitivty.cp.CPLishiActivity"
+            android:name="com.aipiao.bkpkold.acitivty.cp.CpWebActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+
+        <activity
+            android:name="com.aipiao.bkpkold.acitivty.cp.CpCurrentActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+
+
+        <activity
+            android:name="com.aipiao.bkpkold.acitivty.cp.CPLishiActivity"
             android:launchMode="singleTask"
             android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
 
         <activity
-            android:name="com.aipiao.bkpk.acitivty.cp.trent.CpTrentActivity"
+            android:name="com.aipiao.bkpkold.acitivty.cp.trent.CpTrentActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
 
         <activity
@@ -164,48 +164,48 @@
 
 
         <activity
-            android:name="com.aipiao.bkpk.acitivty.CpChoseNumberActivity"
+            android:name="com.aipiao.bkpkold.acitivty.CpChoseNumberActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
         <activity
-            android:name="com.aipiao.bkpk.acitivty.CpDoubleChoseNumberActivity"
+            android:name="com.aipiao.bkpkold.acitivty.CpDoubleChoseNumberActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
 
         <activity
-            android:name="com.aipiao.bkpk.fragment.news.NewsActivity"
+            android:name="com.aipiao.bkpkold.fragment.news.NewsActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
 
         <activity
-            android:name="com.aipiao.bkpk.acitivty.user.LoginActivity"
+            android:name="com.aipiao.bkpkold.acitivty.user.LoginActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
 
         <activity
-            android:name="com.aipiao.bkpk.acitivty.user.ResignActivity"
+            android:name="com.aipiao.bkpkold.acitivty.user.ResignActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
 
         <activity
-            android:name="com.aipiao.bkpk.acitivty.user.KefuViewlActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
-
-
-        <activity
-            android:name="com.aipiao.bkpk.acitivty.user.SignActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
-
-        <activity
-            android:name="com.aipiao.bkpk.acitivty.user.AboutActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
-
-        <activity
-            android:name="com.aipiao.bkpk.acitivty.user.HelpActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
-
-        <activity
-            android:name="com.aipiao.bkpk.acitivty.user.UserInfoActivity"
+            android:name="com.aipiao.bkpkold.acitivty.user.KefuViewlActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
 
 
         <activity
-            android:name="com.aipiao.bkpk.acitivty.user.UpdateUserInfoActivity"
+            android:name="com.aipiao.bkpkold.acitivty.user.SignActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+        <activity
+            android:name="com.aipiao.bkpkold.acitivty.user.AboutActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+        <activity
+            android:name="com.aipiao.bkpkold.acitivty.user.HelpActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+        <activity
+            android:name="com.aipiao.bkpkold.acitivty.user.UserInfoActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+
+        <activity
+            android:name="com.aipiao.bkpkold.acitivty.user.UpdateUserInfoActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
 
 

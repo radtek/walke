@@ -28,13 +28,13 @@
                     android:layout_height="180dp"
                     android:background="@color/red4" />
 
-                <com.aipiao.bkpk.views.MyGridView
+                <com.aipiao.bkpkold.views.MyGridView
                     android:id="@+id/homegridview"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:columnWidth="80dp"
-                    android:numColumns="4"></com.aipiao.bkpk.views.MyGridView>
+                    android:numColumns="4"></com.aipiao.bkpkold.views.MyGridView>
 
                 <LinearLayout
                     android:visibility="gone"
@@ -54,11 +54,11 @@
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
-                    <com.aipiao.bkpk.views.MarqueeView
+                    <com.aipiao.bkpkold.views.MarqueeView
                         android:id="@+id/homeMarqueeView"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@color/white"></com.aipiao.bkpk.views.MarqueeView>
+                        android:background="@color/white"></com.aipiao.bkpkold.views.MarqueeView>
                 </LinearLayout>
 
                 <!--足球-->
@@ -268,11 +268,11 @@
                         android:textColor="@color/black2" />
                 </LinearLayout>
 
-                <com.aipiao.bkpk.views.ListViewForScrollView
+                <com.aipiao.bkpkold.views.ListViewForScrollView
                     android:id="@+id/newListView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"></com.aipiao.bkpk.views.ListViewForScrollView>
+                    android:layout_marginTop="1dp"></com.aipiao.bkpkold.views.ListViewForScrollView>
 
             </LinearLayout>
 

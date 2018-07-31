@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_dialog">
+
+    <TextView
+        android:id="@+id/dPay_title"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="翻页提示"
+        android:textColor="#ffffff"
+        android:textSize="35sp"
+        android:background="@color/topBlue"/>
+
+
+
+    <com.grandsea.ticketvendingapplication.view.ReturnButton
+        android:id="@+id/dPay__rbBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        app:img="@mipmap/icon_sure"
+        app:textContent="确定"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/dPay__rbBack"
+        android:layout_below="@id/dPay_title"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/dPay_ivDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_pay_wechat"/>
+            <TextView
+                android:id="@+id/dPay_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="请把微信授权码放置于\n二维码读取窗口"
+                android:textColor="@color/text_006aae"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/margin_20dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/dPay_descTips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="如何获得微信支付授权码？\n微信->我的->钱包->向商家付款"
+            android:textColor="@color/text_006aae"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="26dp"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

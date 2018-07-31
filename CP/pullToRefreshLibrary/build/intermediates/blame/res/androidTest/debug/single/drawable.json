@@ -1,11 +1,19 @@
 [
     {
+        "merged": "D:\\GIT\\walke\\CP\\pullToRefreshLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_bottom.xml",
+        "source": "D:\\GIT\\walke\\CP\\pullToRefreshLibrary\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_bottom.xml"
+    },
+    {
         "merged": "E:\\GitPlace\\walke\\CP\\pullToRefreshLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\image_loading.xml",
         "source": "E:\\GitPlace\\walke\\CP\\pullToRefreshLibrary\\build\\intermediates\\bundles\\debug\\res\\drawable\\image_loading.xml"
     },
     {
         "merged": "E:\\GitPlace\\walke\\CP\\pullToRefreshLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_bottom.xml",
         "source": "E:\\GitPlace\\walke\\CP\\pullToRefreshLibrary\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_bottom.xml"
+    },
+    {
+        "merged": "D:\\GIT\\walke\\CP\\pullToRefreshLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_top.xml",
+        "source": "D:\\GIT\\walke\\CP\\pullToRefreshLibrary\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_top.xml"
     },
     {
         "merged": "D:\\work\\1805\\cp\\com.aipiap.bkpk\\pullToRefreshLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_top.xml",
@@ -30,6 +38,10 @@
     {
         "merged": "E:\\GitPlace\\walke\\CP\\pullToRefreshLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_top.xml",
         "source": "E:\\GitPlace\\walke\\CP\\pullToRefreshLibrary\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_top.xml"
+    },
+    {
+        "merged": "D:\\GIT\\walke\\CP\\pullToRefreshLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\image_loading.xml",
+        "source": "D:\\GIT\\walke\\CP\\pullToRefreshLibrary\\build\\intermediates\\bundles\\debug\\res\\drawable\\image_loading.xml"
     },
     {
         "merged": "D:\\work\\1805\\cp\\com.aipiap.bkpk\\pullToRefreshLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_bottom.xml",

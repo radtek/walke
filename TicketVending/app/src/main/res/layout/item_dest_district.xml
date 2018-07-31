@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center|center_vertical">
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_10dp"
+        android:id="@+id/view"></View>
+
+    <!--标题头-->
+    <TextView
+        android:id="@+id/item_tvDistrictName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="拱北区"
+        android:gravity="center|center_vertical"
+        android:layout_gravity="center|center_vertical"
+        android:padding="@dimen/padding_10dp"
+        android:drawablePadding="@dimen/padding_5dp"
+        />
+    <com.grandsea.ticketvendingapplication.view.StationGridView
+        android:id="@+id/item_stationGridView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="3"
+        android:horizontalSpacing="10dp"
+        android:verticalSpacing="10dp"/>
+    <!--
+    列数：2 -> android:numColumns="2"
+    参考：http://bbs.51cto.com/thread-947040-1.html
+     -->
+</LinearLayout>

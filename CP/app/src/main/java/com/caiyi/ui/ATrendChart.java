@@ -15,7 +15,7 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 import android.view.MotionEvent;
 import com.caiyi.interfaces.ITrendChart;
-import com.aipiao.bkpk.R;
+import com.aipiao.bkpkold.R;
 
 public abstract class ATrendChart implements ITrendChart {
     private static final boolean DEBUG = false;

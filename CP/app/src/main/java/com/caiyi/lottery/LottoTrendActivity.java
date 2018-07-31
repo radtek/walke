@@ -12,8 +12,8 @@ import com.caiyi.data.TrendData;
 import com.caiyi.ui.DDTrendChart;
 import com.caiyi.ui.DDTrendChart.ISelectedChangeListener;
 import com.caiyi.ui.LottoTrendView;
-import com.aipiao.bkpk.R;
-import com.aipiao.bkpk.views.TopView;
+import com.aipiao.bkpkold.R;
+import com.aipiao.bkpkold.views.TopView;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;

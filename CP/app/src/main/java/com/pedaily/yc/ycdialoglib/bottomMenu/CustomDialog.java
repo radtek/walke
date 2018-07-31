@@ -17,7 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
-import com.aipiao.bkpk.R;
+import com.aipiao.bkpkold.R;
 
 import java.util.ArrayList;
 import java.util.List;

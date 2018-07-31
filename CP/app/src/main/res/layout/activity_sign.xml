@@ -5,17 +5,17 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.aipiao.bkpk.views.TopView
+    <com.aipiao.bkpkold.views.TopView
         android:id="@+id/signTopView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></com.aipiao.bkpk.views.TopView>
+        android:layout_height="wrap_content"></com.aipiao.bkpkold.views.TopView>
 
-    <com.aipiao.bkpk.views.sign.SignView
+    <com.aipiao.bkpkold.views.sign.SignView
         android:id="@+id/signView"
         android:layout_width="match_parent"
         android:layout_height="200dp" />
 
-    <com.aipiao.bkpk.views.sign.SignLinesView
+    <com.aipiao.bkpkold.views.sign.SignLinesView
         android:id="@+id/signLineView"
         android:layout_width="match_parent"
         android:layout_height="200dp" />

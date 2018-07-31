@@ -5,10 +5,10 @@
     android:background="@color/white"
     android:orientation="vertical">
 
-    <com.aipiao.bkpk.views.TopView
+    <com.aipiao.bkpkold.views.TopView
         android:id="@+id/choseTopView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></com.aipiao.bkpk.views.TopView>
+        android:layout_height="wrap_content"></com.aipiao.bkpkold.views.TopView>
 
     <LinearLayout
 

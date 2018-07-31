@@ -20,17 +20,17 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-              <com.aipiao.bkpk.views.TopView
+              <com.aipiao.bkpkold.views.TopView
                   android:id="@+id/expermanTop"
                   android:layout_width="match_parent"
-                  android:layout_height="wrap_content"></com.aipiao.bkpk.views.TopView>
+                  android:layout_height="wrap_content"></com.aipiao.bkpkold.views.TopView>
 
 
-                <com.aipiao.bkpk.views.ListViewForScrollView
+                <com.aipiao.bkpkold.views.ListViewForScrollView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/expertListView"
-                    ></com.aipiao.bkpk.views.ListViewForScrollView>
+                    ></com.aipiao.bkpkold.views.ListViewForScrollView>
 
             </LinearLayout>
 

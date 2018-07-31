@@ -4,10 +4,10 @@
     android:layout_height="match_parent"
     android:background="@color/color_ebebeb"
     android:orientation="vertical">
-    <com.aipiao.bkpk.views.TopView
+    <com.aipiao.bkpkold.views.TopView
         android:id="@+id/userinfoTopView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></com.aipiao.bkpk.views.TopView>
+        android:layout_height="wrap_content"></com.aipiao.bkpkold.views.TopView>
     <com.handmark.pulltorefresh.library.PullToRefreshScrollView
         android:id="@+id/mePullToRefreshScrollView"
         android:layout_width="match_parent"

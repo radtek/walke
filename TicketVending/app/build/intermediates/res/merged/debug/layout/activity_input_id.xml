@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--第一横条-->
+    <com.grandsea.ticketvendingapplication.view.TitleBar
+        android:id="@+id/aii_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:rightHide="true"/>
+    <TextView
+        android:id="@+id/aii_tips"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_50dp"
+        android:layout_below="@id/aii_top"
+        android:background="@color/topBlue"
+        android:gravity="center_vertical"
+        android:paddingRight="@dimen/margin_25dp"
+        android:text="取票联系人手工输入身份证信息"
+        android:textColor="@drawable/white"
+        android:textSize="28dp"
+        android:paddingLeft="15dp"/>
+
+    <TextView
+        android:id="@+id/aii_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/topBlue"
+        android:gravity="center_vertical|right"
+        android:paddingRight="@dimen/margin_25dp"
+        android:text="顺风驴平板专用版V1.0.0930"
+        android:textColor="@drawable/white"
+        android:textSize="28dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/aii_bottom"
+        android:layout_below="@id/aii_tips"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/margin_5dp"
+        android:paddingRight="@dimen/margin_5dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/buttonHeight"
+                android:layout_marginTop="36dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/margin_10dp"
+                    android:gravity="center"
+                    android:text="姓　　名"
+                    android:textColor="@color/topBlue"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/aii_etName"
+                    android:layout_width="@dimen/input_username_width"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/margin_12dp"
+                    android:background="@drawable/bg_username"
+                    android:paddingLeft="@dimen/margin_15dp"
+                    android:singleLine="true"
+                    android:textSize="32sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/buttonHeight"
+                android:layout_marginTop="@dimen/margin_15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/margin_10dp"
+                    android:gravity="center"
+                    android:text="身份证号"
+                    android:textColor="@color/topBlue"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/aii_etIdCode"
+                    android:layout_width="@dimen/input_username_width"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/margin_12dp"
+                    android:background="@drawable/bg_username"
+                    android:paddingLeft="@dimen/margin_15dp"
+                    android:singleLine="true"
+                    android:textSize="32sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/margin_6dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <com.grandsea.ticketvendingapplication.view.CustomButton
+                android:id="@+id/aii_btSure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:img="@mipmap/arrow_right"
+                app:textContent="确　定" />
+
+                <com.grandsea.ticketvendingapplication.view.CustomButton
+                    android:id="@+id/aii_btBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginTop="@dimen/margin_15dp"
+                    app:img="@mipmap/arrow_left"
+                    app:textContent="返　回" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

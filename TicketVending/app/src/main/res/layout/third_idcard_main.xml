@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:weightSum="1" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/btnReadB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="读二代证" />
+
+        <Button
+            android:id="@+id/btnFindTypeA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="找TypeA卡" />
+
+        <Button
+            android:id="@+id/btnTestULCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="UL卡读写测试" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_with_border"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CPU卡测试"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_with_border"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btnCPUCardActive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="激活" />
+
+            <Button
+                android:id="@+id/btnCPUCardSendAPDU"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="发APDU指令" />
+
+            <Button
+                android:id="@+id/btnCPUCardDeactive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="下电" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Spinner
+                android:id="@+id/spinnerApduCMD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/apdu_cmd" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="200dip"
+        android:background="@drawable/idcardbg"
+        android:orientation="horizontal"
+        android:padding="10dip" >
+
+        <TextView
+            android:id="@+id/cardTextInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4.0"
+            android:textColor="@android:color/black" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0" >
+
+            <ImageView
+                android:id="@+id/cardImageInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@null" />
+
+            <Button
+                android:id="@+id/btnShowIDCardPic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="@string/show_id_card_pic"
+                android:visibility="gone"
+                android:textSize="14sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:fadeScrollbars="false" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btnIsConnectedTest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="连接测试" />
+
+        <TextView
+            android:id="@+id/TextVersion"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical" />
+    </RelativeLayout>
+
+</LinearLayout>

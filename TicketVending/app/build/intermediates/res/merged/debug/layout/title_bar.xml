@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/tb_ivLeft"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/margin_15dp"
+            android:src="@mipmap/jckx" />
+
+        <TextView
+            android:id="@+id/tb_textCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/margin_10dp"
+            android:gravity="bottom"
+            android:text="自助售票系统"
+            android:textColor="#006AAE"
+            android:textSize="25sp" />
+
+        <RelativeLayout
+            android:id="@+id/tb_rightLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="285dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="@dimen/margin_5dp"
+                android:layout_marginRight="@dimen/margin_20dp"
+                android:layout_marginTop="@dimen/margin_5dp"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/current_station" />
+
+            <TextView
+                android:id="@+id/tb_textRight"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/margin_20dp"
+                android:paddingRight="110dp"
+                android:gravity="center_vertical"
+                android:text="当前:珠海机场"
+                android:textColor="#006AAE"
+                android:textSize="25sp" />
+        </RelativeLayout>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@drawable/title_line"/>
+
+</LinearLayout>

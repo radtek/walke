@@ -44,7 +44,7 @@
                 android:background="@color/white"
                 android:orientation="horizontal">
 
-                <com.aipiao.bkpk.views.ClearEditText
+                <com.aipiao.bkpkold.views.ClearEditText
                     android:id="@+id/editTextAccount"
                     style="@style/account_edit_text_style"
                     android:layout_width="0.0dip"

@@ -1,0 +1,70 @@
+[
+    {
+        "merged": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\step3.png",
+        "source": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\src\\main\\res\\mipmap-hdpi\\step3.png"
+    },
+    {
+        "merged": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\pay_wechat.png",
+        "source": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\src\\main\\res\\mipmap-hdpi\\pay_wechat.png"
+    },
+    {
+        "merged": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\dialog_id_card.png",
+        "source": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\src\\main\\res\\mipmap-hdpi\\dialog_id_card.png"
+    },
+    {
+        "merged": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\step1.png",
+        "source": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\src\\main\\res\\mipmap-hdpi\\step1.png"
+    },
+    {
+        "merged": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher_round.png",
+        "source": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\city_selected.png",
+        "source": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\src\\main\\res\\mipmap-hdpi\\city_selected.png"
+    },
+    {
+        "merged": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\icon_idcard.png",
+        "source": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\src\\main\\res\\mipmap-hdpi\\icon_idcard.png"
+    },
+    {
+        "merged": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\current_station.png",
+        "source": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\src\\main\\res\\mipmap-hdpi\\current_station.png"
+    },
+    {
+        "merged": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\printf.png",
+        "source": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\src\\main\\res\\mipmap-hdpi\\printf.png"
+    },
+    {
+        "merged": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\tips_error.png",
+        "source": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\src\\main\\res\\mipmap-hdpi\\tips_error.png"
+    },
+    {
+        "merged": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\step4.png",
+        "source": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\src\\main\\res\\mipmap-hdpi\\step4.png"
+    },
+    {
+        "merged": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher.png",
+        "source": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\pay_ali.png",
+        "source": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\src\\main\\res\\mipmap-hdpi\\pay_ali.png"
+    },
+    {
+        "merged": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\page1.png",
+        "source": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\src\\main\\res\\mipmap-hdpi\\page1.png"
+    },
+    {
+        "merged": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\step2.png",
+        "source": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\src\\main\\res\\mipmap-hdpi\\step2.png"
+    },
+    {
+        "merged": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\thanks.png",
+        "source": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\src\\main\\res\\mipmap-hdpi\\thanks.png"
+    },
+    {
+        "merged": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\city_unselect.png",
+        "source": "D:\\ASprojects\\AS2.3.3\\1711\\TicketVending\\app\\src\\main\\res\\mipmap-hdpi\\city_unselect.png"
+    }
+]

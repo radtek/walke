@@ -5,21 +5,21 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.aipiao.bkpk.views.TopView
+    <com.aipiao.bkpkold.views.TopView
         android:id="@+id/cheastTopView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></com.aipiao.bkpk.views.TopView>
+        android:layout_height="wrap_content"></com.aipiao.bkpkold.views.TopView>
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/cheastSwipeRefreshLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.aipiao.bkpk.views.ListViewForScrollView
+        <com.aipiao.bkpkold.views.ListViewForScrollView
             android:background="@color/white"
             android:id="@+id/cheastListViewForScrollView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"></com.aipiao.bkpk.views.ListViewForScrollView>
+            android:layout_height="wrap_content"></com.aipiao.bkpkold.views.ListViewForScrollView>
 
     </android.support.v4.widget.SwipeRefreshLayout>
 

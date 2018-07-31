@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="60dp"
+    android:gravity="center"
+    android:layout_marginTop="@dimen/ticket_select_interval">
+
+    <ImageView
+        android:id="@+id/vst_icon"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:src="@mipmap/shift_man"
+        android:padding="@dimen/margin_5dp"/>
+
+    <TextView
+        android:id="@+id/vst_tvTicketsInfo"
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textSize="29sp"
+        android:textColor="@color/text_006aae"
+        android:text="成人票(25)"
+        android:layout_marginLeft="@dimen/margin_15dp"
+        android:layout_marginRight="@dimen/margin_15dp"/>
+
+    <ImageView
+        android:id="@+id/vst_ivMinus"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:src="@mipmap/shift_minus"
+        android:padding="@dimen/margin_5dp"/>
+    <!-- TextView -->
+    <TextView
+        android:id="@+id/vst_number"
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        android:text="0"
+        android:textSize="32sp"
+        android:gravity="center"
+        android:textColor="@color/text_006aae"
+        android:lines="1"
+        android:inputType="number"
+        android:background="@drawable/bg_select_tickets"
+        android:layout_marginLeft="@dimen/margin_10dp"
+        android:layout_marginRight="@dimen/margin_10dp"/>
+
+    <ImageView
+        android:id="@+id/vst_ivAdd"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:src="@mipmap/shift_add"/>
+
+</LinearLayout>

@@ -6,10 +6,10 @@
     android:background="@color/white"
     android:orientation="vertical">
 
-    <com.aipiao.bkpk.views.TopView
+    <com.aipiao.bkpkold.views.TopView
         android:id="@+id/choseTopView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></com.aipiao.bkpk.views.TopView>
+        android:layout_height="wrap_content"></com.aipiao.bkpkold.views.TopView>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -51,7 +51,7 @@
                 android:orientation="vertical"
                 android:visibility="gone">
 
-                <com.aipiao.bkpk.views.choseview.SelectBallsView
+                <com.aipiao.bkpkold.views.choseview.SelectBallsView
                     android:id="@+id/redSelectBallsView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -63,7 +63,7 @@
                     app:txtSelectedColor="#ffffff"
                     app:txtUnselectedColor="@color/red" />
 
-                <com.aipiao.bkpk.views.choseview.SelectBallsView
+                <com.aipiao.bkpkold.views.choseview.SelectBallsView
                     android:id="@+id/blueSelectBallsView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

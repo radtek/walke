@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/White">
+
+    <com.grandsea.ticketvendingapplication.view.TitleBar
+        android:id="@+id/as_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:rightHide="true"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_50dp"
+        android:background="@color/topBlue"
+        android:text="权限验证"
+        android:textSize="25sp"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/margin_25dp"
+        android:textColor="#ffffff"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="请输入授权码"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/margin_25dp"
+        android:paddingTop="@dimen/margin_15dp"
+        android:paddingBottom="@dimen/margin_10dp"
+        android:textColor="@color/topBlue"
+        android:background="#f2f2f2"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/buttonHeight"
+                android:layout_marginTop="6dp"
+                android:orientation="horizontal">
+                <!--android:layout_marginTop="36dp"-->
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="@dimen/buttonHeight"
+                    android:layout_height="match_parent"
+                    android:padding="5dp"
+                    android:src="@mipmap/input_user" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/margin_10dp"
+                    android:gravity="center"
+                    android:text="用户名"
+                    android:textColor="@color/topBlue"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/as_etUsername"
+                    android:layout_width="@dimen/input_username_width"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/margin_12dp"
+                    android:background="@drawable/bg_username"
+                    android:paddingLeft="@dimen/margin_15dp"
+                    android:singleLine="true"
+                    android:textSize="32sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/buttonHeight"
+                android:layout_marginTop="@dimen/margin_15dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/buttonHeight"
+                    android:layout_height="match_parent"
+                    android:padding="5dp"
+                    android:src="@mipmap/input_password" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/margin_10dp"
+                    android:gravity="center"
+                    android:text="密　码"
+                    android:textColor="@color/topBlue"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/as_etPassword"
+                    android:layout_width="@dimen/input_username_width"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/margin_12dp"
+                    android:background="@drawable/bg_username"
+                    android:paddingLeft="@dimen/margin_15dp"
+                    android:singleLine="true"
+                    android:textSize="32sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="#E4E4E4"
+            android:gravity="center_horizontal"
+            android:paddingTop="@dimen/margin_20dp">
+            <com.grandsea.ticketvendingapplication.view.ReturnButton
+                android:id="@+id/as_btSure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:img="@mipmap/icon_sure"
+                app:textContent="确定"/>
+            <com.grandsea.ticketvendingapplication.view.ReturnButton
+                android:id="@+id/as_btBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:img="@mipmap/icon_back"
+                app:textContent="返回"
+                android:layout_marginTop="@dimen/margin_25dp"
+                android:layout_marginBottom="40dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!--第一横条-->
+    <com.grandsea.ticketvendingapplication.view.TitleBar
+        android:id="@+id/apa_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="145dp"
+            android:layout_height="64dp"
+            android:adjustViewBounds="true"
+            android:cropToPadding="false"
+            android:scaleType="centerInside"
+            android:src="@drawable/jckx"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:gravity="bottom"
+            android:text="自助售票系统"
+            android:textColor="#3333FF"
+            />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_marginRight="20dp"
+            android:text="当前站点：珠海机场"
+            android:textColor="#3333FF" />
+    </LinearLayout>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#3333FF"
+        android:orientation="horizontal"
+        android:layout_weight="0.33">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:layout_marginLeft="20dp"
+            android:text="现在是:"/>
+        <TextClock
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="#ffffff"
+            android:format24Hour="yyyy 年 MM 月 dd 日 hh : mm : ss "
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="5">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="2"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:background="#808080">
+                <TextView
+                    android:id="@+id/shift_name_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="珠海机场 == 中珠大厦"
+                    />
+                <TextView
+                    android:id="@+id/ticket_date_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="    日期：2017年8月15日（今天）"
+
+                    />
+                <TextView
+                    android:id="@+id/is_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="    发车时间：11：10"
+
+                    />
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/passenger_recycler_view_id"
+                android:layout_width="match_parent"
+                android:layout_height="336dp">
+
+            </android.support.v7.widget.RecyclerView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+            </View>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/bt_passenger_back"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="返回"
+                android:background="#ffa500"
+                android:layout_marginBottom="50dp"/>
+            <Button
+                android:id="@+id/bt_add_passenger"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="添加乘车人"
+                android:background="#ffa500"
+                android:layout_marginBottom="50dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="一次最多5个人"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="票价总额："/>
+            <TextView
+                android:id="@+id/tv_total_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="75"/>
+            <Button
+                android:id="@+id/bt_pay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="支付"
+                android:background="#ffa500"
+                android:layout_marginBottom="50dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:fadeScrollbars="false" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+             />
+    </ScrollView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:text="顺风驴平台专用版"
+        android:background="#3333FF"
+        android:textColor="#ffffff"
+        android:textSize="36sp" />
+
+</LinearLayout>

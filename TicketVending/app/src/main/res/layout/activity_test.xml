@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/test_idInfo"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:text="身份证Test"
+        android:onClick="idInfo"/>
+    <Button
+        android:id="@+id/test_idInfo2"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:text="my身份证Test"
+        android:onClick="idInfo2"/>
+    <Button
+        android:id="@+id/test_qrCode"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:text="二维码Test"
+        android:onClick="qrCode"/>
+    <Button
+        android:id="@+id/test_print"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:text="打印Test"
+        android:onClick="print"/>
+    <Button
+        android:id="@+id/test_print2"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:text="my打印Test"
+        android:onClick="print2"/>
+
+</LinearLayout>

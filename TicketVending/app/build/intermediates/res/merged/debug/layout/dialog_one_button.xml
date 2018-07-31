@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_dialog">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="提示"
+        android:textColor="#ffffff"
+        android:textSize="35sp"
+        android:background="@color/topBlue"/>
+
+    <TextView
+        android:id="@+id/dob_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="已经是第一页"
+        android:textColor="@color/text_006aae"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:layout_centerInParent="true"/>
+
+    <com.grandsea.ticketvendingapplication.view.ReturnButton
+        android:id="@+id/dob_rbBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        app:img="@mipmap/icon_sure"
+        app:textContent="知道了"/>
+
+
+</RelativeLayout>

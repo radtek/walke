@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:background="@drawable/bg_layout_corners"
+    android:paddingLeft="@dimen/margin_7dp"
+    android:paddingRight="@dimen/margin_7dp">
+
+    <com.grandsea.ticketvendingapplication.view.ImageTextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        app:img="@mipmap/shift_sort"
+        app:textContent="顺序号"/>
+    <com.grandsea.ticketvendingapplication.view.ImageTextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        app:img="@mipmap/shift_time"
+        app:textContent="乘车时间"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:gravity="center">
+        <com.grandsea.ticketvendingapplication.view.ImageTextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:img="@mipmap/shift_price"
+            app:textContent="票价(人民币/张)"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <com.grandsea.ticketvendingapplication.view.ImageTextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:img="@mipmap/shift_man"
+                app:textContent="成人"/>
+            <com.grandsea.ticketvendingapplication.view.ImageTextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:img="@mipmap/shift_child"
+                app:textContent="儿童"/>
+            <com.grandsea.ticketvendingapplication.view.ImageTextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:img="@mipmap/shift_student"
+                app:textContent="学生"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    <com.grandsea.ticketvendingapplication.view.ImageTextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        app:img="@mipmap/shift_surplus"
+        app:textContent="余票数量(张)"/>
+
+</LinearLayout>

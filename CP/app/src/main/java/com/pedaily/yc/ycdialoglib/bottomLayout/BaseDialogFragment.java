@@ -13,7 +13,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.pedaily.yc.ycdialoglib.customToast.ToastUtil;
-import com.aipiao.bkpk.R;
+import com.aipiao.bkpkold.R;
 
 /**
  * ================================================

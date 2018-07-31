@@ -19,7 +19,7 @@
         android:layout_marginTop="11.0dip"
         android:background="#eee" />
 
-    <com.aipiao.bkpk.views.ClearEditText
+    <com.aipiao.bkpkold.views.ClearEditText
         android:id="@+id/et_nickname"
         style="@style/account_edit_text_style"
         android:layout_width="fill_parent"

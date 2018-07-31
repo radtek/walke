@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/ap_etQrcode"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:inputType="textMultiLine"
+        android:maxLength="50"
+        android:textColor="@color/color_6b6b6b" />
+    <EditText
+        android:id="@+id/ap_printGray"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:inputType="number"
+        android:maxLength="1"
+        android:text="2"
+        android:textColor="@color/color_6b6b6b"
+        android:background="#764d61f9"/>
+
+    <Button
+        android:id="@+id/ap_btnPrint"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:onClick="start"
+        android:text="start"/>
+
+    <LinearLayout
+        android:id="@+id/ap_printLinearLayout"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/white">
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@mipmap/test_logo"/>
+        <TextView
+            android:id="@+id/ap_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="12345786321463"/>
+
+    </LinearLayout>
+
+</LinearLayout>

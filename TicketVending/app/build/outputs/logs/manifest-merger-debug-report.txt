@@ -1,0 +1,236 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:2:1-107:12
+	package
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:3:5-52
+		INJECTED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml
+		INJECTED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml
+		INJECTED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:2:11-69
+	android:versionCode
+		INJECTED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml
+		INJECTED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:5:22-64
+uses-permission#android.permission.CAMERA
+ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:6:5-65
+	android:name
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:6:22-62
+uses-permission#android.permission.VIBRATE
+ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:7:5-66
+	android:name
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:7:22-63
+uses-permission#android.permission.WAKE_LOCK
+ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:8:5-68
+	android:name
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:8:22-65
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:9:5-81
+	android:name
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:9:22-78
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:10:5-80
+	android:name
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:10:22-77
+uses-permission#android.permission.NFC
+ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:12:5-62
+	android:name
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:12:22-59
+uses-feature#android.hardware.usb.host
+ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:14:5-62
+	android:name
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:14:19-59
+application
+ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:16:5-105:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\caihui\.android\build-cache\6ac18ab7ef4b6e5c4e48fe31e5c68c42f69a751b\output\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:design:25.3.1] C:\Users\caihui\.android\build-cache\6300b13f187cd6d29af78a03342a20a6ae440927\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\caihui\.android\build-cache\0b508d7c5a38877966d55358b0c4baa32b08a9c4\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\caihui\.android\build-cache\62fe0c72b95b1c4e9c91439344d3a1374f8c3e34\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\caihui\.android\build-cache\af81ad2fa387d86cbe0d6e4a3121bda51901f054\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:transition:25.3.1] C:\Users\caihui\.android\build-cache\309d0aae712754a8acf37c74bc3e9af4c8ec46df\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\caihui\.android\build-cache\4671ebdc126d0cb83722f8faebf509288db4cacb\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\caihui\.android\build-cache\d983b47c331cec0297e9ae9d9c96f3c617a4fda6\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\caihui\.android\build-cache\f124435b69eab6c93f44a2bd75034a2103060d08\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\caihui\.android\build-cache\bfdc7eaeb68860406f2e18a58aa2a40cb3173a4f\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\caihui\.android\build-cache\65ff1ad431199bacd2c76e89702b8fa4f4647405\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\caihui\.android\build-cache\70242b200c61f9b7ddf990c94212090472fab015\output\AndroidManifest.xml:29:5-20
+	android:label
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:20:9-41
+	android:supportsRtl
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:22:9-35
+	android:roundIcon
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:21:9-54
+	android:allowBackup
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:18:9-35
+	android:icon
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:19:9-43
+	android:theme
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:23:9-41
+	android:name
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:17:9-49
+activity#com.grandsea.ticketvendingapplication.activity.launch.MainActivity
+ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:24:9-33:20
+	android:screenOrientation
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:27:13-50
+	android:launchMode
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:26:13-44
+	android:name
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:25:13-57
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:28:13-32:29
+action#android.intent.action.MAIN
+ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:29:17-69
+	android:name
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:29:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:31:17-77
+	android:name
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:31:27-74
+activity#com.grandsea.ticketvendingapplication.base.BaseActivity
+ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:34:9-35:52
+	android:screenOrientation
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:35:13-50
+	android:name
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:34:19-52
+activity#com.grandsea.ticketvendingapplication.activity.DestCityActivity
+ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:36:9-38:47
+	android:launchMode
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:38:13-44
+	android:name
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:37:13-54
+activity#com.grandsea.ticketvendingapplication.activity.ShiftActivity
+ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:39:9-42:53
+	android:screenOrientation
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:42:13-50
+	android:launchMode
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:41:13-44
+	android:name
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:40:13-51
+activity#com.grandsea.ticketvendingapplication.activity.SelectTicketsActivity
+ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:43:9-46:52
+	android:screenOrientation
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:46:13-50
+	android:launchMode
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:45:13-44
+	android:name
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:44:13-59
+activity#com.grandsea.ticketvendingapplication.activity.PayActivity
+ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:48:9-53:20
+	android:screenOrientation
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:51:13-50
+	android:launchMode
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:50:13-44
+	android:name
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:49:13-49
+activity#com.grandsea.ticketvendingapplication.activity.PrintfActivity
+ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:54:9-62:20
+	android:screenOrientation
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:56:13-50
+	android:name
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:55:13-52
+activity#com.grandsea.ticketvendingapplication.activity.InputIdActivity
+ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:63:9-65:53
+	android:screenOrientation
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:65:13-50
+	android:name
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:64:13-53
+activity#com.grandsea.ticketvendingapplication.activity.launch.SettingActivity
+ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:66:9-68:59
+	android:theme
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:68:13-56
+	android:name
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:67:13-60
+activity#com.grandsea.ticketvendingapplication.activity.launch.ChangeDepartStationActivity
+ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:70:9-80
+	android:name
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:70:19-78
+activity#com.grandsea.ticketvendingapplication.activity.TestActivity
+ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:74:9-82:20
+	android:screenOrientation
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:76:13-50
+	android:name
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:75:13-50
+activity#com.grandsea.ticketvendingapplication.activity.device.QRCodeActivity
+ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:84:9-86:53
+	android:screenOrientation
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:86:13-50
+	android:name
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:85:13-59
+activity#com.grandsea.ticketvendingapplication.activity.third_party.printer.PrinterActivityTest
+ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:87:9-89:53
+	android:screenOrientation
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:89:13-50
+	android:name
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:88:13-77
+activity#com.grandsea.ticketvendingapplication.activity.device.PrintActivity
+ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:90:9-92:53
+	android:screenOrientation
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:92:13-50
+	android:name
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:91:13-58
+activity#com.grandsea.ticketvendingapplication.activity.device.IdInfoActivity
+ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:93:9-95:53
+	android:screenOrientation
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:95:13-50
+	android:name
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:94:13-59
+activity#com.grandsea.ticketvendingapplication.activity.third_party.IdCardActivity
+ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:96:9-98:53
+	android:screenOrientation
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:98:13-50
+	android:name
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:97:13-64
+activity#com.grandsea.ticketvendingapplication.activity.DestStationActivity
+ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:99:9-102:53
+	android:screenOrientation
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:102:13-50
+	android:launchMode
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:101:13-44
+	android:name
+		ADDED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml:100:13-57
+uses-sdk
+INJECTED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\caihui\.android\build-cache\6ac18ab7ef4b6e5c4e48fe31e5c68c42f69a751b\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:design:25.3.1] C:\Users\caihui\.android\build-cache\6300b13f187cd6d29af78a03342a20a6ae440927\output\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\caihui\.android\build-cache\0b508d7c5a38877966d55358b0c4baa32b08a9c4\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\caihui\.android\build-cache\62fe0c72b95b1c4e9c91439344d3a1374f8c3e34\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\caihui\.android\build-cache\af81ad2fa387d86cbe0d6e4a3121bda51901f054\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\caihui\.android\build-cache\37d17ff22d8429299a9d6bdb0fb6c525d5c6d992\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:transition:25.3.1] C:\Users\caihui\.android\build-cache\309d0aae712754a8acf37c74bc3e9af4c8ec46df\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\caihui\.android\build-cache\4671ebdc126d0cb83722f8faebf509288db4cacb\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\caihui\.android\build-cache\d983b47c331cec0297e9ae9d9c96f3c617a4fda6\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\caihui\.android\build-cache\f124435b69eab6c93f44a2bd75034a2103060d08\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\caihui\.android\build-cache\bfdc7eaeb68860406f2e18a58aa2a40cb3173a4f\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\caihui\.android\build-cache\65ff1ad431199bacd2c76e89702b8fa4f4647405\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\caihui\.android\build-cache\b9c0c9821cbfd58e21d13bc7d435014eaa508282\output\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\caihui\.android\build-cache\70242b200c61f9b7ddf990c94212090472fab015\output\AndroidManifest.xml:21:5-23:58
+	tools:overrideLibrary
+		ADDED from [com.android.support:design:25.3.1] C:\Users\caihui\.android\build-cache\6300b13f187cd6d29af78a03342a20a6ae440927\output\AndroidManifest.xml:23:9-59
+	android:targetSdkVersion
+		INJECTED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml
+		INJECTED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml
+		INJECTED from D:\ASprojects\AS2.3.3\1711\TicketVending\app\src\main\AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:design:25.3.1] C:\Users\caihui\.android\build-cache\6300b13f187cd6d29af78a03342a20a6ae440927\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\caihui\.android\build-cache\0b508d7c5a38877966d55358b0c4baa32b08a9c4\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\caihui\.android\build-cache\62fe0c72b95b1c4e9c91439344d3a1374f8c3e34\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\caihui\.android\build-cache\af81ad2fa387d86cbe0d6e4a3121bda51901f054\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\caihui\.android\build-cache\37d17ff22d8429299a9d6bdb0fb6c525d5c6d992\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:transition:25.3.1] C:\Users\caihui\.android\build-cache\309d0aae712754a8acf37c74bc3e9af4c8ec46df\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\caihui\.android\build-cache\4671ebdc126d0cb83722f8faebf509288db4cacb\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\caihui\.android\build-cache\d983b47c331cec0297e9ae9d9c96f3c617a4fda6\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\caihui\.android\build-cache\f124435b69eab6c93f44a2bd75034a2103060d08\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\caihui\.android\build-cache\bfdc7eaeb68860406f2e18a58aa2a40cb3173a4f\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\caihui\.android\build-cache\65ff1ad431199bacd2c76e89702b8fa4f4647405\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\caihui\.android\build-cache\70242b200c61f9b7ddf990c94212090472fab015\output\AndroidManifest.xml:25:5-27:34
+	android:value
+		ADDED from [com.android.support:design:25.3.1] C:\Users\caihui\.android\build-cache\6300b13f187cd6d29af78a03342a20a6ae440927\output\AndroidManifest.xml:27:9-31
+	android:name
+		ADDED from [com.android.support:design:25.3.1] C:\Users\caihui\.android\build-cache\6300b13f187cd6d29af78a03342a20a6ae440927\output\AndroidManifest.xml:26:9-47

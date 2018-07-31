@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--第一横条-->
+    <com.grandsea.ticketvendingapplication.view.TitleBar
+        android:id="@+id/ash_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:rightHide="true"/>
+
+    <TextView
+        android:id="@+id/ash_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/topBlue"
+        android:gravity="center_vertical|right"
+        android:paddingRight="@dimen/margin_25dp"
+        android:text="顺风驴平板专用版V1.0.0930"
+        android:textColor="@drawable/white"
+        android:textSize="28dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/ash_bottom"
+        android:layout_below="@id/ash_top"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/margin_5dp"
+        android:paddingRight="@dimen/margin_5dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:scaleType="fitCenter"
+                    android:src="@mipmap/step2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:background="@drawable/bg_layout_corners"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/margin_5dp"
+                    android:paddingRight="@dimen/margin_5dp">
+
+                    <com.grandsea.ticketvendingapplication.view.DateView
+                        android:id="@+id/ash_dateView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="@dimen/margin_15dp">
+                        <com.grandsea.ticketvendingapplication.view.ImageTextView
+                            android:id="@+id/ash_stationStart"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            app:img="@mipmap/station_start"
+                            app:textContent="出发站点"/>
+                        <com.grandsea.ticketvendingapplication.view.ImageTextView
+                            android:id="@+id/ash_stationEnd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            app:img="@mipmap/station_end"
+                            app:textContent="到达站点"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <include layout="@layout/shift_bar"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/ash_tipsNoShift"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="28sp"
+                    android:textColor="@color/text_006aae"
+                    android:gravity="center"
+                    android:layout_centerInParent="true"
+                    android:drawableLeft="@mipmap/tips_error"
+                    android:drawablePadding="15dp"
+                    android:lineSpacingExtra="@dimen/margin_2dp"
+                    android:text="很抱歉，你查询的站点今天没有合适的班次\n你可以点击日期右边的@查询明天的班次，\n或者点击右下角的“返回按钮选择其他站点”"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/ash_RecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/margin_6dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/rightMarginTop">
+
+            <com.grandsea.ticketvendingapplication.view.MyTimeView
+                android:id="@+id/adc_time"
+                android:layout_width="match_parent"
+                android:layout_height="150dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/margin_10dp"
+                android:background="@drawable/bg_layout_corners">
+
+                <com.grandsea.ticketvendingapplication.view.CustomButton
+                    android:id="@+id/ash_btLast"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:img="@mipmap/arrow_up"
+                    app:textContent="上一页" />
+
+                <com.grandsea.ticketvendingapplication.view.CustomButton
+                    android:id="@+id/ash_btNext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    app:img="@mipmap/arrow_down"
+                    app:textContent="下一页" />
+
+                <com.grandsea.ticketvendingapplication.view.CustomButton
+                    android:id="@+id/ash_btBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginTop="160dp"
+                    app:img="@mipmap/arrow_left"
+                    app:textContent="返　回" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

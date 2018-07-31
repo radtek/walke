@@ -11,7 +11,7 @@ import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.aipiao.bkpk.R;
+import com.aipiao.bkpkold.R;
 
 
 /**

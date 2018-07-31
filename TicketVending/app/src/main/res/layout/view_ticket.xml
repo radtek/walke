@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="390dp"
+    android:layout_height="match_parent"
+    android:background="@color/White"
+    android:paddingTop="@dimen/margin_20dp">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_ticket"
+        android:layout_marginTop="@dimen/margin_6dp"
+        android:layout_marginBottom="@dimen/margin_6dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginRight="9dp"
+        android:padding="@dimen/margin_8dp">
+
+        <TextView
+            android:id="@+id/vt_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="珠海机场快线乘车凭证"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/ticket_titleSize"
+            android:gravity="center"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ticket_line"
+            android:layout_marginTop="@dimen/margin_5dp"
+            android:layout_marginBottom="@dimen/margin_5dp"
+            android:background="@color/Black"/>
+        <TextView
+            android:id="@+id/vt_way"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="线路："
+            android:textSize="@dimen/ticket_titleSize"
+            android:textColor="@color/Black"/>
+        <TextView
+            android:id="@+id/vt_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2017-10-10"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            android:textColor="@color/Black"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_6dp"
+            android:layout_marginBottom="@dimen/margin_6dp">
+
+            <TextView
+                android:id="@+id/vt_getOnStation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="上车："
+                android:textSize="@dimen/ticket_titleSize"
+                android:textColor="@color/Black"/>
+            <TextView
+                android:id="@+id/vt_takeOffStation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="下车"
+                android:textSize="@dimen/ticket_titleSize"
+                android:textColor="@color/Black"
+                android:layout_below="@id/vt_getOnStation"/>
+            <TextView
+                android:id="@+id/vt_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="09:20"
+                android:textSize="35sp"
+                android:textColor="@color/Black"
+                android:textStyle="bold"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/margin_30dp"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ticket_line"
+            android:background="@color/Black"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_2dp"
+            android:layout_marginBottom="@dimen/margin_2dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="车牌号码: "
+                android:textSize="@dimen/ticket_textSizeMiddle"
+                android:textColor="@color/Black"/>
+
+            <TextView
+                android:id="@+id/vt_carNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="粤C18500"
+                android:textSize="@dimen/ticket_textSizeMiddle"
+                android:textColor="@color/Black"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/margin_10dp"/>
+
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ticket_line"
+            android:background="@color/Black"/>
+
+        <ImageView
+            android:id="@+id/vt_ivQrCode"
+            android:layout_width="280dp"
+            android:layout_height="280dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@mipmap/test_logo"
+            android:layout_marginTop="@dimen/margin_10dp"/>
+
+        <TextView
+            android:id="@+id/vt_tvQrCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="验票码：1004480000"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/ticket_titleSize"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/margin_15dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="@dimen/margin_10dp"
+            android:layout_marginRight="@dimen/margin_10dp"
+            android:layout_marginBottom="@dimen/margin_10dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="座位号"
+                    android:gravity="center"
+                    android:textSize="@dimen/ticket_titleSize"
+                    android:textColor="@color/Black"/>
+                <TextView
+                    android:id="@+id/vt_sitNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:gravity="center"
+                    android:textSize="@dimen/ticket_titleSize"
+                    android:textColor="@color/Black"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="票型"
+                    android:gravity="center"
+                    android:textSize="@dimen/ticket_titleSize"
+                    android:textColor="@color/Black"/>
+                <TextView
+                    android:id="@+id/vt_ticketType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="..."
+                    android:gravity="center"
+                    android:textSize="@dimen/ticket_titleSize"
+                    android:textColor="@color/Black"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="票价"
+                    android:gravity="center"
+                    android:textSize="@dimen/ticket_titleSize"
+                    android:textColor="@color/Black"/>
+                <TextView
+                    android:id="@+id/vt_ticketPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="..."
+                    android:gravity="center"
+                    android:textSize="@dimen/ticket_titleSize"
+                    android:textColor="@color/Black"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="检票口"
+                    android:gravity="center"
+                    android:textSize="@dimen/ticket_titleSize"
+                    android:textColor="@color/Black"/>
+                <TextView
+                    android:id="@+id/vt_checkEnter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:gravity="center"
+                    android:textSize="@dimen/ticket_titleSize"
+                    android:textColor="@color/Black"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="卡位号"
+                    android:gravity="center"
+                    android:textSize="@dimen/ticket_titleSize"
+                    android:textColor="@color/Black"/>
+                <TextView
+                    android:id="@+id/vt_checkEnterNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:gravity="center"
+                    android:textSize="@dimen/ticket_titleSize"
+                    android:textColor="@color/Black"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ticket_line"
+            android:background="@color/Black"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="86dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="联系人: "
+                android:gravity="center_vertical"
+                android:textSize="@dimen/ticket_titleSize"
+                android:textColor="@color/Black"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/vt_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="张三(31244*******155)"
+                    android:textColor="@color/Black"
+                    android:textSize="20sp"
+                    android:gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/vt_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="电话：135*****234"
+                    android:lines="1"
+                    android:textColor="@color/Black"
+                    android:textSize="20sp"
+                    android:layout_marginTop="@dimen/margin_4dp"
+                    android:visibility="gone"/>
+                <!--
+                @dimen/ticket_textSize
+                -->
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ticket_line"
+            android:background="@color/Black"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="温馨提示: 发车前15分钟开始检票"
+            android:textSize="@dimen/ticket_textSize"
+            android:textColor="@color/Black"
+            android:layout_marginLeft="@dimen/margin_15dp"
+            android:layout_marginTop="@dimen/margin_10dp"/>
+        <TextView
+            android:id="@+id/vt_customService"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="客服电话: 0756-8111333"
+            android:textSize="@dimen/ticket_textSize"
+            android:textColor="@color/Black"
+            android:layout_marginLeft="@dimen/margin_15dp"
+            android:layout_marginTop="@dimen/margin_5dp"/>
+        <TextView
+            android:id="@+id/vt_terminalNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="终端号: 8478A "
+            android:textSize="@dimen/ticket_textSize"
+            android:textColor="@color/Black"
+            android:layout_marginLeft="@dimen/margin_15dp"
+            android:layout_marginTop="@dimen/margin_5dp"/>
+        <TextView
+            android:id="@+id/vt_printTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="打印时间:2017-10-11 20:30:50"
+            android:textSize="@dimen/ticket_textSize"
+            android:textColor="@color/Black"
+            android:layout_marginLeft="@dimen/margin_15dp"
+            android:layout_marginTop="@dimen/margin_5dp"/>
+
+    </LinearLayout>
+
+
+
+</ScrollView>

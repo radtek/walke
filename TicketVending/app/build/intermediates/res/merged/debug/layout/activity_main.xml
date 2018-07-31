@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/White">
+
+    <LinearLayout
+        android:id="@+id/am_top"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_titleBar"
+        android:orientation="horizontal"
+        android:background="@color/topBlue">
+        <ImageView
+            android:id="@+id/am_ivSetting"
+            android:layout_width="@dimen/height_titleBar"
+            android:layout_height="match_parent"
+            android:src="@mipmap/icon_setting"
+            android:padding="7dp"/>
+        <TextView
+            android:id="@+id/am_tvAirport"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="right|center_vertical"
+            android:text="当前站点：珠海机场"
+            android:textColor="#ffffff"
+            android:layout_weight="1"
+            android:textSize="32sp"
+            android:layout_marginRight="20dp"
+            />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/am_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:background="@color/topBlue"
+        android:layout_alignParentBottom="true">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="76dp"
+            android:gravity="center"
+            android:text="顺风驴平台专用版"
+            android:textColor="#CCFFFF"
+            android:textSize="36sp"
+            android:layout_centerInParent="true" />
+        <TextView
+            android:id="@+id/am_tvTerminalNum"
+            android:layout_width="wrap_content"
+            android:layout_height="76dp"
+            android:gravity="center"
+            android:text="@string/terminal_number"
+            android:textColor="#CCFFFF"
+            android:textSize="16sp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"/>
+
+    </RelativeLayout>
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/am_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/am_top"
+        android:layout_above="@id/am_bottom"/>
+    <TextView
+        android:id="@+id/am_btSellTicket"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:gravity="center"
+        android:background="@drawable/bg_to_by_ticket"
+        android:text="点击进入售票界面"
+        android:textSize="36sp"
+        android:layout_above="@+id/am_bottom"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/margin_25dp"/>
+
+</RelativeLayout>
+

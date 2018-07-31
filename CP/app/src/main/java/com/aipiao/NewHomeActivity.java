@@ -12,18 +12,18 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.aipiao.bkpk.R;
-import com.aipiao.bkpk.acitivty.user.LoginActivity;
-import com.aipiao.bkpk.base.BaseActivity;
-import com.aipiao.bkpk.bean.Root;
-import com.aipiao.bkpk.bean.bmob.User;
-import com.aipiao.bkpk.fragment.FindFragment;
-import com.aipiao.bkpk.fragment.MeFragment;
-import com.aipiao.bkpk.fragment.OpenFragment;
-import com.aipiao.bkpk.fragment.newshome.MyNewHomeFragment;
-import com.aipiao.bkpk.utils.SharepreUtil;
+import com.aipiao.bkpkold.R;
+import com.aipiao.bkpkold.acitivty.user.LoginActivity;
+import com.aipiao.bkpkold.base.BaseActivity;
+import com.aipiao.bkpkold.bean.Root;
+import com.aipiao.bkpkold.bean.bmob.User;
+import com.aipiao.bkpkold.fragment.FindFragment;
+import com.aipiao.bkpkold.fragment.MeFragment;
+import com.aipiao.bkpkold.fragment.OpenFragment;
+import com.aipiao.bkpkold.fragment.newshome.MyNewHomeFragment;
+import com.aipiao.bkpkold.utils.SharepreUtil;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
- import com.aipiao.bkpk.views.ListViewForScrollView;
+ import com.aipiao.bkpkold.views.ListViewForScrollView;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 

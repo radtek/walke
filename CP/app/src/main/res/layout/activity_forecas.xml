@@ -5,10 +5,10 @@
     android:background="@color/windowBackground"
     android:orientation="vertical">
 
-    <com.aipiao.bkpk.views.TopView
+    <com.aipiao.bkpkold.views.TopView
         android:id="@+id/foceTopView"
         android:layout_width="match_parent"
-        android:layout_height="50dp"></com.aipiao.bkpk.views.TopView>
+        android:layout_height="50dp"></com.aipiao.bkpkold.views.TopView>
 
     <RadioGroup
         android:id="@+id/radioGroup1"
@@ -202,11 +202,11 @@
                     android:background="@mipmap/img_yu_ce_hot" />
 
 
-                <com.aipiao.bkpk.views.ListViewForScrollView
+                <com.aipiao.bkpkold.views.ListViewForScrollView
                     android:id="@+id/forceListViewForScrollView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="10dp"></com.aipiao.bkpk.views.ListViewForScrollView>
+                    android:layout_marginTop="10dp"></com.aipiao.bkpkold.views.ListViewForScrollView>
 
             </LinearLayout>
         </ScrollView>

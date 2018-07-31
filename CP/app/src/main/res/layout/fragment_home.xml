@@ -45,10 +45,10 @@
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
-                    <com.aipiao.bkpk.views.MarqueeView
+                    <com.aipiao.bkpkold.views.MarqueeView
                         android:id="@+id/homeMarqueeView"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"></com.aipiao.bkpk.views.MarqueeView>
+                        android:layout_height="match_parent"></com.aipiao.bkpkold.views.MarqueeView>
                 </LinearLayout>
 
                 <LinearLayout
@@ -83,7 +83,7 @@
                 </LinearLayout>
 
 
-                <com.aipiao.bkpk.views.MyGridView
+                <com.aipiao.bkpkold.views.MyGridView
                     android:layout_marginTop="5dp"
                     android:id="@+id/homegridview"
                     android:layout_width="match_parent"
@@ -91,7 +91,7 @@
                     android:columnWidth="200dp"
                     android:stretchMode="spacingWidthUniform"
                     android:numColumns="2"
-                    ></com.aipiao.bkpk.views.MyGridView>
+                    ></com.aipiao.bkpkold.views.MyGridView>
 
 
                 <LinearLayout

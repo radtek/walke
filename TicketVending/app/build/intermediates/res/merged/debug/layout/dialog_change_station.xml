@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/dcs_title"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/color_006aae"
+        android:gravity="center"
+        android:text="当前出发站点 : 珠海机场"
+        android:textColor="@color/White"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/dcs_desc"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/margin_50dp"
+        android:layout_marginRight="@dimen/margin_50dp"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:text="如果你需要购买从其他站点出发的车票，请点击确认按钮"
+        android:textColor="@color/text_006aae"
+        android:textSize="28sp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="@dimen/margin_50dp"/>
+
+    <TextView
+        android:id="@+id/dcs_ask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_20dp"
+        android:layout_marginLeft="@dimen/margin_50dp"
+        android:layout_marginRight="@dimen/margin_50dp"
+        android:gravity="center"
+        android:text="确认需要更换？"
+        android:textColor="@color/text_006aae"
+        android:textSize="28sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_20dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.grandsea.ticketvendingapplication.view.ReturnButton
+            android:id="@+id/dcs_rbLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_dialog_button"
+            app:img="@mipmap/icon_back"
+            app:textContent="返回" />
+
+        <com.grandsea.ticketvendingapplication.view.ReturnButton
+            android:id="@+id/dcs_rbRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:background="@drawable/bg_dialog_button"
+            app:img="@mipmap/icon_sure"
+            app:textContent="确认" />
+    </LinearLayout>
+
+
+</LinearLayout><!--
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_dialog"
+    android:padding="@dimen/dialog_frame"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/dcs_title"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="当前出发站点 : 珠海机场"
+        android:textColor="#ffffff"
+        android:textSize="28sp"
+        android:layout_marginTop="15dp"
+        android:background="@color/topBlue"/>
+
+    <TextView
+        android:id="@+id/dcs_tipsText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:gravity="center_horizontal"
+        android:text="如果你需要购买从其他站点出发的车票，请点击确认按钮"
+        android:textColor="#3562d4"
+        android:textSize="14sp"
+        android:lineSpacingExtra="@dimen/margin_6dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="30dp"/>
+    <TextView
+        android:id="@+id/dcs_tipsText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="确认需要更换？"
+        android:textColor="#3562d4"
+        android:textSize="14sp"
+        android:lineSpacingExtra="@dimen/margin_6dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="30dp"/>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="3dp"
+        android:layout_marginTop="3dp">
+
+        <com.grandsea.ticketvendingapplication.view.ReturnButton
+            android:id="@+id/dcs_leftButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="7dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            app:textContent="返回"
+            app:img="@mipmap/icon_back"/>
+
+       &lt;!&ndash; <View
+            android:id="@+id/dw_line"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#eeeeee" />&ndash;&gt;
+
+        <com.grandsea.ticketvendingapplication.view.ReturnButton
+            android:id="@+id/dcs_rightButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="7dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            app:textContent="确定"
+            app:img="@mipmap/icon_back"/>
+
+    </LinearLayout>
+</LinearLayout>-->

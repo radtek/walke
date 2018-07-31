@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <!--wrap_content-->
+    <Button
+        android:id="@+id/item_btStationName"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:text="name"
+        android:paddingLeft="@dimen/margin_20dp"
+        android:paddingRight="@dimen/margin_20dp"
+        android:textColor="@color/text_006aae"
+        android:background="@drawable/button_layers_station"/>
+   <!-- <TextView
+        android:id="@+id/item_tvStationName"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:text="name"
+        android:background="#ba4691ed"/>-->
+
+</LinearLayout>

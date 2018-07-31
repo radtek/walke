@@ -26,7 +26,7 @@
                 android:text="万位(选1~10个)"
                 android:textColor="@color/black2" />
 
-            <com.aipiao.bkpk.views.choseview.SelectBallsView
+            <com.aipiao.bkpkold.views.choseview.SelectBallsView
                 android:id="@+id/wanweiSelectBallsView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -54,7 +54,7 @@
                 android:text="千位(选1~10个)"
                 android:textColor="@color/black2" />
 
-            <com.aipiao.bkpk.views.choseview.SelectBallsView
+            <com.aipiao.bkpkold.views.choseview.SelectBallsView
                 android:id="@+id/qianweiSelectBallsView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -82,7 +82,7 @@
                 android:text="百位(选1~10个)"
                 android:textColor="@color/black2" />
 
-            <com.aipiao.bkpk.views.choseview.SelectBallsView
+            <com.aipiao.bkpkold.views.choseview.SelectBallsView
                 android:id="@+id/baiweiSelectBallsView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -110,7 +110,7 @@
                 android:text="十位(选1~10个)"
                 android:textColor="@color/black2" />
 
-            <com.aipiao.bkpk.views.choseview.SelectBallsView
+            <com.aipiao.bkpkold.views.choseview.SelectBallsView
                 android:id="@+id/shiweiSelectBallsView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -138,7 +138,7 @@
                 android:text="个位(选1~10个)"
                 android:textColor="@color/black2" />
 
-            <com.aipiao.bkpk.views.choseview.SelectBallsView
+            <com.aipiao.bkpkold.views.choseview.SelectBallsView
                 android:id="@+id/geweiSelectBallsView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
